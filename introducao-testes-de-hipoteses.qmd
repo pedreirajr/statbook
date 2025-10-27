@@ -1,0 +1,16 @@
+---
+title: "Introdução aos Testes de Hipóteses"
+---
+
+# Introdução
+
+Texto introdutório do capítulo.
+
+## Seção 1
+
+Conteúdo.
+
+## Seção 2
+
+Conteúdo.
+

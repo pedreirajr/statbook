@@ -1,0 +1,16 @@
+---
+title: "Distribuições de Probabilidade Contínuas"
+---
+
+# Introdução
+
+Texto introdutório do capítulo.
+
+## Seção 1
+
+Conteúdo.
+
+## Seção 2
+
+Conteúdo.
+
