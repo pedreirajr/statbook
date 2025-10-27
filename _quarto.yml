@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: "statbook"
-  author: "Norah Jones"
-  date: "27/10/2025"
+  title: "Introdução à Estatística - Aplicações em R"
+  author: "Jorge Ubirajara Pedreira Junior"
+  date: "XX/XX/2026"
   chapters:
     - index.qmd
     - intro.qmd
@@ -19,8 +19,6 @@ format:
     theme:
       - cosmo
       - brand
-  pdf:
-    documentclass: scrreprt
 
 editor: visual
 

@@ -1,9 +1,11 @@
-# Preface {.unnumbered}
+# Prefácio {.unnumbered}
 
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Este é um livro construído em Quarto para guiar a disciplina Estatística aplicada à Engenharia de Transportes da Escola Politécnica da UFBA
 
 ```{r}
-1 + 1
+library(tidyverse)
+x <- rnorm(n = 40)
+y <- 1.5*x + rnorm()
+d <- data.frame(x,y)
+d %>% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()
 ```
