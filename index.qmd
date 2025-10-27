@@ -2,7 +2,7 @@
 
 Este é um livro construído em Quarto para guiar a disciplina Estatística aplicada à Engenharia de Transportes da Escola Politécnica da UFBA
 
-```{r, warning = F}
+```{r, warning = F, message = F}
 library(tidyverse)
 x <- rnorm(n = 40)
 y <- 1.5*x + rnorm(0, 2, n = 40)
