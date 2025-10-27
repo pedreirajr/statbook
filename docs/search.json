@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introdução à Estatística - Aplicações em R",
+    "title": "Introdução à Estatística (com R)",
     "section": "",
     "text": "Prefácio\nEste é um livro construído em Quarto para guiar a disciplina Estatística aplicada à Engenharia de Transportes da Escola Politécnica da UFBA\n\nlibrary(tidyverse)\nx &lt;- rnorm(n = 40)\ny &lt;- 1.5*x + rnorm(0, 2, n = 40)\nd &lt;- data.frame(x,y)\nd %&gt;% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()",
     "crumbs": [

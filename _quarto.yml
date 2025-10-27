@@ -3,22 +3,69 @@ project:
   output-dir: docs
 
 book:
-  title: "Introdução à Estatística - Aplicações em R"
-  author: "Jorge Ubirajara Pedreira Junior"
-  date: "XX/XX/2026"
+  title: "Introdução à Estatística (com R)"
+  author: "Jorge Ubirajara"
+  language: pt
+  page-navigation: true
+  search: true
   chapters:
     - index.qmd
-    - intro.qmd
+
+    - part: "PARTE 1: ASPECTOS INTRODUTÓRIOS"
+      chapters:
+        - motivacao.qmd
+        - introducao-ao-r.qmd
+        - planejamento-de-pesquisas.qmd
+
+    - part: "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS"
+      chapters:
+        - manipulacao-de-dados-tabulares.qmd
+        - visualizacao-de-dados-tabulares.qmd
+
+    - part: "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE"
+      chapters:
+        - revisao-de-teoria-dos-conjuntos.qmd
+        - experimento-espaco-eventos.qmd
+        - regras-multiplicacao-adicao.qmd
+        - teorema-de-bayes.qmd
+        - variaveis-aleatorias.qmd
+        - lgn-e-tlc.qmd
+
+    - part: "PARTE 4: DISTRIBUIÇÕES DE PROBABILIDADE"
+      chapters:
+        - distribuicoes-discretas.qmd
+        - distribuicoes-continuas.qmd
+
+    - part: "PARTE 5: INFERÊNCIA ESTATÍSTICA"
+      chapters:
+        - estimacao-de-parametros.qmd
+        - introducao-testes-de-hipoteses.qmd
+        - testes-t-student.qmd
+        - testes-nao-parametricos.qmd
+
+    - part: "PARTE 6: ESTIMANDO RELAÇÕES ENTRE VARIÁVEIS"
+      chapters:
+        - associacao-e-correlacao.qmd
+        - regressao-linear-simples.qmd
+        - inferencia-em-regressao.qmd
+        - regressao-linear-multipla.qmd
+
     - summary.qmd
     - references.qmd
 
-bibliography: references.bib
-
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: default
+    number-sections: true
+    toc: true
+    toc-depth: 3
 
-editor: visual
+bibliography: references.bib
+crossref:
+  fig-title: "Figura"
+  tbl-title: "Tabela"
+  eq-title: "Equação"
 
+# (opcional) builds mais rápidos em capítulos não alterados
+execute:
+  freeze: auto
