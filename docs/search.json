@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introdução à Estatística (com R)",
+    "title": "Introdução à Estatística para Ciência de Dados com R",
     "section": "",
-    "text": "Prefácio\nEste é um livro construído em Quarto para guiar a disciplina Estatística aplicada à Engenharia de Transportes da Escola Politécnica da UFBA\n\nlibrary(tidyverse)\nx &lt;- rnorm(n = 40)\ny &lt;- 1.5*x + rnorm(0, 2, n = 40)\nd &lt;- data.frame(x,y)\nd %&gt;% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()",
+    "text": "Prefácio\nEsta proposta de livro didático surgiu de uma necessidade particular de dar suporte a conteúdos de disciplinas que ministro na Escola Politécnica da UFBA. No contexto da graduação, produzo-o para ser o fio condutor da disciplina Estatística aplicada à Engenharia de Transportes (ENGR79) e como suporte ferramental à análise exploratória de dados na disciplina Levantamentos e Pesquisas em Engenharia de Transportes (ENGR80). No âmbito da pós-gradução, serve como suporte para revisar conteúdos básicos de estatística e probabilidade e avançar em tópicos mais avançados em regressão na disciplina de Planejamento dos Sistemas de Transporte (PPEC0051), bastante utilizados no contexto da modelagem da demanda por transportes.\nExistem muitos bons livros-texto a respeito do tema e minha pretensão aqui jamais será a de substituí-los. Nesse sentido, como obra impressa tenho como principal referência o livro Probabilidade e Estatística na Engenharia, de William W. Hines, Douglas C. Montgomery, Dave Goldsman e Connie M. Borror. Os livros digitais (e-book) existem aos montes, mas tenho um grande apreço pelo Data Science (Data Wrangling e Visualization with R) e Introduction to Data Science (Statistics and Prediction Algorithms Through Case Studies) do Rafael Irizarry.\nEntretanto, três razões principais me motivam a escrevê-lo neste momento. A primeira delas diz respeito ao momento oportuno do boom das “carreiras em dados”, revelados pelas inúmeras páginas de resultados que surgem quando certas palavras-chave associadas são utilizadas em plataformas de busca por emprego. Sugiro experimentar termos “cientista de dados”, “analista de dados”, “engenheira de dados”, “especialista em Big Data”, “especialista em Inteligência Artificial e”engenheira de Aprendizado de Máquina”, por exemplo, para se impressionar com a quantidade de vagas ofertadas nestas áreas.\nEste resultado não é surpresa e já vem sendo discutido em ediçõe seguidas do Future of Jobs Report do Fórum Econômico Mundial. Mencionar: a) Figure 2.4: tecnhology adoption; b) Figure 3.3: new jobs and lost jobs.\nCapa do The Economist (The World most valuable resource). Valor das empresas de tecnologia.\nData Scientist: the sexiest job of the 21st century.\nFechar a ideia: Deste modo, apesar da abundância de material disponível, da minha experiência de pouco mais de 10 anos lecionando tópicos a respeito deste tema, acredito em um roteiro especial para percorrer estes tópicos que favoreça o aprendizado. Este livro traduz a expressão desta crença que tenho experimentando e ajustando material de aula para que esse objetivo seja atingido de forma mais eficaz. A todos(as) os(as) estudantes e colegas que favoreceram o amadurecimento deste caminho, o meu enorme agradecimento.\nA segunda razão está associada ao frenesi relacionado a este momento em que vivemos. Quando abrimos a descrição do perfil de vaga nestas consultas, nos deparamos com uma infinidade de demandas, primeiro por conhecimento técnico em software e, segundo, por domínio teórico em modelagem avançada que estão ancorados em princípios matemáticos e estatísticos. Este livro não tem a pretensão de te colocar como apto para estas vagas, mas de ser um meio de iniciar a exploração deste caminho de uma forma motivadora, reduzindo o desânimo provocado por muitas disciplinas do gênero quando nos deparamos com as suas dificuldades inerentes.\nE aí entra a terceira e última razão para escrevê-lo e que define a filosofia com que ele é escrito. Boa parte dos livros-texto mais tradicionais em estatística . Lembro-me de quando cursei Álgebra Linear na graduação. Consegui uma aprovação sem entender direito qual por que raios precisávamos descobrir autovalores, autovetores ou fatorar matrizes. Quase 10 anos mais tarde, descobri uma playlist de vídeos chamada A Essência da Álgebra Linear, produzida por Gareth Sanders…, que percorria o caminho da álgebra linear básica de uma maneira diferente, trazendo uma intuição visual e geométrica por trás destas operações que me tornou um entusiasta da disciplina. Tradicionalmente nas disciplinas de Estatística ocorre algo parecido. Nos deparamos com funções distribuição de probabilidade e estatísticas de testes e não temos a devida intuição sobre o seu significado, muitas vezes por que a intuição visual não está devidamente amadurecida.\nÉ por isso que nosso livro adentra primeiro numa formação técnica basilar em análise exploratória de dados, nos ensinando logo após a parte de Estatística Descritiva (capítulo X), a elaborar sumários estatísticos, filtrar, selecionar e ordenar tabelas, produzir novos dados a partir dos existentes e como visualizar adequadamente cada tipo de informação que este insumo (a tabela de dados) nos proporciona. Entendo que o mergulho nestes tópicos e o seu domínio antes de adentrarmos em teoria da probabilidade, testes de hipóteses e regressão, por exemplo, seja fundamental para uma melhor compreensão destes conteúdos intermediários de uma disciplina do gênero.\nPor que o R (vinculada à terceira razão; mencionar comunidades que utilizam bastante). Mencionar Python.",
     "crumbs": [
       "Prefácio"
     ]
@@ -77,7 +77,7 @@
     "href": "2introducao-ao-r.html",
     "title": "2  Introdução ao R",
     "section": "",
-    "text": "3 Introdução\nTexto introdutório do capítulo.",
+    "text": "2.1 Introdução\nlibrary(tidyverse)\nx &lt;- rnorm(n = 40)\ny &lt;- 1.5*x + rnorm(0, 2, n = 40)\nd &lt;- data.frame(x,y)\nd %&gt;% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()",
     "crumbs": [
       "PARTE 1: ASPECTOS INTRODUTÓRIOS",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao R</span>"
@@ -110,7 +110,7 @@
     "href": "3planejamento-de-pesquisas.html",
     "title": "3  Planejamento de Pesquisas",
     "section": "",
-    "text": "4 Introdução\nTexto introdutório do capítulo.",
+    "text": "3.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
       "PARTE 1: ASPECTOS INTRODUTÓRIOS",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
@@ -143,7 +143,7 @@
     "href": "4manipulacao-de-dados-tabulares.html",
     "title": "4  Manipulação de Dados Tabulares",
     "section": "",
-    "text": "5 Introdução\nTexto introdutório do capítulo.",
+    "text": "4.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
       "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Dados Tabulares</span>"
@@ -176,7 +176,7 @@
     "href": "5visualizacao-de-dados-tabulares.html",
     "title": "5  Visualização de Dados Tabulares",
     "section": "",
-    "text": "6 Introdução\nTexto introdutório do capítulo.",
+    "text": "5.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
       "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visualização de Dados Tabulares</span>"
@@ -209,7 +209,7 @@
     "href": "6revisao-de-teoria-dos-conjuntos.html",
     "title": "6  Revisão de Teoria dos Conjuntos",
     "section": "",
-    "text": "7 Introdução\nTexto introdutório do capítulo.",
+    "text": "6.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
       "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Revisão de Teoria dos Conjuntos</span>"
@@ -242,7 +242,7 @@
     "href": "7experimento-espaco-eventos.html",
     "title": "7  Experimento Aleatório, Espaço Amostral e Eventos",
     "section": "",
-    "text": "8 Introdução\nTexto introdutório do capítulo.",
+    "text": "7.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
       "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimento Aleatório, Espaço Amostral e Eventos</span>"
@@ -275,7 +275,7 @@
     "href": "8regras-multiplicacao-adicao.html",
     "title": "8  Regras da Multiplicação e da Adição",
     "section": "",
-    "text": "9 Introdução\nTexto introdutório do capítulo.",
+    "text": "8.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
       "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Regras da Multiplicação e da Adição</span>"
@@ -741,6 +741,83 @@
     "crumbs": [
       "PARTE 1: ASPECTOS INTRODUTÓRIOS",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
+    ]
+  },
+  {
+    "objectID": "2introducao-ao-r.html#introdução",
+    "href": "2introducao-ao-r.html#introdução",
+    "title": "2  Introdução ao R",
+    "section": "",
+    "text": "2.1.1 Seção 1\nConteúdo.\n\n\n2.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "3planejamento-de-pesquisas.html#introdução",
+    "href": "3planejamento-de-pesquisas.html#introdução",
+    "title": "3  Planejamento de Pesquisas",
+    "section": "",
+    "text": "3.1.1 Seção 1\nConteúdo.\n\n\n3.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
+    ]
+  },
+  {
+    "objectID": "4manipulacao-de-dados-tabulares.html#introdução",
+    "href": "4manipulacao-de-dados-tabulares.html#introdução",
+    "title": "4  Manipulação de Dados Tabulares",
+    "section": "",
+    "text": "4.1.1 Seção 1\nConteúdo.\n\n\n4.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Dados Tabulares</span>"
+    ]
+  },
+  {
+    "objectID": "5visualizacao-de-dados-tabulares.html#introdução",
+    "href": "5visualizacao-de-dados-tabulares.html#introdução",
+    "title": "5  Visualização de Dados Tabulares",
+    "section": "",
+    "text": "5.1.1 Seção 1\nConteúdo.\n\n\n5.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visualização de Dados Tabulares</span>"
+    ]
+  },
+  {
+    "objectID": "6revisao-de-teoria-dos-conjuntos.html#introdução",
+    "href": "6revisao-de-teoria-dos-conjuntos.html#introdução",
+    "title": "6  Revisão de Teoria dos Conjuntos",
+    "section": "",
+    "text": "6.1.1 Seção 1\nConteúdo.\n\n\n6.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Revisão de Teoria dos Conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "7experimento-espaco-eventos.html#introdução",
+    "href": "7experimento-espaco-eventos.html#introdução",
+    "title": "7  Experimento Aleatório, Espaço Amostral e Eventos",
+    "section": "",
+    "text": "7.1.1 Seção 1\nConteúdo.\n\n\n7.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimento Aleatório, Espaço Amostral e Eventos</span>"
+    ]
+  },
+  {
+    "objectID": "8regras-multiplicacao-adicao.html#introdução",
+    "href": "8regras-multiplicacao-adicao.html#introdução",
+    "title": "8  Regras da Multiplicação e da Adição",
+    "section": "",
+    "text": "8.1.1 Seção 1\nConteúdo.\n\n\n8.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Regras da Multiplicação e da Adição</span>"
     ]
   }
 ]

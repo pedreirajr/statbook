@@ -1,0 +1,17 @@
+{
+  "hash": "86da03d1cc92476a0b218403807d5866",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Introdução ao R\"\n---\n\n## Introdução\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nx <- rnorm(n = 40)\ny <- 1.5*x + rnorm(0, 2, n = 40)\nd <- data.frame(x,y)\nd %>% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()\n```\n\n::: {.cell-output-display}\n![](2introducao-ao-r_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n### Seção 1\n\nConteúdo.\n\n### Seção 2\n\nConteúdo.\n\n",
+    "supporting": [
+      "2introducao-ao-r_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

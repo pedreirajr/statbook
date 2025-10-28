@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jorge Ubirajara">
 
-<title>8&nbsp; Regras da Multiplicação e da Adição – Introdução à Estatística para Ciência de Dados com R</title>
+<title>Introdução à Estatística para Ciência de Dados com R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./9teorema-de-bayes.html" rel="next">
-<link href="./7experimento-espaco-eventos.html" rel="prev">
+<link href="./1motivacao.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./6revisao-de-teoria-dos-conjuntos.html">PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE</a></li><li class="breadcrumb-item"><a href="./8regras-multiplicacao-adicao.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Regras da Multiplicação e da Adição</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Prefácio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Prefácio</span></a>
   </div>
 </li>
@@ -188,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./8regras-multiplicacao-adicao.html" class="sidebar-item-text sidebar-link active">
+  <a href="./8regras-multiplicacao-adicao.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Regras da Multiplicação e da Adição</span></span></a>
   </div>
 </li>
@@ -327,26 +327,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">8.1</span> Introdução</a>
-  <ul class="collapse">
-  <li><a href="#seção-1" id="toc-seção-1" class="nav-link" data-scroll-target="#seção-1"><span class="header-section-number">8.1.1</span> Seção 1</a></li>
-  <li><a href="#seção-2" id="toc-seção-2" class="nav-link" data-scroll-target="#seção-2"><span class="header-section-number">8.1.2</span> Seção 2</a></li>
-  </ul></li>
+  <li><a href="#prefácio" id="toc-prefácio" class="nav-link active" data-scroll-target="#prefácio">Prefácio</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./6revisao-de-teoria-dos-conjuntos.html">PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE</a></li><li class="breadcrumb-item"><a href="./8regras-multiplicacao-adicao.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Regras da Multiplicação e da Adição</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Regras da Multiplicação e da Adição</span></h1>
+<h1 class="title">Introdução à Estatística para Ciência de Dados com R</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jorge Ubirajara </p>
+          </div>
+  </div>
     
   
     
@@ -357,19 +359,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introdução" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">8.1</span> Introdução</h2>
-<p>Texto introdutório do capítulo.</p>
-<section id="seção-1" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="seção-1"><span class="header-section-number">8.1.1</span> Seção 1</h3>
-<p>Conteúdo.</p>
-</section>
-<section id="seção-2" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="seção-2"><span class="header-section-number">8.1.2</span> Seção 2</h3>
-<p>Conteúdo.</p>
+<section id="prefácio" class="level1 unnumbered">
+<h1 class="unnumbered">Prefácio</h1>
+<p>Esta proposta de livro didático surgiu de uma necessidade particular de dar suporte a conteúdos de disciplinas que ministro na Escola Politécnica da UFBA. No contexto da graduação, produzo-o para ser o fio condutor da disciplina Estatística aplicada à Engenharia de Transportes (ENGR79) e como suporte ferramental à análise exploratória de dados na disciplina Levantamentos e Pesquisas em Engenharia de Transportes (ENGR80). No âmbito da pós-gradução, serve como suporte para revisar conteúdos básicos de estatística e probabilidade e avançar em tópicos mais avançados em regressão na disciplina de Planejamento dos Sistemas de Transporte (PPEC0051), bastante utilizados no contexto da modelagem da demanda por transportes.</p>
+<p>Existem muitos bons livros-texto a respeito do tema e minha pretensão aqui jamais será a de substituí-los. Nesse sentido, como obra impressa tenho como principal referência o livro Probabilidade e Estatística na Engenharia, de William W. Hines, Douglas C. Montgomery, Dave Goldsman e Connie M. Borror. Os livros digitais (e-book) existem aos montes, mas tenho um grande apreço pelo Data Science (Data Wrangling e Visualization with R) e Introduction to Data Science (Statistics and Prediction Algorithms Through Case Studies) do Rafael Irizarry.</p>
+<p>Entretanto, três razões principais me motivam a escrevê-lo neste momento. A primeira delas diz respeito ao momento oportuno do <em>boom</em> das “carreiras em dados”, revelados pelas inúmeras páginas de resultados que surgem quando certas palavras-chave associadas são utilizadas em plataformas de busca por emprego. Sugiro experimentar termos “cientista de dados”, “analista de dados”, “engenheira de dados”, “especialista em <em>Big Data</em>”, “especialista em Inteligência Artificial e”engenheira de Aprendizado de Máquina”, por exemplo, para se impressionar com a quantidade de vagas ofertadas nestas áreas.</p>
+<p>Este resultado não é surpresa e já vem sendo discutido em ediçõe seguidas do Future of Jobs Report do Fórum Econômico Mundial. Mencionar: a) Figure 2.4: tecnhology adoption; b) Figure 3.3: new jobs and lost jobs.</p>
+<p>Capa do The Economist (The World most valuable resource). Valor das empresas de tecnologia.</p>
+<p>Data Scientist: the sexiest job of the 21st century.</p>
+<p>Fechar a ideia: Deste modo, apesar da abundância de material disponível, da minha experiência de pouco mais de 10 anos lecionando tópicos a respeito deste tema, acredito em um roteiro especial para percorrer estes tópicos que favoreça o aprendizado. Este livro traduz a expressão desta crença que tenho experimentando e ajustando material de aula para que esse objetivo seja atingido de forma mais eficaz. A todos(as) os(as) estudantes e colegas que favoreceram o amadurecimento deste caminho, o meu enorme agradecimento.</p>
+<p>A segunda razão está associada ao frenesi relacionado a este momento em que vivemos. Quando abrimos a descrição do perfil de vaga nestas consultas, nos deparamos com uma infinidade de demandas, primeiro por conhecimento técnico em <em>software</em> e, segundo, por domínio teórico em modelagem avançada que estão ancorados em princípios matemáticos e estatísticos. Este livro não tem a pretensão de te colocar como apto para estas vagas, mas de ser um meio de iniciar a exploração deste caminho de uma forma motivadora, reduzindo o desânimo provocado por muitas disciplinas do gênero quando nos deparamos com as suas dificuldades inerentes.</p>
+<p>E aí entra a terceira e última razão para escrevê-lo e que define a filosofia com que ele é escrito. Boa parte dos livros-texto mais tradicionais em estatística . Lembro-me de quando cursei Álgebra Linear na graduação. Consegui uma aprovação sem entender direito qual por que raios precisávamos descobrir autovalores, autovetores ou fatorar matrizes. Quase 10 anos mais tarde, descobri uma playlist de vídeos chamada A Essência da Álgebra Linear, produzida por Gareth Sanders…, que percorria o caminho da álgebra linear básica de uma maneira diferente, trazendo uma intuição visual e geométrica por trás destas operações que me tornou um entusiasta da disciplina. Tradicionalmente nas disciplinas de Estatística ocorre algo parecido. Nos deparamos com funções distribuição de probabilidade e estatísticas de testes e não temos a devida intuição sobre o seu significado, muitas vezes por que a intuição visual não está devidamente amadurecida.</p>
+<p>É por isso que nosso livro adentra primeiro numa formação técnica basilar em análise exploratória de dados, nos ensinando logo após a parte de Estatística Descritiva (capítulo X), a elaborar sumários estatísticos, filtrar, selecionar e ordenar tabelas, produzir novos dados a partir dos existentes e como visualizar adequadamente cada tipo de informação que este insumo (a tabela de dados) nos proporciona. Entendo que o mergulho nestes tópicos e o seu domínio antes de adentrarmos em teoria da probabilidade, testes de hipóteses e regressão, por exemplo, seja fundamental para uma melhor compreensão destes conteúdos intermediários de uma disciplina do gênero.</p>
+<p>Por que o R (vinculada à terceira razão; mencionar comunidades que utilizam bastante). Mencionar Python.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -774,13 +778,10 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./7experimento-espaco-eventos.html" class="pagination-link" aria-label="Experimento Aleatório, Espaço Amostral e Eventos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimento Aleatório, Espaço Amostral e Eventos</span></span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./9teorema-de-bayes.html" class="pagination-link" aria-label="Teorema de Bayes">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Teorema de Bayes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./1motivacao.html" class="pagination-link" aria-label="Motivação">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Motivação</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

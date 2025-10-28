@@ -1,11 +1,23 @@
 # Prefácio {.unnumbered}
 
-Este é um livro construído em Quarto para guiar a disciplina Estatística aplicada à Engenharia de Transportes da Escola Politécnica da UFBA
+Esta proposta de livro didático surgiu de uma necessidade particular de dar suporte a conteúdos de disciplinas que ministro na Escola Politécnica da UFBA. No contexto da graduação, produzo-o para ser o fio condutor da disciplina Estatística aplicada à Engenharia de Transportes (ENGR79) e como suporte ferramental à análise exploratória de dados na disciplina Levantamentos e Pesquisas em Engenharia de Transportes (ENGR80). No âmbito da pós-gradução, serve como suporte para revisar conteúdos básicos de estatística e probabilidade e avançar em tópicos mais avançados em regressão na disciplina de Planejamento dos Sistemas de Transporte (PPEC0051), bastante utilizados no contexto da modelagem da demanda por transportes.
 
-```{r, warning = F, message = F}
-library(tidyverse)
-x <- rnorm(n = 40)
-y <- 1.5*x + rnorm(0, 2, n = 40)
-d <- data.frame(x,y)
-d %>% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()
-```
+Existem muitos bons livros-texto a respeito do tema e minha pretensão aqui jamais será a de substituí-los. Nesse sentido, como obra impressa tenho como principal referência o livro Probabilidade e Estatística na Engenharia, de William W. Hines, Douglas C. Montgomery, Dave Goldsman e Connie M. Borror. Os livros digitais (e-book) existem aos montes, mas tenho um grande apreço pelo Data Science (Data Wrangling e Visualization with R) e Introduction to Data Science (Statistics and Prediction Algorithms Through Case Studies) do Rafael Irizarry.
+
+Entretanto, três razões principais me motivam a escrevê-lo neste momento. A primeira delas diz respeito ao momento oportuno do *boom* das "carreiras em dados", revelados pelas inúmeras páginas de resultados que surgem quando certas palavras-chave associadas são utilizadas em plataformas de busca por emprego. Sugiro experimentar termos "cientista de dados", "analista de dados", "engenheira de dados", "especialista em *Big Data*", "especialista em Inteligência Artificial e "engenheira de Aprendizado de Máquina", por exemplo, para se impressionar com a quantidade de vagas ofertadas nestas áreas.
+
+Este resultado não é surpresa e já vem sendo discutido em ediçõe seguidas do Future of Jobs Report do Fórum Econômico Mundial. Mencionar: a) Figure 2.4: tecnhology adoption; b) Figure 3.3: new jobs and lost jobs. 
+
+Capa do The Economist (The World most valuable resource). Valor das empresas de tecnologia.
+
+Data Scientist: the sexiest job of the 21st century.
+
+Fechar a ideia: Deste modo, apesar da abundância de material disponível, da minha experiência de pouco mais de 10 anos lecionando tópicos a respeito deste tema, acredito em um roteiro especial para percorrer estes tópicos que favoreça o aprendizado. Este livro traduz a expressão desta crença que tenho experimentando e ajustando material de aula para que esse objetivo seja atingido de forma mais eficaz. A todos(as) os(as) estudantes e colegas que favoreceram o amadurecimento deste caminho, o meu enorme agradecimento.
+
+A segunda razão está associada ao frenesi relacionado a este momento em que vivemos. Quando abrimos a descrição do perfil de vaga nestas consultas, nos deparamos com uma infinidade de demandas, primeiro por conhecimento técnico em *software* e, segundo, por domínio teórico em modelagem avançada que estão ancorados em princípios matemáticos e estatísticos. Este livro não tem a pretensão de te colocar como apto para estas vagas, mas de ser um meio de iniciar a exploração deste caminho de uma forma motivadora, reduzindo o desânimo provocado por muitas disciplinas do gênero quando nos deparamos com as suas dificuldades inerentes.
+
+E aí entra a terceira e última razão para escrevê-lo e que define a filosofia com que ele é escrito. Boa parte dos livros-texto mais tradicionais em estatística . Lembro-me de quando cursei Álgebra Linear na graduação. Consegui uma aprovação sem entender direito qual por que raios precisávamos descobrir autovalores, autovetores ou fatorar matrizes. Quase 10 anos mais tarde, descobri uma playlist de vídeos chamada A Essência da Álgebra Linear, produzida por Gareth Sanders..., que percorria o caminho da álgebra linear básica de uma maneira diferente, trazendo uma intuição visual e geométrica por trás destas operações que me tornou um entusiasta da disciplina. Tradicionalmente nas disciplinas de Estatística ocorre algo parecido. Nos deparamos com funções distribuição de probabilidade e estatísticas de testes e não temos a devida intuição sobre o seu significado, muitas vezes por que a intuição visual não está devidamente amadurecida.
+
+É por isso que nosso livro adentra primeiro numa formação técnica basilar em análise exploratória de dados, nos ensinando logo após a parte de Estatística Descritiva (capítulo X), a elaborar sumários estatísticos, filtrar, selecionar e ordenar tabelas, produzir novos dados a partir dos existentes e como visualizar adequadamente cada tipo de informação que este insumo (a tabela de dados) nos proporciona. Entendo que o mergulho nestes tópicos e o seu domínio antes de adentrarmos em teoria da probabilidade, testes de hipóteses e regressão, por exemplo, seja fundamental para uma melhor compreensão destes conteúdos intermediários de uma disciplina do gênero.
+
+Por que o R (vinculada à terceira razão; mencionar comunidades que utilizam bastante). Mencionar Python.
