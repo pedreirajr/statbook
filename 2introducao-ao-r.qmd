@@ -4,7 +4,13 @@ title: "Introdução ao R"
 
 ## Introdução
 
-Texto introdutório do capítulo.
+```{r, warning = F, message = F}
+library(tidyverse)
+x <- rnorm(n = 40)
+y <- 1.5*x + rnorm(0, 2, n = 40)
+d <- data.frame(x,y)
+d %>% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()
+```
 
 ### Seção 1
 
