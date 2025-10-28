@@ -13,42 +13,42 @@ book:
 
     - part: "PARTE 1: ASPECTOS INTRODUTÓRIOS"
       chapters:
-        - motivacao.qmd
-        - introducao-ao-r.qmd
-        - planejamento-de-pesquisas.qmd
+        - 1motivacao.qmd
+        - 2introducao-ao-r.qmd
+        - 3planejamento-de-pesquisas.qmd
 
     - part: "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS"
       chapters:
-        - manipulacao-de-dados-tabulares.qmd
-        - visualizacao-de-dados-tabulares.qmd
+        - 4manipulacao-de-dados-tabulares.qmd
+        - 5visualizacao-de-dados-tabulares.qmd
 
     - part: "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE"
       chapters:
-        - revisao-de-teoria-dos-conjuntos.qmd
-        - experimento-espaco-eventos.qmd
-        - regras-multiplicacao-adicao.qmd
-        - teorema-de-bayes.qmd
-        - variaveis-aleatorias.qmd
-        - lgn-e-tlc.qmd
+        - 6revisao-de-teoria-dos-conjuntos.qmd
+        - 7experimento-espaco-eventos.qmd
+        - 8regras-multiplicacao-adicao.qmd
+        - 9teorema-de-bayes.qmd
+        - 10variaveis-aleatorias.qmd
+        - 11lgn-e-tlc.qmd
 
     - part: "PARTE 4: DISTRIBUIÇÕES DE PROBABILIDADE"
       chapters:
-        - distribuicoes-discretas.qmd
-        - distribuicoes-continuas.qmd
+        - 12distribuicoes-discretas.qmd
+        - 13distribuicoes-continuas.qmd
 
     - part: "PARTE 5: INFERÊNCIA ESTATÍSTICA"
       chapters:
-        - estimacao-de-parametros.qmd
-        - introducao-testes-de-hipoteses.qmd
-        - testes-t-student.qmd
-        - testes-nao-parametricos.qmd
+        - 14estimacao-de-parametros.qmd
+        - 15introducao-testes-de-hipoteses.qmd
+        - 16testes-t-student.qmd
+        - 17testes-nao-parametricos.qmd
 
     - part: "PARTE 6: ESTIMANDO RELAÇÕES ENTRE VARIÁVEIS"
       chapters:
-        - associacao-e-correlacao.qmd
-        - regressao-linear-simples.qmd
-        - inferencia-em-regressao.qmd
-        - regressao-linear-multipla.qmd
+        - 18associacao-e-correlacao.qmd
+        - 19regressao-linear-simples.qmd
+        - 20inferencia-em-regressao.qmd
+        - 21regressao-linear-multipla.qmd
 
     - summary.qmd
     - references.qmd
