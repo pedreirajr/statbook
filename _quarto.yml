@@ -13,12 +13,12 @@ book:
 
     - part: "PARTE 1: ASPECTOS INTRODUTÓRIOS"
       chapters:
-        - 1motivacao.qmd
-        - 2introducao-ao-r.qmd
-        - 3planejamento-de-pesquisas.qmd
+        - 1introducao-ao-r.qmd
+        - 2planejamento-de-pesquisas.qmd
 
     - part: "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS"
       chapters:
+        - 3estatistica-descritiva.qmd
         - 4manipulacao-de-dados-tabulares.qmd
         - 5visualizacao-de-dados-tabulares.qmd
 

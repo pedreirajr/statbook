@@ -1,5 +1,5 @@
 ---
-title: "Motivação"
+title: "Estatística Descritiva"
 ---
 
 ## Introdução
@@ -13,3 +13,4 @@ Conteúdo.
 ### Seção 2
 
 Conteúdo.
+
