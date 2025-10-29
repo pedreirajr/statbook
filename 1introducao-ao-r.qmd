@@ -6,10 +6,9 @@ Neste primeiro momento, disponibilizarei uma *playlist* de videoaulas do meu can
 
 ::: {.ratio .ratio-16x9}
 <iframe
-  src="https://www.youtube-nocookie.com/embed/videoseries?list=PL_v-tArg0FZjeQMDtbDTc5M88vH7DqK9_"
+  src="https://www.youtube.com/embed/videoseries?list=PL_v-tArg0FZjeQMDtbDTc5M88vH7DqK9_"
   title="Introdução ao R — Playlist"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
-  loading="lazy">
-</iframe>
+  loading="lazy"></iframe>
 :::
