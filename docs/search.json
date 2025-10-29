@@ -819,5 +819,60 @@
       "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Regras da Multiplicação e da Adição</span>"
     ]
+  },
+  {
+    "objectID": "1introducao-ao-r.html",
+    "href": "1introducao-ao-r.html",
+    "title": "1  Introdução ao R",
+    "section": "",
+    "text": "Neste primeiro momento, disponibilizarei uma playlist de videoaulas do meu canal do YouTube sobre Introdução ao R. Envolve desde a instalação do R e do RStudio, bem como familiarização com ambiente de desenvolvimento e conceitos básicos.",
+    "crumbs": [
+      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "2planejamento-de-pesquisas.html",
+    "href": "2planejamento-de-pesquisas.html",
+    "title": "2  Planejamento de Pesquisas",
+    "section": "",
+    "text": "2.1 Introdução\nTexto introdutório do capítulo.",
+    "crumbs": [
+      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
+    ]
+  },
+  {
+    "objectID": "2planejamento-de-pesquisas.html#introdução",
+    "href": "2planejamento-de-pesquisas.html#introdução",
+    "title": "2  Planejamento de Pesquisas",
+    "section": "",
+    "text": "2.1.1 Seção 1\nConteúdo.\n\n\n2.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
+    ]
+  },
+  {
+    "objectID": "3estatistica-descritiva.html",
+    "href": "3estatistica-descritiva.html",
+    "title": "3  Estatística Descritiva",
+    "section": "",
+    "text": "3.1 Introdução\nTexto introdutório do capítulo.",
+    "crumbs": [
+      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Estatística Descritiva</span>"
+    ]
+  },
+  {
+    "objectID": "3estatistica-descritiva.html#introdução",
+    "href": "3estatistica-descritiva.html#introdução",
+    "title": "3  Estatística Descritiva",
+    "section": "",
+    "text": "3.1.1 Seção 1\nConteúdo.\n\n\n3.1.2 Seção 2\nConteúdo.",
+    "crumbs": [
+      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Estatística Descritiva</span>"
+    ]
   }
 ]
