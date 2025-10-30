@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  resources:
+    - img/**
 
 book:
   title: "Introdução à Estatística para Ciência de Dados com R"
