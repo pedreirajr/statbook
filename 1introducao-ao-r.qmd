@@ -2,13 +2,6 @@
 title: "Introdução ao R"
 ---
 
-Neste primeiro momento, disponibilizarei uma *playlist* de videoaulas do meu canal do YouTube sobre Introdução ao R. Envolve desde a instalação do R e do RStudio, bem como familiarização com ambiente de desenvolvimento e conceitos básicos.
+Neste primeiro momento, disponibilizarei uma *playlist* de videoaulas do meu canal do YouTube sobre Introdução ao R. Envolve desde a instalação do R e do RStudio, bem como familiarização com ambiente de desenvolvimento, conceitos básicos sobre os tipos de objetos e estruturas de dados no R e como fazer leitura de dados externos em diferentes formatos.
 
-::: {.ratio .ratio-16x9}
-<iframe
-  src="https://www.youtube.com/embed/videoseries?list=PL_v-tArg0FZjeQMDtbDTc5M88vH7DqK9_"
-  title="Introdução ao R — Playlist"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen
-  loading="lazy"></iframe>
-:::
+[▶️ Abrir playlist no YouTube](https://www.youtube.com/playlist?list=PL_v-tArg0FZjeQMDtbDTc5M88vH7DqK9_)
