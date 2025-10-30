@@ -2,15 +2,7 @@
 title: "Visualização de Dados Tabulares"
 ---
 
-## Introdução
+Neste primeiro momento, disponibilizarei uma *playlist* de videoaulas do meu canal do YouTube sobre Análise Exploratória de Dados com R. Compreende os vídeos 14 a 27 e aborda como visualizar variáveis numéricas e categóricas, isoladamente ou em combinação.
 
-Texto introdutório do capítulo.
-
-### Seção 1
-
-Conteúdo.
-
-### Seção 2
-
-Conteúdo.
+[▶️ Abrir playlist no YouTube](https://www.youtube.com/playlist?list=PL_v-tArg0FZhA6dqbGv1uQMQqFOUPlryE)
 
