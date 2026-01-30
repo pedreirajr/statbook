@@ -365,7 +365,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#big-data" id="toc-big-data" class="nav-link active" data-scroll-target="#big-data">Big Data</a>
+  <li><a href="#das-válvulas-aos-bilhões-de-transistores-meio-século-de-revoluções-silenciosas" id="toc-das-válvulas-aos-bilhões-de-transistores-meio-século-de-revoluções-silenciosas" class="nav-link active" data-scroll-target="#das-válvulas-aos-bilhões-de-transistores-meio-século-de-revoluções-silenciosas">Das válvulas aos bilhões de transistores: meio século de revoluções silenciosas</a>
+  <ul class="collapse">
+  <li><a href="#processamento-de-dados-a-lei-de-moore" id="toc-processamento-de-dados-a-lei-de-moore" class="nav-link" data-scroll-target="#processamento-de-dados-a-lei-de-moore">Processamento de dados: a Lei de Moore</a></li>
+  <li><a href="#transmissão-de-dados-a-lei-de-nielsen-e-as-gerações-móveis" id="toc-transmissão-de-dados-a-lei-de-nielsen-e-as-gerações-móveis" class="nav-link" data-scroll-target="#transmissão-de-dados-a-lei-de-nielsen-e-as-gerações-móveis">Transmissão de dados: a Lei de Nielsen e as gerações móveis</a></li>
+  <li><a href="#armazenamento-de-dados-do-armário-de-uma-tonelada-ao-bolso" id="toc-armazenamento-de-dados-do-armário-de-uma-tonelada-ao-bolso" class="nav-link" data-scroll-target="#armazenamento-de-dados-do-armário-de-uma-tonelada-ao-bolso">Armazenamento de dados: do armário de uma tonelada ao bolso</a></li>
+  <li><a href="#adoção-tecnológica-o-mundo-na-palma-da-mão" id="toc-adoção-tecnológica-o-mundo-na-palma-da-mão" class="nav-link" data-scroll-target="#adoção-tecnológica-o-mundo-na-palma-da-mão">Adoção tecnológica: o mundo na palma da mão</a></li>
+  </ul></li>
+  <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">Big Data</a>
   <ul class="collapse">
   <li><a href="#volume" id="toc-volume" class="nav-link" data-scroll-target="#volume">Volume</a></li>
   <li><a href="#velocidade" id="toc-velocidade" class="nav-link" data-scroll-target="#velocidade">Velocidade</a></li>
@@ -409,45 +416,224 @@ window.Quarto = {
 </header>
 
 
-<p>Em maio de 2017, a revista britânica <em>The Economist</em> estampou em sua capa uma provocação que sintetiza o espírito da era em que vivemos: <strong>“The world’s most valuable resource is no longer oil, but data”</strong> (O recurso mais valioso do mundo não é mais o petróleo, mas os dados).</p>
+<p>Em maio de 2017, a revista britânica <em>The Economist</em> estampou em sua capa uma provocação que sintetiza o espírito da era em que vivemos: <strong>“The world’s most valuable resource is no longer oil, but data”</strong> (<em>O recurso mais valioso do mundo não é mais o petróleo, mas os dados</em>).</p>
 <!-- IMAGEM: Capa da The Economist "The world's most valuable resource" (slide 2) -->
 <div id="fig-economist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-economist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/economist-capa.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/0-1-the_economist_most_valuable_resource.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-economist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.1: Capa da revista The Economist, maio de 2017.
+Figura&nbsp;1.1: <a href="https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data">Capa da revista The Economist, maio de 2017</a>
 </figcaption>
 </figure>
 </div>
-<p>A analogia é poderosa. Assim como o petróleo moldou a geopolítica e a economia do século XX, os dados estão redesenhando as relações de poder no século XXI. As maiores empresas do mundo em valor de mercado já não são petroleiras ou montadoras: são empresas de tecnologia cuja principal matéria-prima são os dados gerados por bilhões de usuários.</p>
-<!-- IMAGEM: Gráfico ou slide mostrando as maiores empresas do mundo em valor de mercado (slide 3) -->
+<p>A analogia é poderosa. Assim como o petróleo moldou a geopolítica e a economia do século XX, os dados estão redesenhando as relações de poder no século XXI. As maiores empresas do mundo em valor de mercado já não são petroleiras ou montadoras: são empresas de tecnologia cuja principal matéria-prima são os dados gerados por bilhões de usuários. Mas por que os dados se tornaram tão valiosos? Para responder a essa pergunta, vale a pena fazermos um breve passeio por alguns avanços tecnológicos das últimas décadas.</p>
+<section id="das-válvulas-aos-bilhões-de-transistores-meio-século-de-revoluções-silenciosas" class="level2">
+<h2 class="anchored" data-anchor-id="das-válvulas-aos-bilhões-de-transistores-meio-século-de-revoluções-silenciosas">Das válvulas aos bilhões de transistores: meio século de revoluções silenciosas</h2>
+<p>De forma simplificada, um computador é uma máquina que recebe <strong>dados</strong> de entrada, realiza operações lógicas e aritméticas sobre eles e devolve resultados. Os primeiros computadores eletrônicos de uso geral utilizavam <strong>válvulas termiônicas</strong> (componentes do tamanho de uma lâmpada) como “interruptores” para representar os dígitos binários (0 e 1) que sustentam toda a computação moderna.</p>
+<p>O exemplo mais emblemático é o <a href="https://www.britannica.com/technology/ENIAC"><strong>ENIAC</strong></a> (<em>Electronic Numerical Integrator and Computer</em>), construído na Universidade da Pensilvânia entre 1943 e 1946. Projetado para calcular tabelas balísticas durante a Segunda Guerra Mundial, o ENIAC ocupava uma sala de aproximadamente 140 m², pesava cerca de 30 toneladas e consumia 150 kW de energia. Seu “cérebro” era composto por <strong>17.468 válvulas</strong>, além de milhares de resistores, capacitores e relês, totalizando cerca de 5 milhões de conexões soldadas à mão. Com tudo isso, ele era capaz de realizar aproximadamente <strong>5.000 operações de adição por segundo</strong>.</p>
+<!-- IMAGEM: Foto do ENIAC -->
+<div id="fig-eniac" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eniac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-2-eniac.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eniac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.2: O ENIAC (1946): 30 toneladas, 17.468 válvulas e 5.000 adições por segundo.
+</figcaption>
+</figure>
+</div>
+<p>O grande salto veio com a invenção do <strong>transistor</strong> em 1947 nos Laboratórios Bell, e posteriormente com o desenvolvimento dos <strong>circuitos integrados</strong> no final dos anos 1950. Um transistor cumpre a mesma função de “interruptor eletrônico” que uma válvula, porém é incomparavelmente menor, mais rápido, mais barato e mais eficiente em termos de energia. Quanto mais transistores conseguimos colocar em um único <em>chip</em>, mais operações ele pode realizar simultaneamente, e mais poderoso se torna o computador.</p>
+<div id="fig-circuit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-circuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-3-circuito_integrado.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-circuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.3: <a href="https://en.wikipedia.org/wiki/Integrated_circuit">Imagem microscópica de um circuito integrado para controlar um painel de LCD</a>
+</figcaption>
+</figure>
+</div>
+<section id="processamento-de-dados-a-lei-de-moore" class="level3">
+<h3 class="anchored" data-anchor-id="processamento-de-dados-a-lei-de-moore">Processamento de dados: a Lei de Moore</h3>
+<p>Em 1965, <a href="https://en.wikipedia.org/wiki/Gordon_Moore">Gordon Moore</a>, cofundador da Intel Corporation, publicou um artigo na revista <em>Electronics</em> intitulado <a href="https://hasler.ece.gatech.edu/Published_papers/Technology_overview/gordon_moore_1965_article.pdf"><em>“Cramming more components onto integrated circuits”</em></a>, no qual observou que o número de componentes em um circuito integrado vinha dobrando a cada ano desde 1959. Moore projetou que esse ritmo se manteria por pelo menos mais uma década. Em 1975, ele revisou a previsão para uma duplicação a cada <strong>dois anos</strong>, ritmo que se manteve notavelmente estável por mais de cinco décadas, até os dias de hoje.</p>
+<div id="fig-moore" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-moore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-3-moore_law.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-moore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.4: Evolução do número de transistores em processadores ao longo das décadas (a Lei de Moore em ação).
+</figcaption>
+</figure>
+</div>
+<p>O que essa regularidade significa na prática? Enquanto em 1960 trabalhávamos com circuitos com algumas dezenas de componentes, um processador comercial moderno (como o GB202 da NVIDIA, lançado em 2024) possui mais de <strong>92 bilhões de transistores</strong>. Essa escalada exponencial na capacidade de processamento é o primeiro ingrediente que tornou possível lidar com volumes de dados antes inimagináveis.</p>
+<p>Para se ter uma ideia, o ENIAC de 1946 alcançava cerca de 500 <a href="https://pt.wikipedia.org/wiki/FLOPS">FLOPS</a> (operações de ponto flutuante por segundo). O supercomputador <a href="https://en.wikipedia.org/wiki/Cray-1">Cray-1</a>, referência nos anos 1970, atingia 160 milhões de FLOPS, e ocupava uma sala inteira. Hoje, um <em>smartphone</em> comum carrega no bolso um processador capaz de realizar <strong>trilhões de operações por segundo</strong> (teraFLOPS). O chip A17 Pro da Apple, por exemplo, alcança mais de 5 teraFLOPS, cerca de <strong>10 bilhões de vezes</strong> a capacidade do ENIAC, em um dispositivo que pesa pouco mais de 200 gramas.</p>
+</section>
+<section id="transmissão-de-dados-a-lei-de-nielsen-e-as-gerações-móveis" class="level3">
+<h3 class="anchored" data-anchor-id="transmissão-de-dados-a-lei-de-nielsen-e-as-gerações-móveis">Transmissão de dados: a Lei de Nielsen e as gerações móveis</h3>
+<p>De nada adiantaria processar enormes volumes de dados se não fosse possível transmiti-los de forma eficiente e confiável entre diferentes computadores. Felizmente, as tecnologias de telecomunicação também avançaram significativamente ao longo desse período. Em 1998, Jakob Nielsen, um especialista em usabilidade e experiência do usuário (UX), documentou uma regularidade empírica que ficou conhecida como a <a href="https://www.nngroup.com/articles/law-of-bandwidth/"><strong>Lei de Nielsen</strong></a>: a capacidade máxima de transferência de dados de uma rede ou conexão disponível para usuários domésticos (conhecida como largura de banda) aparentava crescer cerca de <strong>50% ao ano</strong>, equivalendo a uma duplicação a cada 21 meses aproximadamente. indicando uma aderência impressionante ao longo de quatro décadas, conforme o gráfico a seguir</p>
+<div id="fig-internet_connectivity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-internet_connectivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-5-internet_connectivity.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-internet_connectivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.5: Evolução da velocidade de conexão à internet ao longo das décadas.
+</figcaption>
+</figure>
+</div>
+<p>Para as conexões móveis, a evolução foi igualmente expressiva, impulsionada pelas sucessivas gerações de tecnologia de radiofrequência. A tabela abaixo resume os marcos principais, com velocidades de pico definidas pelos padrões <a href="https://www.itu.int/en/ITU-R/study-groups/rsg5/rwp5d/imt-2020/Pages/default.aspx">IMT da União Internacional de Telecomunicações (ITU)</a>:</p>
+<div id="tbl-geracoes_tec_movel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-geracoes_tec_movel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;1.1: Gerações de tecnologia móvel e suas velocidades de pico. Fonte: padrões IMT da ITU e especificações 3GPP.
+</figcaption>
+<div aria-describedby="tbl-geracoes_tec_movel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Geração</th>
+<th>Período aproximado</th>
+<th>Velocidade de pico</th>
+<th>Avanço principal</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>2G</strong> (GSM)</td>
+<td>anos 1990</td>
+<td>~0,1 Mbps</td>
+<td>Dados digitais e SMS</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>3G</strong> (UMTS/HSPA)</td>
+<td>anos 2000</td>
+<td>2 Mbps (até 42 Mbps com HSPA+)</td>
+<td>Internet móvel e e-mail</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>4G</strong> (LTE)</td>
+<td>anos 2010</td>
+<td>100 Mbps (até 3 Gbps com LTE-A Pro)</td>
+<td>Streaming de vídeo em tempo real</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>5G</strong> (NR)</td>
+<td>anos 2020</td>
+<td>até 10 Gbps</td>
+<td>“Internet das Coisas” massiva e latência ultrabaixa</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>A cada nova geração, não apenas a velocidade aumentou como também a <strong>latência</strong> (atraso na transmissão de dados através de uma rede móvel) diminuiu drasticamente, viabilizando aplicações em tempo real como veículos autônomos, telemedicina e cidades inteligentes.</p>
+</section>
+<section id="armazenamento-de-dados-do-armário-de-uma-tonelada-ao-bolso" class="level3">
+<h3 class="anchored" data-anchor-id="armazenamento-de-dados-do-armário-de-uma-tonelada-ao-bolso">Armazenamento de dados: do armário de uma tonelada ao bolso</h3>
+<p>Processar e transmitir dados com rapidez é bacana, mas em algum momento os dados vão precisar <em>descansar</em> em algum <em>estoque</em>… Sobre esse aspecto, estamos lidando com as tecnologias de <strong>armazenamento</strong> de dados. E a evolução nesse campo foi tão impressionante quanto nas demais.</p>
+<p>É raro falar em armazenamento de dados hoje em dia utilizando grandeza inferior ao gigabyte. Mas acredite: o primeiro disco rígido comercial da história, o <a href="https://www.ibm.com/history/ramac"><strong>IBM 350</strong></a>, lançado em 1956, armazenava <strong>3,75 MB</strong> em 50 discos magnéticos de 24 polegadas cada. Ele era do tamanho de dois refrigeradores, pesava cerca de uma tonelada e o custo de aluguel do sistema era de US$ 3.200 por mês (cerca de US$ 36.000 em valores atuais), o que equivalia a aproximadamente <strong>US$ 10.000 por megabyte</strong>.</p>
+<!-- IMAGEM: Foto do IBM 350 RAMAC -->
+<div id="fig-ramac" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ramac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-6-ibm_350.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ramac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.6: O IBM 350 RAMAC (1956): uma tonelada para armazenar 3,75 MB.
+</figcaption>
+</figure>
+</div>
+<p>Nas décadas seguintes, a capacidade de armazenamento cresceu exponencialmente enquanto o custo despencou. O <em>floppy disk</em> (disquete) de 3,5 polegadas, popular nos anos 1980 e 1990, armazenava 1,44 MB. O primeiro disco rígido a atingir 1 TB (terabyte) chegou ao mercado apenas em 2007, mas bastaram dois anos para que surgisse o de 2 TB. Segundo dados disponibilizados pelo <a href="https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage">Our World in Data</a>, o custo por gigabyte de armazenamento magnético caiu de mais de <strong>US$ 1 milhão nos anos 1950</strong> para <strong>menos de US$ 0,02 atualmente</strong>, uma redução de mais de 50 bilhões de vezes.</p>
+<div id="fig-custo-armazenamento" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-custo-armazenamento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-7-custo_armazenamento.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-custo-armazenamento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.7: Evolução do custo de armazenamento por gigabyte ao longo das décadas.
+</figcaption>
+</figure>
+</div>
+<p>Essa queda vertiginosa no custo por gigabyte viabilizou a construção dos <strong>centros de dados</strong> (<em>data centers</em>): instalações dedicadas a abrigar, alimentar e refrigerar grandes conjuntos de servidores. O conceito não é novo: já nos anos 1940 e 1950, as primeiras salas de <em>mainframes</em> (como a que abrigava o ENIAC) precisavam de ventilação e controle de temperatura para manter o equipamento em funcionamento. Nas décadas seguintes, empresas como a IBM construíram salas dedicadas a <em>mainframes</em> corporativos, e com o advento da internet comercial nos anos 1990, surgiram os primeiros <em>data centers</em> em larga escala para atender à demanda da web. A partir dos anos 2000, o modelo de <a href="https://aws.amazon.com/what-is-cloud-computing/"><strong>computação em nuvem</strong></a> (<em>cloud computing</em>), pioneiramente oferecido pela Amazon Web Services (AWS) em 2006, transformou a escala do setor: em vez de manter servidores próprios, empresas passaram a alugar capacidade de processamento e armazenamento sob demanda. Hoje, os chamados <em>data centers</em> de hiperescala (<em>hyperscale</em>), operados por empresas como Amazon, Google e Microsoft, podem abrigar centenas de milhares de servidores em instalações do tamanho de vários campos de futebol. Segundo estimativas do <a href="https://www.seagate.com/files/www-content/our-story/trends/files/dataage-idc-report-final.pdf">IDC</a>, o volume global de dados criados, capturados e replicados saltou de cerca de 2 zettabytes em 2010 para mais de 149 zettabytes em 2024 (1 zettabyte = 1 trilhão de gigabytes).</p>
+<p>Paralelamente ao avanço no <em>hardware</em>, os <strong>formatos de armazenamento de dados</strong> também evoluíram para acompanhar essa escala. Durante décadas, formatos baseados em texto puro dominaram o armazenamento de dados tabulares: o CSV (<em>Comma-Separated Values</em>), o JSON (<em>JavaScript Object Notation</em>) e o XML (<em>Extensible Markup Language</em>) são amplamente utilizados até hoje por sua legibilidade e universalidade. Entretanto, esses formatos apresentam limitações importantes em grandes volumes: armazenam tudo como texto (um número inteiro como <code>1000000000</code> ocupa 10 bytes em texto, contra 4 bytes em representação binária), não possuem compressão nativa e organizam os dados por linhas, dificultando consultas que precisam acessar apenas algumas colunas de uma tabela com dezenas delas.</p>
+<p>Para superar essas limitações, formatos binários e colunares ganharam espaço. O <a href="https://parquet.apache.org/"><strong>Apache Parquet</strong></a>, por exemplo, armazena os dados coluna por coluna (em vez de linha por linha), aplica codificação de tipos nativos e compressão integrada (como Snappy ou Gzip). O resultado prático é expressivo: em <em>benchmarks</em> comparativos, arquivos Parquet são tipicamente <a href="https://duckdb.org/2024/12/05/csv-files-dethroning-parquet-or-not"><strong>5 a 10 vezes menores</strong></a> que o CSV equivalente, podendo chegar a <strong>50 vezes</strong> em conjuntos de dados com alta repetição de valores. Além do ganho em espaço, a leitura seletiva de colunas torna as consultas analíticas ordens de grandeza mais rápidas. Outros formatos modernos, como o <a href="https://arrow.apache.org/"><strong>Apache Arrow</strong></a> (otimizado para processamento em memória) e o <a href="https://orc.apache.org/"><strong>ORC</strong></a> (<em>Optimized Row Columnar</em>, bastante utilizado no ecossistema Hadoop), seguem princípios semelhantes de eficiência.</p>
+</section>
+<section id="adoção-tecnológica-o-mundo-na-palma-da-mão" class="level3">
+<h3 class="anchored" data-anchor-id="adoção-tecnológica-o-mundo-na-palma-da-mão">Adoção tecnológica: o mundo na palma da mão</h3>
+<p>Os avanços em processamento, transmissão e armazenamento só se traduzem em “toneladas de dados” porque foram acompanhados por uma adoção sem precedentes de tecnologias digitais pela população mundial.</p>
+<p>O que impressiona não é apenas o número de pessoas conectadas, mas a <strong>velocidade</strong> com que cada nova tecnologia foi adotada em comparação com as anteriores. O telefone fixo, inventado em 1876, levou cerca de 75 anos para alcançar 50 milhões de usuários. O rádio precisou de 38 anos para atingir a mesma marca, e a televisão, de 13 anos. A internet chegou lá em 7 anos. Já o <em>smartphone</em> levou apenas 5 anos para saltar de 5% a 50% de adoção nos domicílios americanos, uma velocidade comparável apenas à da televisão entre 1950 e 1953, conforme análise publicada na <a href="https://hbr.org/2013/11/the-pace-of-technology-adoption-is-speeding-up"><em>Harvard Business Review</em></a>. Nos gráficos a seguir, é possível visualizar a velocidade de adoção de algumas tecnologias de comunicação, com destaque para o avanço exponencial do uso de smartphones (<em>mobile phone subscriptions</em>), além do avanço do uso da Internet em diferentes regiões do mundo nas últimas décadas .</p>
+<div id="fig-adocao" class="quarto-float quarto-figure quarto-figure-center anchored" data-layout-nrol="2">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adocao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="fig-adocao-a" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-adocao-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-6a-adocao_tec_comunicacoes.png" class="img-fluid figure-img" data-ref-parent="fig-adocao">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-adocao-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Adoção de tecnologias de comunicação ao longo da história.
+</figcaption>
+</figure>
+</div>
+<div id="fig-adocao-b" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-adocao-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/00-motivacao/0-6b-pop_usando_internet.png" class="img-fluid figure-img" data-ref-parent="fig-adocao">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-adocao-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Percentual da população utilizando a internet por região.
+</figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adocao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.8: Adoção de tecnologias de comunicação e uso da internet no mundo. Fonte: Our World in Data (<a href="https://ourworldindata.org/grapher/ict-adoption?time=earliest..2024">a</a> e <a href="https://ourworldindata.org/internet-history-just-begun">b</a>)
+</figcaption>
+</figure>
+</div>
+<p>A convergência desses quatro fatores (processamento cada vez mais potente, transmissão cada vez mais rápida, armazenamento cada vez mais barato e adoção cada vez mais ampla) criou as condições para o fenômeno que chamamos de <em>Big Data</em>.</p>
+</section>
+</section>
+<section id="big-data" class="level2">
+<h2 class="anchored" data-anchor-id="big-data">Big Data</h2>
+<p>O termo <em>Big Data</em> não se refere apenas a “muitos dados”. Ele descreve um cenário em que o volume, a velocidade e a variedade dos dados ultrapassam a capacidade das ferramentas tradicionais de coleta, armazenamento e análise. São os chamados <strong>3 V’s do Big Data</strong>:</p>
 <div id="fig-empresas" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-empresas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/maiores-empresas.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/0-2-bigdata_3V.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-empresas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.2: Maiores empresas do mundo em valor de mercado.
+Figura&nbsp;1.9: Os 3 V’s do Big Data
 </figcaption>
 </figure>
 </div>
-<p>Mas por que os dados se tornaram tão valiosos? A resposta passa por três fenômenos que convergiram nas últimas décadas e que costumam ser resumidos pelo termo <em>Big Data</em>.</p>
-<section id="big-data" class="level2">
-<h2 class="anchored" data-anchor-id="big-data">Big Data</h2>
-<p>O termo <em>Big Data</em> não se refere apenas a “muitos dados”. Ele descreve um cenário em que o volume, a velocidade e a variedade dos dados ultrapassam a capacidade das ferramentas tradicionais de coleta, armazenamento e análise. São os chamados <strong>3 V’s do Big Data</strong>.</p>
 <section id="volume" class="level3">
 <h3 class="anchored" data-anchor-id="volume">Volume</h3>
-<p>Para ter uma intuição da escala de dados que produzimos, considere a seguinte analogia. Imagine um tabuleiro de xadrez e um grão de arroz. Se colocarmos 1 grão na primeira casa, 2 na segunda, 4 na terceira e assim por diante — dobrando a cada casa — ao chegar na última casa (a 64ª), teríamos cerca de <span class="math inline">\(2^{63} \approx 9{,}2 \times 10^{18}\)</span> grãos. Isso equivale a aproximadamente <strong>460 bilhões de toneladas de arroz</strong>, muito mais do que toda a produção mundial acumulada na história.</p>
+<p>Para ter uma intuição da escala de dados que produzimos, considere a seguinte analogia. Imagine um tabuleiro de xadrez e um grão de arroz. Se colocarmos 1 grão na primeira casa, 2 na segunda, 4 na terceira e assim por diante, dobrando a cada casa, ao chegar na última casa (a 64ª), teríamos cerca de <span class="math inline">\(2^{63} \approx 9{,}2 \times 10^{18}\)</span> grãos. Isso equivale a aproximadamente <strong>460 bilhões de toneladas de arroz</strong>, muito mais do que toda a produção mundial acumulada na história.</p>
 <!-- IMAGEM: Analogia do grão de arroz no tabuleiro de xadrez (slide sobre Volume) -->
 <div id="fig-graos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/graos-xadrez.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/graos-xadrez.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.3: Analogia do crescimento exponencial: grãos de arroz em um tabuleiro de xadrez.
+Figura&nbsp;1.10: Analogia do crescimento exponencial: grãos de arroz em um tabuleiro de xadrez.
 </figcaption>
 </figure>
 </div>
@@ -456,10 +642,10 @@ Figura&nbsp;1.3: Analogia do crescimento exponencial: grãos de arroz em um tabu
 <div id="fig-crescimento" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crescimento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/crescimento-dados.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/crescimento-dados.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crescimento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.4: Crescimento da quantidade de dados gerados globalmente.
+Figura&nbsp;1.11: Crescimento da quantidade de dados gerados globalmente.
 </figcaption>
 </figure>
 </div>
@@ -471,10 +657,10 @@ Figura&nbsp;1.4: Crescimento da quantidade de dados gerados globalmente.
 <div id="fig-carro" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-carro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/carro-autonomo.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/carro-autonomo.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-carro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.5: Sensores de um veículo autônomo gerando dados em tempo real.
+Figura&nbsp;1.12: Sensores de um veículo autônomo gerando dados em tempo real.
 </figcaption>
 </figure>
 </div>
@@ -486,20 +672,20 @@ Figura&nbsp;1.5: Sensores de um veículo autônomo gerando dados em tempo real.
 <ul>
 <li><strong>Dados estruturados:</strong> tabelas com linhas e colunas bem definidas, como planilhas e bancos de dados relacionais.</li>
 <li><strong>Dados semiestruturados:</strong> dados com alguma organização, mas sem um esquema rígido, como arquivos JSON, XML ou logs de servidores.</li>
-<li><strong>Dados não estruturados:</strong> textos livres, imagens, vídeos, áudios, publicações em redes sociais — que representam a maior parte dos dados gerados hoje.</li>
+<li><strong>Dados não estruturados:</strong> textos livres, imagens, vídeos, áudios, publicações em redes sociais, que representam a maior parte dos dados gerados hoje.</li>
 </ul>
 <!-- IMAGEM: Tipos de dados (estruturados, semiestruturados, não estruturados) com exemplos (slide sobre Variedade) -->
 <div id="fig-tipos-dados" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tipos-dados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/tipos-dados.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/tipos-dados.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tipos-dados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.6: Tipos de dados: estruturados, semiestruturados e não estruturados.
+Figura&nbsp;1.13: Tipos de dados: estruturados, semiestruturados e não estruturados.
 </figcaption>
 </figure>
 </div>
-<p>A capacidade de lidar com essa variedade de formatos é um dos grandes desafios — e oportunidades — da área de dados.</p>
+<p>A capacidade de lidar com essa variedade de formatos é um dos grandes desafios (e oportunidades) da área de dados.</p>
 </section>
 </section>
 <section id="o-mercado-de-trabalho-em-dados" class="level2">
@@ -515,10 +701,10 @@ Figura&nbsp;1.6: Tipos de dados: estruturados, semiestruturados e não estrutura
 <div id="fig-future-jobs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-future-jobs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/future-jobs-2025.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/future-jobs-2025.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-future-jobs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.7: Carreiras com maior crescimento previsto segundo o <em>Future of Jobs Report 2025</em>.
+Figura&nbsp;1.14: Carreiras com maior crescimento previsto segundo o <em>Future of Jobs Report 2025</em>.
 </figcaption>
 </figure>
 </div>
@@ -530,10 +716,10 @@ Figura&nbsp;1.7: Carreiras com maior crescimento previsto segundo o <em>Future o
 <div id="fig-hbr" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hbr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/hbr-sexiest-job.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/hbr-sexiest-job.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hbr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.8: Artigo da <em>Harvard Business Review</em> (2012).
+Figura&nbsp;1.15: Artigo da <em>Harvard Business Review</em> (2012).
 </figcaption>
 </figure>
 </div>
@@ -545,16 +731,16 @@ Figura&nbsp;1.8: Artigo da <em>Harvard Business Review</em> (2012).
 <li><strong>Inteligência Artificial</strong> é o campo mais amplo, que busca criar sistemas capazes de realizar tarefas que normalmente exigiriam inteligência humana.</li>
 <li><strong>Aprendizado de Máquina</strong> é um subcampo da IA que desenvolve algoritmos capazes de aprender padrões a partir dos dados, sem serem explicitamente programados para cada tarefa.</li>
 <li><strong>Aprendizado Profundo</strong> é um subcampo do ML que utiliza redes neurais com muitas camadas para aprender representações cada vez mais abstratas dos dados.</li>
-<li><strong>Ciência de Dados</strong> é uma área interdisciplinar que utiliza métodos de estatística, computação e conhecimento de domínio para extrair conhecimento a partir de dados — e pode ou não utilizar técnicas de IA/ML.</li>
+<li><strong>Ciência de Dados</strong> é uma área interdisciplinar que utiliza métodos de estatística, computação e conhecimento de domínio para extrair conhecimento a partir de dados, e pode ou não utilizar técnicas de IA/ML.</li>
 </ul>
 <!-- IMAGEM: Diagrama de "bonecas russas" ou diagrama de Venn mostrando IA > ML > DL e a relação com Ciência de Dados (slide sobre IA/ML/DL) -->
 <div id="fig-ia-ml-dl" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ia-ml-dl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/ia-ml-dl.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/ia-ml-dl.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ia-ml-dl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.9: Relação entre Inteligência Artificial, Aprendizado de Máquina, Aprendizado Profundo e Ciência de Dados.
+Figura&nbsp;1.16: Relação entre Inteligência Artificial, Aprendizado de Máquina, Aprendizado Profundo e Ciência de Dados.
 </figcaption>
 </figure>
 </div>
@@ -572,10 +758,10 @@ Figura&nbsp;1.9: Relação entre Inteligência Artificial, Aprendizado de Máqui
 <div id="fig-ciclo" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ciclo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/ciclo-ciencia-dados.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/ciclo-ciencia-dados.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ciclo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.10: Ciclo da Ciência de Dados.
+Figura&nbsp;1.17: Ciclo da Ciência de Dados.
 </figcaption>
 </figure>
 </div>
@@ -595,10 +781,10 @@ Figura&nbsp;1.10: Ciclo da Ciência de Dados.
 <div id="fig-aplicacoes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-aplicacoes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/aplicacoes-cd.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/aplicacoes-cd.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aplicacoes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.11: Exemplos de aplicações de Ciência de Dados em diversos setores.
+Figura&nbsp;1.18: Exemplos de aplicações de Ciência de Dados em diversos setores.
 </figcaption>
 </figure>
 </div>
@@ -618,10 +804,10 @@ Figura&nbsp;1.11: Exemplos de aplicações de Ciência de Dados em diversos seto
 <div id="fig-venn" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-venn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/00/venn-competencias.png" class="img-fluid figure-img">
+<img src="img/00-motivacao/venn-competencias.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-venn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.12: Diagrama de Venn das competências em Ciência de Dados.
+Figura&nbsp;1.19: Diagrama de Venn das competências em Ciência de Dados.
 </figcaption>
 </figure>
 </div>
@@ -732,6 +918,11 @@ Figura&nbsp;1.12: Diagrama de Venn das competências em Ciência de Dados.
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -62,6 +62,7 @@ format:
     number-sections: true
     toc: true
     toc-depth: 3
+    link-external-newwindow: true
 
 bibliography: references.bib
 crossref:
