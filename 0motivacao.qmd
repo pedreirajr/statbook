@@ -1,0 +1,152 @@
+---
+title: "Motivação"
+number-sections: false
+---
+
+Em maio de 2017, a revista britânica *The Economist* estampou em sua capa uma provocação que sintetiza o espírito da era em que vivemos: **"The world's most valuable resource is no longer oil, but data"** (O recurso mais valioso do mundo não é mais o petróleo, mas os dados).
+
+<!-- IMAGEM: Capa da The Economist "The world's most valuable resource" (slide 2) -->
+
+![Capa da revista The Economist, maio de 2017.](img/00/0-1-the_economist_most_valuable_resource.png){#fig-economist}
+
+A analogia é poderosa. Assim como o petróleo moldou a geopolítica e a economia do século XX, os dados estão redesenhando as relações de poder no século XXI. As maiores empresas do mundo em valor de mercado já não são petroleiras ou montadoras: são empresas de tecnologia cuja principal matéria-prima são os dados gerados por bilhões de usuários.
+
+<!-- IMAGEM: Gráfico ou slide mostrando as maiores empresas do mundo em valor de mercado (slide 3) -->
+
+![Maiores empresas do mundo em valor de mercado.](img/00/maiores-empresas.png){#fig-empresas}
+
+Mas por que os dados se tornaram tão valiosos? A resposta passa por três fenômenos que convergiram nas últimas décadas e que costumam ser resumidos pelo termo *Big Data*.
+
+## Big Data
+
+O termo *Big Data* não se refere apenas a "muitos dados". Ele descreve um cenário em que o volume, a velocidade e a variedade dos dados ultrapassam a capacidade das ferramentas tradicionais de coleta, armazenamento e análise. São os chamados **3 V's do Big Data**.
+
+### Volume
+
+Para ter uma intuição da escala de dados que produzimos, considere a seguinte analogia. Imagine um tabuleiro de xadrez e um grão de arroz. Se colocarmos 1 grão na primeira casa, 2 na segunda, 4 na terceira e assim por diante --- dobrando a cada casa --- ao chegar na última casa (a 64ª), teríamos cerca de $2^{63} \approx 9{,}2 \times 10^{18}$ grãos. Isso equivale a aproximadamente **460 bilhões de toneladas de arroz**, muito mais do que toda a produção mundial acumulada na história.
+
+<!-- IMAGEM: Analogia do grão de arroz no tabuleiro de xadrez (slide sobre Volume) -->
+
+![Analogia do crescimento exponencial: grãos de arroz em um tabuleiro de xadrez.](img/00/graos-xadrez.png){#fig-graos}
+
+É exatamente esse tipo de crescimento exponencial que observamos na geração de dados. A adoção massiva de dispositivos móveis, sensores embarcados, sistemas de monitoramento e Tecnologias da Informação e Comunicação (TICs) fez com que a quantidade de dados gerados globalmente crescesse de forma vertiginosa.
+
+<!-- IMAGEM: Gráfico de crescimento da quantidade de dados ao longo dos anos (slide sobre Volume) -->
+
+![Crescimento da quantidade de dados gerados globalmente.](img/00/crescimento-dados.png){#fig-crescimento}
+
+### Velocidade
+
+Além do volume, a velocidade com que os dados são gerados e precisam ser processados é impressionante. Um carro autônomo, por exemplo, gera e processa enormes quantidades de dados a cada segundo: câmeras, radares, sensores LIDAR, GPS e acelerômetros alimentam algoritmos que precisam tomar decisões em tempo real para garantir a segurança dos passageiros.
+
+<!-- IMAGEM: Exemplo de carro autônomo e seus sensores (slide sobre Velocidade) -->
+
+![Sensores de um veículo autônomo gerando dados em tempo real.](img/00/carro-autonomo.png){#fig-carro}
+
+Outro exemplo notável são as turbinas de aviões modernos: cada motor pode gerar terabytes de dados por voo, monitorando temperatura, pressão, vibração e outros parâmetros críticos que permitem a manutenção preditiva e aumentam a segurança das operações aéreas.
+
+### Variedade
+
+Os dados que geramos não são apenas números organizados em planilhas. Eles assumem formas bastante diversas:
+
+-   **Dados estruturados:** tabelas com linhas e colunas bem definidas, como planilhas e bancos de dados relacionais.
+-   **Dados semiestruturados:** dados com alguma organização, mas sem um esquema rígido, como arquivos JSON, XML ou logs de servidores.
+-   **Dados não estruturados:** textos livres, imagens, vídeos, áudios, publicações em redes sociais --- que representam a maior parte dos dados gerados hoje.
+
+<!-- IMAGEM: Tipos de dados (estruturados, semiestruturados, não estruturados) com exemplos (slide sobre Variedade) -->
+
+![Tipos de dados: estruturados, semiestruturados e não estruturados.](img/00/tipos-dados.png){#fig-tipos-dados}
+
+A capacidade de lidar com essa variedade de formatos é um dos grandes desafios --- e oportunidades --- da área de dados.
+
+## O Mercado de Trabalho em Dados
+
+### *Future of Jobs Report* (2025)
+
+Diante desse cenário de crescimento exponencial na geração de dados, é natural que o mercado de trabalho reflita essa transformação. O [*Future of Jobs Report 2025*](https://www.weforum.org/publications/the-future-of-jobs-report-2025/), publicado pelo Fórum Econômico Mundial, ouviu milhares de empregadores que respondem por mais de 14 milhões de colaboradores em dezenas de setores e países. Os resultados são expressivos:
+
+-   Quase **90% das organizações** apontam **IA e Tecnologias de Processamento de Dados** como o principal vetor de transformação dos negócios nos próximos anos.
+-   **Especialistas em Big Data**, **especialistas em IA e Aprendizado de Máquina** e **engenheiros de FinTech** figuram entre as três carreiras com maior crescimento previsto.
+
+<!-- IMAGEM: Gráfico do Future of Jobs Report 2025 - carreiras em crescimento (slide sobre Mercado de Trabalho) -->
+
+![Carreiras com maior crescimento previsto segundo o *Future of Jobs Report 2025*.](img/00/future-jobs-2025.png){#fig-future-jobs}
+
+### Cientista de Dados: *"The Sexiest Job of the 21st Century"*
+
+Em 2012, a *Harvard Business Review* publicou um artigo que marcou época ao chamar o cientista de dados de *"the sexiest job of the 21st century"*. Mais de uma década depois, a previsão se confirmou: a profissão segue entre as mais demandadas, bem remuneradas e com altos índices de satisfação profissional.
+
+<!-- IMAGEM: Capa ou destaque do artigo da HBR "Data Scientist: The Sexiest Job" (slide sobre Cientista de Dados) -->
+
+![Artigo da *Harvard Business Review* (2012).](img/00/hbr-sexiest-job.png){#fig-hbr}
+
+### Inteligência Artificial, Aprendizado de Máquina e Ciência de Dados
+
+É comum haver confusão entre termos como **Inteligência Artificial (IA)**, **Aprendizado de Máquina** (*Machine Learning* - ML), **Aprendizado Profundo** (*Deep Learning* - DL) e **Ciência de Dados**. Uma forma didática de entender a relação entre eles é pensar em "bonecas russas":
+
+-   **Inteligência Artificial** é o campo mais amplo, que busca criar sistemas capazes de realizar tarefas que normalmente exigiriam inteligência humana.
+-   **Aprendizado de Máquina** é um subcampo da IA que desenvolve algoritmos capazes de aprender padrões a partir dos dados, sem serem explicitamente programados para cada tarefa.
+-   **Aprendizado Profundo** é um subcampo do ML que utiliza redes neurais com muitas camadas para aprender representações cada vez mais abstratas dos dados.
+-   **Ciência de Dados** é uma área interdisciplinar que utiliza métodos de estatística, computação e conhecimento de domínio para extrair conhecimento a partir de dados --- e pode ou não utilizar técnicas de IA/ML.
+
+<!-- IMAGEM: Diagrama de "bonecas russas" ou diagrama de Venn mostrando IA > ML > DL e a relação com Ciência de Dados (slide sobre IA/ML/DL) -->
+
+![Relação entre Inteligência Artificial, Aprendizado de Máquina, Aprendizado Profundo e Ciência de Dados.](img/00/ia-ml-dl.png){#fig-ia-ml-dl}
+
+### O Ciclo da Ciência de Dados
+
+Na prática, um projeto de Ciência de Dados segue um ciclo com etapas bem definidas:
+
+1.  **Obtenção dos dados:** coleta a partir de sensores, bancos de dados, APIs, questionários, entre outras fontes.
+2.  **Tratamento dos dados:** limpeza, transformação e organização dos dados em formato adequado para análise.
+3.  **Modelagem:** aplicação de técnicas estatísticas e/ou de aprendizado de máquina para identificar padrões e relações.
+4.  **Visualização e comunicação:** apresentação dos resultados de forma clara e acessível para a tomada de decisão.
+
+<!-- IMAGEM: Fluxograma do ciclo da Ciência de Dados: Obtenção → Tratamento → Modelagem → Visualização (slide sobre Fluxograma) -->
+
+![Ciclo da Ciência de Dados.](img/00/ciclo-ciencia-dados.png){#fig-ciclo}
+
+Cada uma dessas etapas será abordada ao longo deste livro, com ênfase especial nas fases de tratamento, modelagem e visualização.
+
+### Onde a Ciência de Dados é Aplicada?
+
+As aplicações da Ciência de Dados são praticamente ilimitadas. Alguns setores que se destacam:
+
+-   **Transportes:** planejamento de rotas, previsão de demanda, contagem automática de veículos, veículos autônomos.
+-   **Saúde:** diagnóstico por imagem, epidemiologia, descoberta de medicamentos.
+-   **Finanças:** detecção de fraudes, análise de risco, *trading* algorítmico.
+-   **Varejo:** sistemas de recomendação, previsão de vendas, precificação dinâmica.
+-   **Governo:** políticas públicas baseadas em evidências, planejamento urbano, segurança pública.
+
+<!-- IMAGEM: Exemplos de aplicações de Ciência de Dados em diferentes setores, incluindo classificação de imagens e contagem de veículos (slide sobre Projetos Interessantes) -->
+
+![Exemplos de aplicações de Ciência de Dados em diversos setores.](img/00/aplicacoes-cd.png){#fig-aplicacoes}
+
+## Como se Preparar
+
+### Competências para a Ciência de Dados
+
+Uma representação clássica das competências necessárias para atuar em Ciência de Dados é o **Diagrama de Venn**, que identifica três áreas fundamentais:
+
+-   **Conhecimento de domínio:** entender o problema e o contexto em que os dados estão inseridos (no nosso caso, Engenharia de Transportes).
+-   **Habilidades em computação/programação:** saber manipular dados, escrever código e utilizar ferramentas computacionais.
+-   **Matemática e Estatística:** dominar os fundamentos que sustentam os modelos e as análises.
+
+<!-- IMAGEM: Diagrama de Venn das competências em Ciência de Dados (slide sobre Competências) -->
+
+![Diagrama de Venn das competências em Ciência de Dados.](img/00/venn-competencias.png){#fig-venn}
+
+A interseção dessas três áreas é onde mora a Ciência de Dados. E é exatamente nessa interseção que este livro pretende atuar: oferecendo os fundamentos de Matemática e Estatística, utilizando ferramentas computacionais (R e tidyverse) e contextualizando os exemplos na Engenharia de Transportes.
+
+### A Conexão com Este Livro
+
+Este livro foi estruturado para percorrer esse caminho de forma gradual:
+
+1.  **Aspectos introdutórios** ([Parte 1](1introducao-ao-r.qmd)): instalação e familiarização com o R.
+2.  **Análise exploratória de dados** ([Parte 2](3estatistica-descritiva.qmd)): estatística descritiva, manipulação e visualização de dados.
+3.  **Teoria da probabilidade** ([Parte 3](6revisao-de-teoria-dos-conjuntos.qmd)): fundamentos probabilísticos essenciais.
+4.  **Distribuições de probabilidade** ([Parte 4](12distribuicoes-discretas.qmd)): modelos teóricos para variáveis aleatórias.
+5.  **Inferência estatística** ([Parte 5](14estimacao-de-parametros.qmd)): estimação de parâmetros e testes de hipóteses.
+6.  **Relações entre variáveis** ([Parte 6](18associacao-e-correlacao.qmd)): correlação e regressão linear.
+
+Ao final desta jornada, você terá uma base sólida para avançar com segurança para tópicos mais avançados de modelagem estatística e aprendizado de máquina. **Vamos começar!**

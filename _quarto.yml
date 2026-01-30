@@ -12,6 +12,7 @@ book:
   search: true
   chapters:
     - index.qmd
+    - 0motivacao.qmd
 
     - part: "PARTE 1: ASPECTOS INTRODUTÓRIOS"
       chapters:
