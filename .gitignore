@@ -23,3 +23,5 @@ CLAUDE.md
 
 # Misc
 *.log
+
+**/*.quarto_ipynb

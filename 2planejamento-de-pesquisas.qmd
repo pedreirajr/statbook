@@ -1,6 +1,7 @@
 ---
 title: "Planejamento de Pesquisas"
 ---
+<!-- Este capítulo deve se chamar "A natureza dos dados"! -->
 
 ## Introdução
 
