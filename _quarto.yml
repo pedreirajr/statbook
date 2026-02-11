@@ -4,8 +4,13 @@ project:
   resources:
     - img/**
 
+lang: pt-BR
+
+csl: apa.csl
+
 book:
-  title: "Introdução à Estatística para Ciência de Dados com R"
+  title: "Ciência de Dados para a Engenharia de Transportes"
+  subtitle: "Aplicações práticas em R"
   author: "Jorge Ubirajara Pedreira Junior"
   language: pt
   page-navigation: true
@@ -53,22 +58,26 @@ book:
         - 20inferencia-em-regressao.qmd
         - 21regressao-linear-multipla.qmd
 
-    - summary.qmd
     - references.qmd
 
 format:
   html:
     theme: default
+    css: custom.css
     number-sections: true
     toc: true
-    toc-depth: 3
+    toc-depth: 4
+    toc-title: "Índice do Capítulo"
     link-external-newwindow: true
 
 bibliography: references.bib
 crossref:
   fig-title: "Figura"
+  fig-prefix: "Figura"
   tbl-title: "Tabela"
+  tbl-prefix: "Tabela"
   eq-title: "Equação"
+  eq-prefix: "Equação"
 
 # (opcional) builds mais rápidos em capítulos não alterados
 execute:

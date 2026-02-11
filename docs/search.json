@@ -2,140 +2,116 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introdução à Estatística para Ciência de Dados com R",
+    "title": "Ciência de Dados para a Engenharia de Transportes",
     "section": "",
-    "text": "Prefácio\nA proposta deste livro surgiu da necessidade de dispor de um material didático de apoio às disciplinas que ministro na Escola Politécnica da Universidade Federal da Bahia. No contexto da graduação, ele serve como fio condutor de Estatística aplicada à Engenharia de Transportes (ENGR79) e como base para capacitar estudantes a explorarem dados de forma eficaz em Levantamentos e Pesquisas em Engenharia de Transportes (ENGR80). No âmbito da pós-graduação, apoia Planejamento dos Sistemas de Transporte (PPEC0051), aprofundando em tópicos mais avançados em modelos de regressão, amplamente utilizados na modelagem da demanda por transportes.\nExistem muitos livros-texto de excelência sobre o tema, e minha intenção não é substituí-los. Pelo contrário: recomendo algumas obras que são as principais inspirações para este livro. Como referência impressa, Probabilidade e Estatística na Engenharia de William W. Hines, Douglas C. Montgomery, Dave Goldsman e Connie M. Borror, é meu preferido: consistente na base teórica e rico em aplicações de Engenharia (especialmente no contexto industrial). No meio digital, tenho grande apreço por Introduction to Data Science: Data Wrangling and Visualization with R e Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies, de Rafael Irizarry.\nApesar da abundância de boas obras, três razões principais me motivam a produzir este livro neste momento. A primeira diz respeito ao boom das “carreiras em dados”, com desafios de capacitação distintos da formação tradicional. Experimente buscar termos como “cientista de dados”, “analista de dados”, “engenheira de dados”, “especialista em Big Data”, “especialista em Inteligência Artificial (IA)” e “engenheira de Aprendizado de Máquina” nos portais de emprego: o volume de vagas impressiona. São páginas e mais páginas que parecem não ter fim. E o melhor: as oportunidades vêm dos mais diversos setores, do agronegócio ao mercado financeiro, o que torna a carreira na área especialmente dinâmica.\nPara quem acompanha a evolução do mercado de trabalho nos últimos anos, isso não surpreende. É reflexo de décadas de avanços em processamento computacional e telecomunicações, da adoção massiva de dispositivos móveis e da capacidade de monitorar a natureza, objetos e infraestruturas com sensores cada vez mais precisos. O resultado são “toneladas” de informações geradas em tempo real, armazenadas em grandes data centers ou transmitidas instantaneamente para qualquer lugar do mundo, gerando insumos valiosos para compreender fenômenos e tomar decisões mais embasadas. \nUm registro claro desta tendência tem sido documentado na publicação Future of Jobs Report, produzido pelo Fórum Econômico Mundial a cada dois anos. Na edição de 2025, foram ouvidos milhares de empregadores que respondem por mais de 14 milhões de colaboradores, cobrindo dezenas de setores e países. Os resultados indicam que quase 90% das organizações veem IA e Tecnologias de Processamento de Dados como o principal vetor de transformação (superando Robôs e Automação de Sistemas) e colocam especialistas em Big Data e especialistas em IA/Aprendizado de Máquina entre as três carreiras com maior crescimento previsto (ao lado de engenheiros de FinTech).\nA segunda razão é a cautela. O entusiasmo do momento costuma vir acompanhado de promessas fáceis. Ao abrir descrições de vagas, nos deparamos um volume extenso de habilidades técnicas (uso de software, frameworks e bibliotecas) e teóricas (modelos econométricos e de Aprendizado de Máquina, por exemplo) exigidas para estas profissões. Há quem venda a ilusão de que um pacote de videoaulas te transformará em especialista nestas carreiras de dados em pouco tempo, quase sempre focando no “onde clicar” ou “como rodar este código”. Não se engane: a falta de profundidade nos fundamentos de probabilidade e estatística que sustentam os modelos avançados limita a atuação profissional. Este livro não promete atalhos, mas busca ser um ponto de partida sólido e motivador para consolidar o essencial e dar segurança para passos mais avançados.\nA terceira e última razão diz respeito à filosofia que orienta a escrita e a organização deste livro. Muito do material clássico de estatística segue um percurso árido, carregado de fórmulas e com pouca intuição sobre o que elas significam. Lembro-me de quando cursei Álgebra Linear na graduação: saí da disciplina sem entender por que precisaríamos de calcular autovalores, autovetores ou fatorar matrizes. Quase dez anos depois, encontrei a série A Essência da Álgebra Linear, do canal 3Blue1Brown (Grant Sanderson), que apresenta estes e outros conceitos com uma intuição geométrica tão eloquente que aprofundou de modo decisivo meu interesse pelo tema (sobretudo por sua utilidade quando avançamos para a Estatística Multivariada).\nEste é o motivo de me preocupar com uma formação inicial em análise exploratória de dados. Logo após Estatística Descritiva (Capítulo 3), partimos para a prática: filtrar, selecionar e ordenar tabelas, elaborar sumários estatísticos, produzir novas variáveis a partir das existentes e visualizar adequadamente cada tipo de informação que a tabela de dados nos oferece. Entendo que mergulhar e dominar esses tópicos antes de avançar para teoria da probabilidade, testes de hipóteses e regressão é fundamental para compreender melhor os conteúdos intermediários típicos de uma disciplina do gênero. A autonomia na produção é fundamental para que as perguntas e hipóteses surjam da exploração dos dados, e só então sejam confrontadas com o arsenal de técnicas que a Inferência Estatística nos oferece.\nPor fim, uma pergunta fundamental: por que R? Embora Python seja mais popular e amplamente difundido, este livro adota R por dois motivos práticos. Primeiro, por acreditar que na aderência do seu ecossistema à filosofia deste livro. Gostaria de destacar, sobretudo, os bons princípios para tratamento e visualização de dados incorporados pela família de pacotes do tidyverse. Segundo, pela existência de uma comunidade ativa e colaborativa em diversas áreas, mais especialmente no planejamento urbano e de transportes, que dissemina boas práticas e materiais didáticos de qualidade. Integrar-se a Python é possível (e muitas vezes desejável), mas a escolha por R se alinha ao objetivo didático e à cultura de análise estatística que buscamos aqui.\nDiante desse cenário, e depois de pouco mais de 10 anos lecionando temas correlatos e observando como as turmas assimilam os conteúdos, acredito poder contribuir com um roteiro que favoreça o aprendizado. Este livro é a expressão dessa crença. A todas(os) as(os) estudantes e colegas que ajudaram a amadurecer esse caminho, deixo meu enorme agradecimento. Meus sinceros votos de que este livro ofereça solidez e direção ao seu desenvolvimento profissional nesta área em constante evolução. Mãos à obra!",
+    "text": "Prefácio\nA proposta deste livro surgiu da necessidade de dispor de um material didático de apoio às disciplinas que ministro na Escola Politécnica da Universidade Federal da Bahia. No contexto da graduação, ele serve como fio condutor de Estatística aplicada aos Transportes (ENGR79) e como base para capacitar estudantes a explorarem dados de forma eficaz em Levantamentos e Pesquisas em Engenharia de Transportes (ENGR80). No âmbito da pós-graduação, apoia Planejamento dos Sistemas de Transporte (PPEC0051), aprofundando em tópicos mais avançados em modelos de regressão, amplamente utilizados na modelagem da demanda por transportes.\nExistem muitos livros-texto de excelência sobre o tema, e minha intenção não é substituí-los. Pelo contrário: recomendo algumas obras que são as principais inspirações para este livro. Como referência impressa, Probabilidade e Estatística na Engenharia de William W. Hines, Douglas C. Montgomery, Dave Goldsman e Connie M. Borror, é meu preferido: consistente na base teórica e rico em aplicações de Engenharia (especialmente no contexto industrial). No meio digital, tenho grande apreço por Introduction to Data Science: Data Wrangling and Visualization with R e Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies, de Rafael Irizarry.\nApesar da abundância de boas obras, três razões principais me motivam a produzir este livro neste momento. A primeira diz respeito ao boom das “carreiras em dados”, com desafios de capacitação distintos da formação tradicional. Experimente buscar termos como “cientista de dados”, “analista de dados”, “engenheira de dados”, “especialista em Big Data”, “especialista em Inteligência Artificial (IA)” e “engenheira de Aprendizado de Máquina” nos portais de emprego: o volume de vagas impressiona. Torça para a plataforma permitir mais resultados por página ou aguarde muitos clicks até conseguir checar todos os resultados. E o melhor: as oportunidades vêm dos mais diversos setores, do agronegócio ao mercado financeiro, o que torna a carreira na área especialmente dinâmica.\nPara quem acompanha a evolução do mercado de trabalho nos últimos anos, isso não surpreende. É reflexo de décadas de avanços em processamento computacional e telecomunicações, da adoção massiva de dispositivos móveis e da capacidade de monitorar a natureza, objetos e infraestruturas com sensores cada vez mais precisos. O resultado são “toneladas” de informações geradas em tempo real, armazenadas em grandes data centers ou transmitidas instantaneamente para qualquer lugar do mundo, gerando insumos valiosos para compreender fenômenos e tomar decisões mais embasadas. \nUm registro claro desta tendência tem sido documentado na publicação Future of Jobs Report, produzido pelo Fórum Econômico Mundial a cada dois anos. Na edição de 2025, foram ouvidos milhares de empregadores que respondem por mais de 14 milhões de colaboradores, cobrindo dezenas de setores e países. Os resultados indicam que quase 90% das organizações veem IA e Tecnologias de Processamento de Dados como o principal vetor de transformação (superando Robôs e Automação de Sistemas) e colocam especialistas em Big Data e especialistas em IA/Aprendizado de Máquina entre as três carreiras com maior crescimento previsto (ao lado de engenheiros de FinTech).\nA segunda razão é a cautela. O entusiasmo do momento costuma vir acompanhado de promessas fáceis. Ao abrir descrições de vagas, nos deparamos um volume extenso de habilidades técnicas (uso de software, frameworks e bibliotecas) e teóricas (modelos econométricos e de Aprendizado de Máquina, por exemplo) exigidas para estas profissões. Há quem venda a ilusão de que um pacote de videoaulas te transformará em especialista nestas carreiras de dados em pouco tempo, quase sempre focando no “onde clicar” ou “como rodar este código”. Não se engane: a falta de profundidade nos fundamentos de probabilidade e estatística que sustentam os modelos avançados limita a atuação profissional. Este livro não promete atalhos, mas busca ser um ponto de partida sólido e motivador para consolidar o essencial e dar segurança para passos mais avançados.\nA terceira e última razão diz respeito à filosofia que orienta a escrita e a organização deste livro. Muito do material clássico de estatística segue um percurso árido, carregado de fórmulas e com pouca intuição sobre o que elas significam. Lembro-me de quando cursei Álgebra Linear na graduação: saí da disciplina sem entender por que precisaríamos de calcular autovalores, autovetores ou fatorar matrizes. Quase dez anos depois, encontrei a série A Essência da Álgebra Linear, do canal 3Blue1Brown (Grant Sanderson), que apresenta estes e outros conceitos com uma intuição geométrica tão eloquente que aprofundou de modo decisivo meu interesse pelo tema (sobretudo por sua utilidade quando avançamos para a Estatística Multivariada).\nEste é o motivo de me preocupar com uma formação inicial em análise exploratória de dados. Logo após Estatística Descritiva (Capítulo 3), partimos para a prática: filtrar, selecionar e ordenar tabelas, elaborar sumários estatísticos, produzir novas variáveis a partir das existentes e visualizar adequadamente cada tipo de informação que a tabela de dados nos oferece. Entendo que mergulhar e dominar esses tópicos antes de avançar para teoria da probabilidade, testes de hipóteses e regressão é fundamental para compreender melhor os conteúdos intermediários típicos de uma disciplina do gênero. A autonomia na produção é fundamental para que as perguntas e hipóteses surjam da exploração dos dados, e só então sejam confrontadas com o arsenal de técnicas que a Inferência Estatística nos oferece.\nPor fim, uma pergunta fundamental: por que R? Embora Python seja mais popular e amplamente difundido, este livro adota R por dois motivos práticos. Primeiro, por acreditar que na aderência do seu ecossistema à filosofia deste livro. Gostaria de destacar, sobretudo, os bons princípios para tratamento e visualização de dados incorporados pela família de pacotes do tidyverse. Segundo, pela existência de uma comunidade ativa e colaborativa em diversas áreas, mais especialmente no planejamento urbano e de transportes, que dissemina boas práticas e materiais didáticos de qualidade. Integrar-se a Python é possível (e muitas vezes desejável), mas a escolha por R se alinha ao objetivo didático e à cultura de análise estatística que buscamos aqui.\nDiante desse cenário, e depois de pouco mais de 10 anos lecionando temas correlatos e observando como as turmas assimilam os conteúdos, acredito poder contribuir com um roteiro que favoreça o aprendizado. Este livro é a expressão dessa crença. A todas(os) as(os) estudantes e colegas que ajudaram a amadurecer esse caminho, deixo meu enorme agradecimento. Meus sinceros votos de que este livro ofereça solidez e direção ao seu desenvolvimento profissional nesta área em constante evolução. Mãos à obra!",
     "crumbs": [
       "Prefácio"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "0motivacao.html",
+    "href": "0motivacao.html",
+    "title": "Motivação",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "4 razões de por que chegamos até aqui\nEm maio de 2017, a revista britânica The Economist estampou em sua capa uma provocação que sintetiza o espírito da era em que vivemos: “The world’s most valuable resource is no longer oil, but data” (O recurso mais valioso do mundo não é mais o petróleo, mas os dados).\nA analogia é poderosa. Assim como o petróleo moldou a geopolítica e a economia do século XX, os dados estão redesenhando as relações de poder no século XXI. Não é por acaso que as maiores empresas do mundo em valor de mercado são justamente aquelas que extraem valor dos rastros digitais gerados por bilhões de pessoas. Essa transformação traz consigo implicações profundas para o mercado de trabalho, criando novas carreiras, redefinindo competências e abrindo oportunidades sem precedentes para quem souber coletar, organizar, analisar e comunicar dados de forma eficaz.\nEste capítulo percorre esse cenário em quatro etapas. Primeiro, faremos um passeio histórico que acredito que explique substancialmente como chegamos até o atual estado de coisas, revisitando saltos tecnológicos e mudanças sociais que tornaram possível essa nova era dos dados. Em seguida, discutimos o conceito de Big Data, o fenômeno que emerge quando esses avanços convergem e as oportunidades quase que ilimitadas decorrentes desse processo. Na terceira parte, olhamos para o mercado de trabalho nas carreiras de dados, destacando os aspectos que consagraram a profissão de Cientista de Dados como uma das mais promissoras do século. Por fim, abordamos como se preparar profissionalemnte para esta carreira, apresentando o fluxo de trabalho típico dessa área e os três domínios de competência que definem o perfil deste(a) profissional.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Motivação"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
+    "objectID": "0motivacao.html#razões-de-por-que-chegamos-até-aqui",
+    "href": "0motivacao.html#razões-de-por-que-chegamos-até-aqui",
+    "title": "Motivação",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "Processamento de dados: das válvulas aos bilhões de transistores\nDe forma simplificada, um computador é uma máquina que recebe dados de entrada, realiza operações lógicas e aritméticas sobre eles e devolve resultados. Os primeiros computadores eletrônicos de uso geral utilizavam válvulas termiônicas (componentes do tamanho de uma lâmpada) como “interruptores” para representar os dígitos binários (0 e 1) que sustentam toda a computação moderna.\nO exemplo mais emblemático é o ENIAC (Electronic Numerical Integrator and Computer), construído na Universidade da Pensilvânia entre 1943 e 1946. Projetado para calcular tabelas balísticas durante a Segunda Guerra Mundial, o ENIAC ocupava uma sala de aproximadamente 140 m², pesava cerca de 30 toneladas e consumia 150 kW de energia. Seu “cérebro” era composto por 17.468 válvulas, além de milhares de resistores, capacitores e relês, totalizando cerca de 5 milhões de conexões soldadas à mão. Com tudo isso, ele era capaz de realizar aproximadamente 5.000 operações de adição por segundo.\n\n\n\n\n\n\n\nFigura 2: O ENIAC (1946): 30 toneladas, 17.468 válvulas e 5.000 adições por segundo.\n\n\n\nApesar de impressionante para época, um grande salto na computação veio com a invenção do transistor em 1947, nos Laboratórios Bell, e posteriormente com o desenvolvimento dos circuitos integrados no final dos anos 1950. Um transistor cumpre a mesma função de “interruptor eletrônico” que uma válvula, porém é incomparavelmente menor, mais rápido, mais barato e mais eficiente em termos de energia. Quanto mais transistores conseguimos colocar em um único chip, mais operações ele pode realizar simultaneamente, e mais poderoso se torna o computador.\n\n\n\n\n\n\nFigura 3: Imagem microscópica de um circuito integrado para controlar um painel de LCD\n\n\n\nEm 1965, Gordon Moore, um dos fundadores da Intel Corporation, publicou um artigo na revista Electronics intitulado “Cramming more components onto integrated circuits”, no qual observou que o número de transistores em um circuito integrado vinha dobrando a cada ano desde 1959. Moore projetou que esse ritmo se manteria por pelo menos mais uma década. Em 1975, ele revisou a previsão para uma duplicação a cada dois anos, ritmo que se manteve notavelmente estável por mais de cinco décadas, até os dias de hoje.\nO que essa regularidade significa na prática? Enquanto em 1960 trabalhávamos com circuitos com algumas dezenas de componentes, um processador comercial moderno (como o GB202 da NVIDIA, lançado em 2024) possui mais de 92 bilhões de transistores. Essa escalada sem precedentes na capacidade de processamento é o primeiro ingrediente que tornou possível lidar com volumes de dados antes inimagináveis.\n\n\n\n\n\n\nFigura 4: Evolução do número de transistores em processadores ao longo das décadas (a Lei de Moore em ação).\n\n\n\nPara se ter uma ideia, o ENIAC de 1946 alcançava cerca de 500 FLOPS (operações de ponto flutuante por segundo). Algumas décadas mais tarde, o supercomputador Cray-1, referência nos anos 1970, atingia 160 milhões de FLOPS, e ocupava uma sala inteira. Hoje, um smartphone comum carrega no bolso um processador capaz de realizar trilhões de operações por segundo (teraFLOPS). O chip A17 Pro da Apple, por exemplo, alcança mais de 5 teraFLOPS, cerca de 10 bilhões de vezes a capacidade do ENIAC, em um dispositivo que pesa pouco mais de 200 gramas.\n\n\nTransmissão de dados: dos cabos de cobre ao 5G\nUm computador isolado, por mais poderoso que seja, tem utilidade limitada. O verdadeiro salto ocorre quando computadores se conectam, permitindo o fluxo de dados entre organizações, objetos e pessoas. Nesse sentido, a capacidade de transmitir dados entre máquinas distintas transformou dispositivos individuais em nós de uma rede global, expandindo significativamente o valor da computação. Sem transmissão eficiente de dados, não haveria Internet, comércio eletrônico, redes sociais, streaming de vídeo, computação em nuvem nem a economia digital como a conhecemos. Felizmente, as tecnologias de telecomunicação também avançaram expressivamente ao longo desse período.\n\n\n\n\n\n\nFigura 5: Feixes de fibra óptica\n\n\n\nConsiderando a transmissão cabeada, durante décadas as redes dependeram de cabos de cobre para transmitirem dados por meio de sinais elétricos. O problema é que esses sinais sofrem interferência eletromagnética, limitando a distância e a velocidade que se pode transmitir informações. A grande revolução veio com a fibra óptica: filamentos de vidro ultrapuro, mais finos que um fio de cabelo, que transmitem informação na forma de pulsos de luz. Como a luz viaja a cerca de 200.000 km/s dentro da fibra e é imune a interferências eletromagnéticas, as fibras ópticas permitem transmitir volumes de dados incomparavelmente maiores, a distâncias muito mais longas. A Tabela 1 ilustra essa evolução impressionante: em menos de 50 anos, a capacidade de transmissão em uma única fibra saltou de 45 Mbps para 402 Tbps, um aumento de quase 10 milhões de vezes. Hoje, aproximadamente 99% de todo o tráfego internacional de dados passa por cabos submarinos de fibra óptica, que totalizam mais de 1,5 milhão de quilômetros no fundo dos oceanos.\n\n\n\nTabela 1: Evolução da velocidade de transmissão em fibra óptica.\n\n\n\n\n\nPeríodo\nMarco tecnológico\nVelocidade\n\n\n\n\n1956\nTAT-1: primeiro cabo submarino de telefone (cobre coaxial)\n~0,5 Mbps\n\n\n1977\nPrimeiros sistemas comerciais de fibra (LED + fibra multimodo)\n45-90 Mbps\n\n\n1988\nTAT-8: primeiro cabo submarino de fibra óptica\n280 Mbps\n\n\nAnos 1990\nAmplificadores ópticos (EDFA) e multiplexação WDM\n2,5-10 Gbps\n\n\n1999\nSistemas WDM com 100+ canais\n3,2 Tbps\n\n\n2024\nRecorde NICT: 6 bandas de comprimento de onda\n402 Tbps\n\n\n\n\n\n\nParalelamente, a transmissão de dados sem fio evoluiu de forma igualmente impressionante. Baseada na propagação de ondas eletromagnéticas pelo ar, essa tecnologia libertou as comunicações dos cabos físicos causando uma outra revolução nas telecomunicações. A Tabela 2 resume a evolução das gerações de tecnologia móvel: a cada nova geração, observamos tanto aumentos expressivos de velocidade quanto redução da latência (atraso na transmissão), viabilizando aplicações que necessitam de transmissão de informações em tempo real como veículos autônomos.\n\n\n\nTabela 2: Gerações de tecnologia móvel e suas velocidades de pico. Fonte: padrões IMT da ITU e especificações 3GPP.\n\n\n\n\n\n\n\n\n\n\n\nGeração\nPeríodo\nVelocidade de pico\nAvanço principal\n\n\n\n\n2G (GSM)\nanos 1990\n~0,1 Mbps\nDigitalização: dados e SMS\n\n\n3G (UMTS/HSPA)\nanos 2000\n2-42 Mbps\nInternet móvel e e-mail\n\n\n4G (LTE)\nanos 2010\n100 Mbps - 3 Gbps\nStreaming de vídeo em tempo real\n\n\n5G (NR)\nanos 2020\naté 10 Gbps\n“Internet das Coisas” massiva e latência ultrabaixa\n\n\n\n\n\n\nVale mencionar também uma série de inovações que, embora não sejam tecnologias físicas, foram fundamentais para viabilizar a transmissão de dados em escala global: a digitalização da informação (conversão de sinais analógicos em bits), os protocolos de rede como o TCP/IP (que padronizou a comunicação entre computadores e deu origem à Internet) e os algoritmos de compressão de dados (como MP3, JPEG e H.264, que reduziram drasticamente o tamanho de arquivos multimídia).\n\n\nArmazenamento de dados: do armário de uma tonelada à nuvem\nProcessamento e transmissão não resume tudo que acontece ao longo da “vida” de um dado. Aliás, em boa parte do tempo, ele só precisa estar estocado em algum local. É nesse momento que entram as tecnologias de armazenamento, cuja evolução foi tão impressionante quanto as demais.\n\n\n\n\n\n\nFigura 6: O IBM 350 RAMAC (1956): uma tonelada para armazenar 3,75 MB.\n\n\n\nAntes dos discos, os primeiros computadores armazenavam dados em fitas magnéticas e tambores rotativos, tecnologias lentas e de acesso sequencial. O grande salto veio com o IBM 350 RAMAC, lançado em 1956: o primeiro disco rígido (Hard Disk Drive - HDD) comercial da história. Ele armazenava 3,75 MB em 50 discos magnéticos de 24 polegadas, pesava cerca de uma tonelada e custava aproximadamente US$ 10.000 por megabyte. Mas essa era apenas a primeira geração de uma tecnologia que não pararia de encolher e ganhar capacidade.\nNas décadas seguintes, os HDDs passaram por uma miniaturização impressionante: dos 50 discos de 24 polegadas do RAMAC, a indústria convergiu para o formato de 3,5 polegadas que se tornaria padrão nos computadores pessoais. Ao mesmo tempo, a capacidade cresceu exponencialmente: o primeiro HDD de 1 GB surgiu em 1980 (o IBM 3380, do tamanho de um refrigerador), o primeiro de 1 TB chegou ao mercado em 2007 (já no formato compacto de 3,5”), e hoje existem HDDs comerciais com mais de 20 TB. Durante mais de 50 anos, os discos rígidos foram a tecnologia dominante de armazenamento digital.\nParalelamente aos HDDs, surgiram as mídias removíveis, que trouxeram portabilidade ao armazenamento. Os disquetes (floppy disks), populares entre os anos 1970 e 1990, foram os primeiros dispositivos que permitiam carregar e trocar arquivos entre computadores, embora com capacidade limitada a 1,44 MB. As mídias ópticas vieram em seguida: o CD (1982, 700 MB) e o DVD (1996, 4,7 GB) revolucionaram a distribuição de software, música e filmes. Finalmente, no início dos anos 2000, os pendrives (USB flash drives) popularizaram a memória flash, uma tecnologia baseada em chips semicondutores capaz de armazenar dados sem partes mecânicas. Com os pendrives, gigabytes de dados passaram a caber literalmente no bolso.\nUma segunda revolução ocorreu com os drives de estado sólido (Solid State Drives - SSDs). Diferentemente dos HDDs, que dependem de discos magnéticos giratórios e cabeçotes mecânicos, os SSDs armazenam dados em chips de memória flash, sem partes móveis. O resultado: velocidades de leitura e escrita ordens de grandeza superiores, menor consumo de energia e maior resistência a impactos. O primeiro SSD comercial para PCs foi lançado pela SanDisk em 1991, com 20 MB por US$ 1.000. A popularização veio nos anos 2000, quando a Samsung introduziu SSDs com interface SATA (2006) e os preços começaram a cair. Hoje, SSDs de 1 TB custam menos de US$ 50.\n\n\n\n\n\n\nFigura 7: Evolução do custo de armazenamento por gigabyte ao longo das décadas.\n\n\n\nSegundo o Our World in Data, o custo por gigabyte (Gb) de armazenamento caiu de mais de US$ 1 milhão nos anos 1950 para menos de US$ 0,02 atualmente, uma redução de mais de 50 bilhões de vezes (veja a Figura 7). Com armazenamento tão barato, a nova fronteira dessa evolução tecnológica são os centros de dados (data centers): instalações que reúnem milhares de servidores equipados com as mesmas tecnologias de armazenamento (HDDs, SSDs e até fitas magnéticas para backup), organizadas em camadas conforme a frequência de acesso aos dados. A partir dos anos 2000, o modelo de computação em nuvem (cloud computing) transformou esses data centers em serviços acessíveis a qualquer pessoa, com diversas empresas de tecnologia passando a oferecer capacidade de armazenamento e processamento sob demanda, eliminando a necessidade de manter servidores próprios.\n\n\nO mundo na palma da mão: pessoas e objetos, tudo conectado\nPor fim, é importante destacar que os avanços em processamento, transmissão e armazenamento só se traduzem em “toneladas de dados” porque foram acompanhados por dois fenômenos complementares: uma adoção sem precedentes de tecnologias digitais pela população mundial e uma capacidade crescente de medir e registrar os mais diversos atributos do mundo físico (natural e artificial) à nossa volta.\nDo lado das pessoas, o que impressiona não é apenas o número de usuários, mas a velocidade com que cada nova tecnologia foi adotada. A Figura 8 mostra a evolução da adoção de algumas tecnologias de comunicação nos EUA. Consideremos o período necessário para uma tecnologia avançar de 20% para 80% da populaçã utilizando-a. Entre os dispositivos, esse intervalo foi de 45 anos (1907–1962) para o telefone fixo (landline), mas de apenas 12 anos (1997–2009) para o telefone celular (cellular phone), quase quatro vezes menor. Já entre os tipos de serviços tecnológicos, a Internet levou 15 anos (1997–2012) para percorrer esse mesmo caminho, enquanto o uso de mídias sociais (por exemplo, Instagram, Facebook e TikTok) levou 9 anos (2008–2017).\n\n\n\n\n\n\nFigura 8: Adoção de tecnologias de comunicação ao longo da história\n\n\n\nDo lado dos objetos, o barateamento dos sensores e a expansão das redes de comunicação permitiram que bilhões de dispositivos físicos passassem a coletar e transmitir informações de forma contínua e autônoma. É o que se convencionou chamar de Internet das Coisas (Internet of Things - IoT): termômetros, acelerômetros, câmeras, medidores de energia, sensores de tráfego, estações meteorológicas e dispositivos vestíveis (wearables), todos conectados e gerando fluxos ininterruptos de dados. Segundo a Statista, o número de dispositivos IoT conectados no mundo saltou de cerca de 8 bilhões em 2019 para mais de 18 bilhões em 2024, com projeção de ultrapassar 39 bilhões até 2033. Em transportes, por exemplo, sensores embarcados em veículos, laços indutivos em vias, radares e câmeras de monitoramento produzem terabytes de dados diariamente sobre fluxo, velocidade, ocupação e condições de tráfego. Essa “camada de sensoriamento” do mundo físico é hoje uma das maiores fontes de dados em volume e velocidade.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "Motivação"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "0motivacao.html#big-data",
+    "href": "0motivacao.html#big-data",
+    "title": "Motivação",
+    "section": "Big Data",
+    "text": "Big Data\nA convergência desses quatro fatores criou as condições para o fenômeno que atualmente chamamos de Big Data. É importante salientar que o termo não se refere apenas à existência de um volume muito grande de dados. Ele descreve um cenário em que a velocidade com que são produzidos e a variedade com que podem ser encontrados também geram enormes desafios para a sua coleta, armazenamento e análise. Estes são os 3 V’s que caracterizam o Big Data:\n\n\n\n\n\n\nFigura 9: Os 3 V’s do Big Data\n\n\n\nPara ter uma intuição da rapidez com que os dados vêm sendo produzidos, uma iniciativa bastante interessante chamada Data Never Sleeps (dados nunca dormem) tem registrado o volume de conteúdo produzido a cada minuto por diversos serviços de Internet ao longo dos anos. Observe na Figura 10 que, em apenas 10 anos, o número de horas de vídeo enviadas ao YouTube por minuto saltou de 48 para 500, enquanto o número de fotos compartilhadas no Instagram aumentou de 3,6 mil para 66 mil. Esse ritmo significa que o mundo produz cerca de 400 Exabytes diariamente, conforme estimativas da Statista para 2025. Para colocar em perspectiva, isso equivale a aproximadamente 400 milhões de discos rígidos de 1 terabyte apenas para armazenar o que é gerado em um único dia.\n\n\n\n\n\n\nFigura 10: Conteúdo produzido na Internet a cada minuto (2013 VS. 2023)\n\n\n\nNo contexto das tecnologias de transportes, um fato bastante interessante é o quanto veículos autônomos dependem de dados para avaliar as condições atuais e tomar decisões em tempo real. A partir da combinação de sensores como câmeras, radar e LiDAR, estima-se que um único veículo possa gerar cerca de 10 GB de dados por segundo. Esse ritmo significa esgotar o equivalente a 40 discos rígidos de 1 TB em apenas uma hora. São números nos permitem contemplar, inclusive, o desafio que será a gestão desses dados em data centers caso a tecnologia se difunda rapidamente como aquelas de comunicação que discutimos anteriormente (Figura 8).\n\n\n\n\n\n\nFigura 11: Esquema de aquisição de dados em um veículo autônomo\n\n\n\nDo ponto de vista da variedade, durante boa parte do século XX, os dados com os quais pesquisadores e organizações trabalhavam eram predominantemente estruturados: números e categorias organizados em tabelas com linhas e colunas bem definidas, como planilhas, formulários de pesquisa e bancos de dados relacionais. Esse formato tabular era (e continua sendo) a base da análise estatística clássica que veremos neste livro.\nTodavia, o cenário mudou radicalmente com a popularização da Internet, dos smartphones e dos sensores. Hoje, a maior parte dos dados gerados no mundo não cabe em uma tabela. Cerca de 80% dos dados globais são não estruturados, isto é, não possuem um esquema fixo de linhas e colunas. São textos livres (e-mails, artigos, publicações em redes sociais), imagens (fotos de satélite, radiografias, imagens de câmeras de tráfego), vídeos (gravações de segurança, transmissões ao vivo), áudios (chamadas telefônicas, podcasts, gravações de sensores acústicos) e dados geoespaciais (trajetórias GPS, mapas vetoriais, nuvens de pontos LiDAR). Além desses, existe uma categoria intermediária, os dados semiestruturados, que possuem alguma organização, mas sem um esquema rígido, como arquivos JSON, XML, logs de servidores e dados de sensores IoT.\n\n\n\n\n\n\nFigura 12: Dados não estruturados bastante comuns nos dias de hoje\n\n\n\nA capacidade de coletar, armazenar e extrair conhecimento dessa variedade de formatos é um dos grandes desafios (e oportunidades) da era dos dados. Não por acaso, boa parte dos avanços recentes em Inteligência Artificial, como modelos de linguagem e visão computacional, surgiu justamente da necessidade de processar esses dados não estruturados em larga escala. Naturalmente, toda essa transformação tem reflexos diretos no mercado de trabalho e nas competências profissionais mais valorizadas, que veremos com mais detalhe logo mais.",
+    "crumbs": [
+      "Motivação"
+    ]
+  },
+  {
+    "objectID": "0motivacao.html#o-mercado-de-trabalho-nas-carreiras-de-dados",
+    "href": "0motivacao.html#o-mercado-de-trabalho-nas-carreiras-de-dados",
+    "title": "Motivação",
+    "section": "O Mercado de Trabalho nas Carreiras de Dados",
+    "text": "O Mercado de Trabalho nas Carreiras de Dados\nA explosão na geração de dados vem abrindo espaço para ganhos expressivos de eficiência e inovação nas organizações, além de viabilizar novos produtos, serviços e mercados. Como consequência, tem crescido a demanda por profissionais capazes de transformar dados brutos em informação útil e conhecimento acionável para apoiar decisões. Nesta seção, apresentamos o que se entende por carreiras de dados, com foco na atuação em Ciência de Dados. Para isso, começamos com um panorama global do mercado de trabalho a partir do Future of Jobs Report, passamos pela origem e consolidação da carreira de Cientista de Dados e encerramos com perspectivas sobre capacitação nesta área.\n\nO Future of Jobs Report (2025)\nPara termos um panorama amplo sobre esse tema, vale olhar para alguns achados do Future of Jobs Report, uma publicação realizada a cada 2 anos que sintetiza tendências do mercado de trabalho a partir da visão de empregadores produzida pelo Fórum Econômico Mundial. Na edição de 2025, o relatório reuniu respostas de mais de 1.000 empresas, que juntas representam mais de 14 milhões de trabalhadores, em 22 setores e 55 países ao redor do mundo.\nUm primeiro questionamento importante diz respeito às principais tendências de transformação dos negócios para os próximos anos. Nesse sentido, 60% dos empregadores apontaram a ampliação do acesso digital (Figura 8, ela, de novo!) como um fator central, seguida por questões relacionadas ao custo de vida (50%) e por esforços para a diminuição de emissões de carbono (47%). Já entre os tipos de tecnologia que impactarão seus negócios nos próximos anos, 86% indicam que Inteligência Artificial (IA) e tecnologias de processamento de informação serão determinantes, seguidas por robôs e automação de sistemas (58%) e por geração, armazenamento e distribuição de energia (41%).\nLevando em consideração os principais conjuntos de tendências levantadas, estima-se que, até 2030, serão criados 170 milhões novos postos de trabalho (14% dos 1,4 bilhões de empregos da base analisada). Ao mesmo tempo, projeta-se a extinção de 92 milhões de empregos no mesmo período (8% do total). O saldo, ainda assim, é positivo: um aumento líquido de 78 milhões de ocupações nos próximos anos, conforme a Figura 13.\n\n\n\n\n\n\nFigura 13: Criação e destruição de empregos até 2030 de acordo com o Future of Jobs Report de 2025)\n\n\n\nAo observar a natureza dessa oferta de trabalho adicional (Figura 14), percebe-se com clareza a relevância das carreiras em dados. Note o crescimento líquido em ocupações como especialistas em Big Data  (mais de 100%), especialistas em IA e Aprendizado de Máquina (cerca de 80%) e analistas e cientistas de dados (pouco mais de 40%). Em grande medida, esses rótulos nomeiam variações de um mesmo núcleo: todas são carreiras centradas em coletar, organizar, analisar e modelar dados para gerar valor.\n\n\n\n\n\n\nFigura 14: Crescimento líquido por tipo de ocupação\n\n\n\nO que muda, em geral, é o foco da aplicação e a ênfase técnica de cada uma, seja na infraestrutura e escala (Big Data), no desenvolvimento de modelos e automação (IA e Aprendizado de Máquina), ou na análise e tomada de decisão orientada por dados como uma atuação mais “ponta a ponta”, conectando o problema, os dados, a análise e a entrega de valor (Ciência de Dados). Perceba que esta última engloba de forma mais abrangente um roteiro de análise de dados. Sendo assim, vale a pena discutirmos de forma mais contextualizada esta carreira que é o foco deste livro.\n\n\nA carreira em Ciência de Dados\nO termo “cientista de dados” foi cunhado em 2008, quando D.J. Patil e Jeff Hammberbacher passaram a utilizá-lo para descrever um novo tipo de profissional, em uma época em que a versão inaugural do iPhone ainda alcançava seus primeiros usuários. Pouco tempo depois, D.J. Patil ajudou a popularizar a expressão ao assinar o artigo Data Scientist: The Sexiest Job of the 21st Century na Harvard Business Review em coatoria com Thomas H. Davenport. Esta matéria viria a se tornar uma grande referência a respeito do tema (Figura 15), chamando a atenção por explicitar o que esse(a) profissional seria capaz de fazer, quais as competências esperadas e por que organizações teriam dificuldade para recrutá-lo(a). Como curiosidade, naquela época Patil atuava na área de produtos de dados do LinkedIn, e mais tarde se tornaria o primeiro Chief Data Scientist da Casa Branca, em 2015.\n\n\n\n\n\n\nFigura 15: Capa da matéria Data Scientist: The Sexiest Job of the 21st Century da Harvard Business Review\n\n\n\nUm ponto especialmente interessante do texto é a descrição da Ciência de Dados menos como conjunto de atribuições e mais como um modo de atuar dentro das organizações. Nesse sentido, trata-se de um perfil híbrido, capaz de dar forma a dados desorganizados, conectar fontes imperfeitas, comunicar achados de maneira convincente e orientar decisões em produtos e processos. Ao mesmo tempo, são profissionais que tendem a buscar autonomia para experimentar e, sobretudo, proximidade com o “lugar onde as decisões acontecem”, isto é, com equipes de produto e operação, porque preferem construir soluções que gerem impacto concreto em vez de apenas entregar recomendações.\nO texto trazia ainda uma ênfase importante na escassez de formações acadêmicas específicas para a área, a partir da qual Patil e Davenport sugeriram que recrutadores buscassem trajetórias alternativas para identificar e desenvolver esse perfil. A demanda crescente nos anos seguintes acelerou a criação de caminhos de formação, e uma década depois já se observava uma transformação profunda nesse cenário. Atualmente, são abundantes os cursos sobre Ciência de Dados em diferentes formatos e níveis, desde extensão, graduação, especialização, MBA, mestrado e doutorado.\nO que aconteceu com a carreira de Cientista de Dados desde esta publicação é história. Em poucos anos, a profissão passou a figurar de forma recorrente nos principais rankings internacionais de melhores carreiras, avaliada sob critérios como remuneração, satisfação profissional, volume de vagas e perspectivas de crescimento. A convergência de fontes tão distintas, de plataformas de emprego a agências governamentais, deixa pouco espaço para dúvida quanto à consolidação dessa carreira.\nA plataforma Glassdoor, uma das principais referências em avaliação de empregos, elegeu “Cientista de Dados” como a melhor profissão dos Estados Unidos por quatro anos consecutivos (2016 a 2019) em seu ranking anual 50 Best Jobs in America. Nos anos seguintes, a profissão se manteve entre as três primeiras colocadas (3º em 2020, 2º em 2021 e 3º em 2022), consolidando ao menos sete anos consecutivos no pódio (Figura 16). Este ranking avalia as profissões com base em três critérios ponderados igualmente: potencial de remuneração (salário-base mediano anual), satisfação no trabalho (avaliação dos próprios profissionais) e número de vagas abertas na plataforma. No caso de Cientista de Dados, os números eram consistentemente expressivos, com salário-base mediano entre US$ 110 e 120 mil anuais, nota de satisfação acima de 4,0 (em uma escala até 5) e milhares de vagas em aberto.\n\n\n\n\n\n\nFigura 16: Ranking do Glassdoor de melhores profissões nos EUA em 2022\n\n\n\nOutros rankings também convergem para a mesma conclusão. O U.S. News & World Report, outra referência tradicional em rankings de carreiras nos EUA, também passou a incluir Cientista de Dados entre as melhores profissões em sua lista anual 100 Best Jobs, alcançando a 3ª posição em 2022. Os critérios do U.S. News são complementares aos do Glassdoor, incluindo taxa de desemprego na profissão, crescimento projetado em dez anos, perspectivas futuras e nível de estresse. Paralelamente, os relatórios Emerging Jobs Report e Jobs on the Rise do LinkedIn, baseados em dados de sua própria rede profissional com centenas de milhões de usuários, destacaram repetidamente as carreiras em dados entre as que mais cresciam no mercado de trabalho global.\nDo ponto de vista institucional, os números do Bureau of Labor Statistics (BLS), a agência oficial de estatísticas trabalhistas do governo dos EUA, confirmam essa tendência de forma inequívoca: a projeção mais recente estima um crescimento de 34% no emprego de cientistas de dados entre 2024 e 2034, tornando-a a 4ª ocupação com maior taxa de crescimento no país, muito acima da média geral de apenas 3% para todas as profissões. Em 2022, dez anos após a publicação original, os próprios Patil e Davenport revisitaram o tema em um novo artigo na Harvard Business Review intitulado Is Data Scientist Still the Sexiest Job of the 21st Century?, no qual reafirmaram a relevância da profissão, embora reconhecendo que o campo havia se diversificado e amadurecido consideravelmente desde então.\n\n\nA capacitação em Ciência de Dados\nReconhecido o sucesso da carreira em Ciência de Dados, uma curiosidade fica no ar: qual é a rotina, na prática, de um(a) cientista de dados? Uma visão bastante didática é apresentada em um dos livros mais influentes da área, o R for Data Science (Wickham et al., 2025), cuja tradução para o português da 2ª edição já se encontra disponível gratuitamente em formato online. Em vez de retratar Ciência de Dados como uma sequência linear de etapas, o livro propõe um fluxo de trabalho iterativo, no qual você avança e retorna entre fases conforme aprende mais sobre o problema e sobre os dados (Figura 17).\nEm termos gerais, o ciclo começa quando os dados são importados para o ambiente de trabalho e então organizados em uma estrutura que permita e facilite a análise. A partir daí, entra a fase de transformação, em que você filtra, cria variáveis, corrige inconsistências e prepara a base para responder perguntas. Em seguida, a visualização ajuda a explorar padrões e levantar hipóteses, que podem ser aprofundadas com modelagem, quando faz sentido estimar relações, prever resultados ou explicar mecanismos. Por fim, nenhuma análise se completa sem comunicação, isto é, transformar resultados em narrativa, gráficos e recomendações compreensíveis para outras pessoas. Ao longo de todo o processo, a prática de programação funciona como um suporte transversal que garante reprodutibilidade, organização e eficiência, além de viabilizar a automação de tarefas e análises recorrentes, de modo que o ciclo possa se repetir com muito mais agilidade à medida que novas perguntas surgem ou os dados mudam.\n\n\n\n\n\n\nFigura 17: Fluxo de trabalho genérico em Ciência de Dados, adaptado de Wickham et al. (2025)\n\n\n\nUm aspecto particularmente interessante deste livro é a ênfase em etapas do ciclo que, em geral, recebem pouca atenção em livros-texto tradicionais de Estatística, como importação, organização, transformação e visualização de dados. Embora essas atividades sejam frequentemente tratadas como “prévias” à análise, elas são fundamentais para dar concretude a ideias estatísticas e probabilísticas básicas, pois é nelas que aprendemos a reconhecer padrões, formular perguntas, checar suposições e interpretar medidas e gráficos com senso crítico.\nAgora que entendemos um pouco da rotina de trabalho de um(a) cientista de dados, a próxima pergunta a ser respondida é: quais as competências necessárias para desempenhar bem este papel? Para respondê-la, uma representação bastante utilizada nos cursos de formação na área é o diagrama de Venn da Figura 18, que ilustra três grandes domínios de competência que, combinados, definem o perfil do(a) cientista de dados. Nenhum deles é, isoladamente, suficiente: é na interseção dos três que reside o diferencial dessa carreira.\n\n\n\n\n\n\nFigura 18: Domínios de competência para o(a) Cientista de Dados\n\n\n\nO domínio matemático e estatístico fornece a base teórica para toda análise de dados. Ele abrange fundamentos de Probabilidade e Estatística (que sustentam a inferência, a quantificação de incerteza e a tomada de decisão sob variabilidade), Cálculo (necessário para entender otimização e convergência de algoritmos) e Álgebra Linear (essenciais para compreender transformações, decomposições e representações matriciais de dados em modelos mais avançados). A partir dessas bases, é possível ganhar autonomia na formulação de modelos estatísticos clássicos (ex.: Regressão, Análise de Variância e Séries Temporais) e de Aprendizado de Máquina (ex.: Árvores de Decisão e Redes Neurais), que permite ao(à) profissional ir além da mera descrição dos dados e formular conclusões com rigor.\nO domínio ferramental reúne as habilidades técnicas e computacionais que viabilizam a execução prática do ciclo de Ciência de Dados. As linguagens de programação ocupam posição central, com destaque para R, Python e Julia, bastante utilizadas na área. Enquanto R se destaca pela riqueza do ecossistema estatístico e de visualização (e será a linguagem adotada neste livro), Python é amplamente adotado em aprendizado de máquina e engenharia de dados e Julia vem ganhando espaço em aplicações que exigem alto desempenho computacional. Além das linguagens, esse domínio inclui o conhecimento em bancos de dados relacionais (SQL) e não relacionais (NoSQL), frameworks para processamento de grandes volumes de dados (como Apache Spark e Hadoop), ferramentas de versionamento de código (Git), ambientes de computação em nuvem e plataformas de visualização e comunicação de resultados.\nO domínio da área de aplicação é o que confere propósito e contexto à análise. Um dos aspectos mais marcantes da Ciência de Dados é a sua transversalidade: existem profissionais atuando em praticamente todos os setores da economia, da saúde ao varejo, das finanças à agricultura, da indústria ao setor público. Por isso, além de dominar técnicas e ferramentas, é preciso compreender profundamente o problema que se pretende resolver e o contexto em que os dados foram gerados. Na área de Transportes, por exemplo, isso significa entender conceitos em Engenharia de Tráfego, Planejamento e Operação de Transporte Público, Comportamento Individual relativo a Viagens, Segurança Viária, Logística e Cadeia de Suprimentos, entre outros. É esse conhecimento de domínio que permite formular as perguntas certas, interpretar resultados de forma crítica e propor soluções que façam sentido na prática.\nEssa é justamente a proposta deste livro: desenvolver os fundamentos matemáticos e estatísticos (domínio teórico) por meio de ferramentas computacionais modernas (domínio ferramental), sempre que possível contextualizados em problemas reais de Engenharia de Transportes (domínio de aplicação). A ideia é que teoria e prática caminhem lado a lado desde o início, de modo que cada conceito novo ganhe concretude imediata através de código, dados e visualizações.",
+    "crumbs": [
+      "Motivação"
+    ]
+  },
+  {
+    "objectID": "0motivacao.html#como-se-preparar",
+    "href": "0motivacao.html#como-se-preparar",
+    "title": "Motivação",
+    "section": "Como se Preparar",
+    "text": "Como se Preparar\n\n\nCompetências para a Ciência de Dados\nUma representação clássica das competências necessárias para atuar em Ciência de Dados é o Diagrama de Venn, que identifica três áreas fundamentais:\n\nConhecimento de domínio: entender o problema e o contexto em que os dados estão inseridos (no nosso caso, Engenharia de Transportes).\nHabilidades em computação/programação: saber manipular dados, escrever código e utilizar ferramentas computacionais.\nMatemática e Estatística: dominar os fundamentos que sustentam os modelos e as análises.\n\n\n\n\n\n\n\n\nFigura 18: Diagrama de Venn das competências em Ciência de Dados.\n\n\n\nA interseção dessas três áreas é onde mora a Ciência de Dados. E é exatamente nessa interseção que este livro pretende atuar: oferecendo os fundamentos de Matemática e Estatística, utilizando ferramentas computacionais (R e tidyverse) e contextualizando os exemplos na Engenharia de Transportes.\n\n\nA Conexão com Este Livro\nEste livro foi estruturado para percorrer esse caminho de forma gradual:\n\nAspectos introdutórios (Parte 1): instalação e familiarização com o R.\nAnálise exploratória de dados (Parte 2): estatística descritiva, manipulação e visualização de dados.\nTeoria da probabilidade (Parte 3): fundamentos probabilísticos essenciais.\nDistribuições de probabilidade (Parte 4): modelos teóricos para variáveis aleatórias.\nInferência estatística (Parte 5): estimação de parâmetros e testes de hipóteses.\nRelações entre variáveis (Parte 6): correlação e regressão linear.\n\nAo final desta jornada, você terá uma base sólida para avançar com segurança para tópicos mais avançados de modelagem estatística e aprendizado de máquina. Vamos começar!\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2025). R para Ciência de Dados (2ª edição). https://pt.r4ds.hadley.nz/",
+    "crumbs": [
+      "Motivação"
+    ]
+  },
+  {
+    "objectID": "1introducao-ao-r.html",
+    "href": "1introducao-ao-r.html",
+    "title": "1  Introdução ao R",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "Neste primeiro momento, disponibilizarei uma playlist de videoaulas do meu canal do YouTube sobre Introdução ao R. Envolve desde a instalação do R e do RStudio, bem como familiarização com ambiente de desenvolvimento, conceitos básicos sobre os tipos de objetos e estruturas de dados no R e como fazer leitura de dados externos em diferentes formatos.\n▶️ Abrir playlist no YouTube",
     "crumbs": [
-      "References"
+      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
-    "objectID": "1motivacao.html",
-    "href": "1motivacao.html",
-    "title": "1  Motivação",
+    "objectID": "2planejamento-de-pesquisas.html",
+    "href": "2planejamento-de-pesquisas.html",
+    "title": "2  Planejamento de Pesquisas",
     "section": "",
-    "text": "1.1 Introdução\nTexto introdutório do capítulo.",
+    "text": "2.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
       "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
     ]
   },
   {
-    "objectID": "1motivacao.html#seção-1",
-    "href": "1motivacao.html#seção-1",
-    "title": "1  Motivação",
-    "section": "2.1 Seção 1",
-    "text": "2.1 Seção 1\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
-    ]
-  },
-  {
-    "objectID": "1motivacao.html#seção-2",
-    "href": "1motivacao.html#seção-2",
-    "title": "1  Motivação",
-    "section": "2.2 Seção 2",
-    "text": "2.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
-    ]
-  },
-  {
-    "objectID": "2introducao-ao-r.html",
-    "href": "2introducao-ao-r.html",
-    "title": "2  Introdução ao R",
+    "objectID": "2planejamento-de-pesquisas.html#introdução",
+    "href": "2planejamento-de-pesquisas.html#introdução",
+    "title": "2  Planejamento de Pesquisas",
     "section": "",
-    "text": "2.1 Introdução\nlibrary(tidyverse)\nx &lt;- rnorm(n = 40)\ny &lt;- 1.5*x + rnorm(0, 2, n = 40)\nd &lt;- data.frame(x,y)\nd %&gt;% ggplot(aes(x = x, y = y)) + geom_point() + theme_bw()",
+    "text": "2.1.1 Seção 1\nConteúdo.\n\n\n2.1.2 Seção 2\nConteúdo.",
     "crumbs": [
       "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao R</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
     ]
   },
   {
-    "objectID": "2introducao-ao-r.html#seção-1",
-    "href": "2introducao-ao-r.html#seção-1",
-    "title": "2  Introdução ao R",
-    "section": "3.1 Seção 1",
-    "text": "3.1 Seção 1\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao R</span>"
-    ]
-  },
-  {
-    "objectID": "2introducao-ao-r.html#seção-2",
-    "href": "2introducao-ao-r.html#seção-2",
-    "title": "2  Introdução ao R",
-    "section": "3.2 Seção 2",
-    "text": "3.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao R</span>"
-    ]
-  },
-  {
-    "objectID": "3planejamento-de-pesquisas.html",
-    "href": "3planejamento-de-pesquisas.html",
-    "title": "3  Planejamento de Pesquisas",
+    "objectID": "3estatistica-descritiva.html",
+    "href": "3estatistica-descritiva.html",
+    "title": "3  Estatística Descritiva",
     "section": "",
     "text": "3.1 Introdução\nTexto introdutório do capítulo.",
     "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
+      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Estatística Descritiva</span>"
     ]
   },
   {
-    "objectID": "3planejamento-de-pesquisas.html#seção-1",
-    "href": "3planejamento-de-pesquisas.html#seção-1",
-    "title": "3  Planejamento de Pesquisas",
-    "section": "4.1 Seção 1",
-    "text": "4.1 Seção 1\nConteúdo.",
+    "objectID": "3estatistica-descritiva.html#introdução",
+    "href": "3estatistica-descritiva.html#introdução",
+    "title": "3  Estatística Descritiva",
+    "section": "",
+    "text": "3.1.1 Seção 1\nConteúdo.\n\n\n3.1.2 Seção 2\nConteúdo.",
     "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
-    ]
-  },
-  {
-    "objectID": "3planejamento-de-pesquisas.html#seção-2",
-    "href": "3planejamento-de-pesquisas.html#seção-2",
-    "title": "3  Planejamento de Pesquisas",
-    "section": "4.2 Seção 2",
-    "text": "4.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
+      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Estatística Descritiva</span>"
     ]
   },
   {
@@ -144,28 +120,6 @@
     "title": "4  Manipulação de Dados Tabulares",
     "section": "",
     "text": "Neste primeiro momento, disponibilizarei uma playlist de videoaulas do meu canal do YouTube sobre Análise Exploratória de Dados com R. Compreende os vídeos 4 a 13 e trata de filtragem, seleção, ordenação de tabelas de dados, criação de variáveis e produção de sumários estatísticos.\n▶️ Abrir playlist no YouTube",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Dados Tabulares</span>"
-    ]
-  },
-  {
-    "objectID": "4manipulacao-de-dados-tabulares.html#seção-1",
-    "href": "4manipulacao-de-dados-tabulares.html#seção-1",
-    "title": "4  Manipulação de Dados Tabulares",
-    "section": "5.1 Seção 1",
-    "text": "5.1 Seção 1\nConteúdo.",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Dados Tabulares</span>"
-    ]
-  },
-  {
-    "objectID": "4manipulacao-de-dados-tabulares.html#seção-2",
-    "href": "4manipulacao-de-dados-tabulares.html#seção-2",
-    "title": "4  Manipulação de Dados Tabulares",
-    "section": "5.2 Seção 2",
-    "text": "5.2 Seção 2\nConteúdo.",
     "crumbs": [
       "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Dados Tabulares</span>"
@@ -183,28 +137,6 @@
     ]
   },
   {
-    "objectID": "5visualizacao-de-dados-tabulares.html#seção-1",
-    "href": "5visualizacao-de-dados-tabulares.html#seção-1",
-    "title": "5  Visualização de Dados Tabulares",
-    "section": "6.1 Seção 1",
-    "text": "6.1 Seção 1\nConteúdo.",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visualização de Dados Tabulares</span>"
-    ]
-  },
-  {
-    "objectID": "5visualizacao-de-dados-tabulares.html#seção-2",
-    "href": "5visualizacao-de-dados-tabulares.html#seção-2",
-    "title": "5  Visualização de Dados Tabulares",
-    "section": "6.2 Seção 2",
-    "text": "6.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visualização de Dados Tabulares</span>"
-    ]
-  },
-  {
     "objectID": "6revisao-de-teoria-dos-conjuntos.html",
     "href": "6revisao-de-teoria-dos-conjuntos.html",
     "title": "6  Revisão de Teoria dos Conjuntos",
@@ -216,22 +148,11 @@
     ]
   },
   {
-    "objectID": "6revisao-de-teoria-dos-conjuntos.html#seção-1",
-    "href": "6revisao-de-teoria-dos-conjuntos.html#seção-1",
+    "objectID": "6revisao-de-teoria-dos-conjuntos.html#introdução",
+    "href": "6revisao-de-teoria-dos-conjuntos.html#introdução",
     "title": "6  Revisão de Teoria dos Conjuntos",
-    "section": "7.1 Seção 1",
-    "text": "7.1 Seção 1\nConteúdo.",
-    "crumbs": [
-      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Revisão de Teoria dos Conjuntos</span>"
-    ]
-  },
-  {
-    "objectID": "6revisao-de-teoria-dos-conjuntos.html#seção-2",
-    "href": "6revisao-de-teoria-dos-conjuntos.html#seção-2",
-    "title": "6  Revisão de Teoria dos Conjuntos",
-    "section": "7.2 Seção 2",
-    "text": "7.2 Seção 2\nConteúdo.",
+    "section": "",
+    "text": "6.1.1 Seção 1\nConteúdo.\n\n\n6.1.2 Seção 2\nConteúdo.",
     "crumbs": [
       "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Revisão de Teoria dos Conjuntos</span>"
@@ -249,22 +170,11 @@
     ]
   },
   {
-    "objectID": "7experimento-espaco-eventos.html#seção-1",
-    "href": "7experimento-espaco-eventos.html#seção-1",
+    "objectID": "7experimento-espaco-eventos.html#introdução",
+    "href": "7experimento-espaco-eventos.html#introdução",
     "title": "7  Experimento Aleatório, Espaço Amostral e Eventos",
-    "section": "8.1 Seção 1",
-    "text": "8.1 Seção 1\nConteúdo.",
-    "crumbs": [
-      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimento Aleatório, Espaço Amostral e Eventos</span>"
-    ]
-  },
-  {
-    "objectID": "7experimento-espaco-eventos.html#seção-2",
-    "href": "7experimento-espaco-eventos.html#seção-2",
-    "title": "7  Experimento Aleatório, Espaço Amostral e Eventos",
-    "section": "8.2 Seção 2",
-    "text": "8.2 Seção 2\nConteúdo.",
+    "section": "",
+    "text": "7.1.1 Seção 1\nConteúdo.\n\n\n7.1.2 Seção 2\nConteúdo.",
     "crumbs": [
       "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimento Aleatório, Espaço Amostral e Eventos</span>"
@@ -282,22 +192,11 @@
     ]
   },
   {
-    "objectID": "8regras-multiplicacao-adicao.html#seção-1",
-    "href": "8regras-multiplicacao-adicao.html#seção-1",
+    "objectID": "8regras-multiplicacao-adicao.html#introdução",
+    "href": "8regras-multiplicacao-adicao.html#introdução",
     "title": "8  Regras da Multiplicação e da Adição",
-    "section": "9.1 Seção 1",
-    "text": "9.1 Seção 1\nConteúdo.",
-    "crumbs": [
-      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Regras da Multiplicação e da Adição</span>"
-    ]
-  },
-  {
-    "objectID": "8regras-multiplicacao-adicao.html#seção-2",
-    "href": "8regras-multiplicacao-adicao.html#seção-2",
-    "title": "8  Regras da Multiplicação e da Adição",
-    "section": "9.2 Seção 2",
-    "text": "9.2 Seção 2\nConteúdo.",
+    "section": "",
+    "text": "8.1.1 Seção 1\nConteúdo.\n\n\n8.1.2 Seção 2\nConteúdo.",
     "crumbs": [
       "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Regras da Multiplicação e da Adição</span>"
@@ -733,196 +632,33 @@
     ]
   },
   {
-    "objectID": "1motivacao.html#introdução",
-    "href": "1motivacao.html#introdução",
-    "title": "1  Motivação",
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Referências",
     "section": "",
-    "text": "1.1.1 Seção 1\nConteúdo.\n\n\n1.1.2 Seção 2\nConteúdo.",
+    "text": "Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2025). R\npara ciência de dados (2ª edição). https://pt.r4ds.hadley.nz/",
     "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
+      "Referências"
     ]
   },
   {
-    "objectID": "2introducao-ao-r.html#introdução",
-    "href": "2introducao-ao-r.html#introdução",
-    "title": "2  Introdução ao R",
-    "section": "",
-    "text": "2.1.1 Seção 1\nConteúdo.\n\n\n2.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao R</span>"
-    ]
-  },
-  {
-    "objectID": "3planejamento-de-pesquisas.html#introdução",
-    "href": "3planejamento-de-pesquisas.html#introdução",
-    "title": "3  Planejamento de Pesquisas",
-    "section": "",
-    "text": "3.1.1 Seção 1\nConteúdo.\n\n\n3.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
-    ]
-  },
-  {
-    "objectID": "4manipulacao-de-dados-tabulares.html#introdução",
-    "href": "4manipulacao-de-dados-tabulares.html#introdução",
-    "title": "4  Manipulação de Dados Tabulares",
-    "section": "",
-    "text": "4.1.1 Seção 1\nConteúdo.\n\n\n4.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Dados Tabulares</span>"
-    ]
-  },
-  {
-    "objectID": "5visualizacao-de-dados-tabulares.html#introdução",
-    "href": "5visualizacao-de-dados-tabulares.html#introdução",
-    "title": "5  Visualização de Dados Tabulares",
-    "section": "",
-    "text": "5.1.1 Seção 1\nConteúdo.\n\n\n5.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visualização de Dados Tabulares</span>"
-    ]
-  },
-  {
-    "objectID": "6revisao-de-teoria-dos-conjuntos.html#introdução",
-    "href": "6revisao-de-teoria-dos-conjuntos.html#introdução",
-    "title": "6  Revisão de Teoria dos Conjuntos",
-    "section": "",
-    "text": "6.1.1 Seção 1\nConteúdo.\n\n\n6.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Revisão de Teoria dos Conjuntos</span>"
-    ]
-  },
-  {
-    "objectID": "7experimento-espaco-eventos.html#introdução",
-    "href": "7experimento-espaco-eventos.html#introdução",
-    "title": "7  Experimento Aleatório, Espaço Amostral e Eventos",
-    "section": "",
-    "text": "7.1.1 Seção 1\nConteúdo.\n\n\n7.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimento Aleatório, Espaço Amostral e Eventos</span>"
-    ]
-  },
-  {
-    "objectID": "8regras-multiplicacao-adicao.html#introdução",
-    "href": "8regras-multiplicacao-adicao.html#introdução",
-    "title": "8  Regras da Multiplicação e da Adição",
-    "section": "",
-    "text": "8.1.1 Seção 1\nConteúdo.\n\n\n8.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Regras da Multiplicação e da Adição</span>"
-    ]
-  },
-  {
-    "objectID": "1introducao-ao-r.html",
-    "href": "1introducao-ao-r.html",
-    "title": "1  Introdução ao R",
-    "section": "",
-    "text": "Neste primeiro momento, disponibilizarei uma playlist de videoaulas do meu canal do YouTube sobre Introdução ao R. Envolve desde a instalação do R e do RStudio, bem como familiarização com ambiente de desenvolvimento, conceitos básicos sobre os tipos de objetos e estruturas de dados no R e como fazer leitura de dados externos em diferentes formatos.\n▶️ Abrir playlist no YouTube",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao R</span>"
-    ]
-  },
-  {
-    "objectID": "2planejamento-de-pesquisas.html",
-    "href": "2planejamento-de-pesquisas.html",
-    "title": "2  Planejamento de Pesquisas",
-    "section": "",
-    "text": "2.1 Introdução\nTexto introdutório do capítulo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
-    ]
-  },
-  {
-    "objectID": "2planejamento-de-pesquisas.html#introdução",
-    "href": "2planejamento-de-pesquisas.html#introdução",
-    "title": "2  Planejamento de Pesquisas",
-    "section": "",
-    "text": "2.1.1 Seção 1\nConteúdo.\n\n\n2.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 1: ASPECTOS INTRODUTÓRIOS",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planejamento de Pesquisas</span>"
-    ]
-  },
-  {
-    "objectID": "3estatistica-descritiva.html",
-    "href": "3estatistica-descritiva.html",
-    "title": "3  Estatística Descritiva",
-    "section": "",
-    "text": "3.1 Introdução\nTexto introdutório do capítulo.",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Estatística Descritiva</span>"
-    ]
-  },
-  {
-    "objectID": "3estatistica-descritiva.html#introdução",
-    "href": "3estatistica-descritiva.html#introdução",
-    "title": "3  Estatística Descritiva",
-    "section": "",
-    "text": "3.1.1 Seção 1\nConteúdo.\n\n\n3.1.2 Seção 2\nConteúdo.",
-    "crumbs": [
-      "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Estatística Descritiva</span>"
-    ]
-  },
-  {
-    "objectID": "0motivacao.html",
-    "href": "0motivacao.html",
+    "objectID": "0motivacao.html#referências",
+    "href": "0motivacao.html#referências",
     "title": "Motivação",
-    "section": "",
-    "text": "Das válvulas aos bilhões de transistores: meio século de revoluções silenciosas\nEm maio de 2017, a revista britânica The Economist estampou em sua capa uma provocação que sintetiza o espírito da era em que vivemos: “The world’s most valuable resource is no longer oil, but data” (O recurso mais valioso do mundo não é mais o petróleo, mas os dados).\nA analogia é poderosa. Assim como o petróleo moldou a geopolítica e a economia do século XX, os dados estão redesenhando as relações de poder no século XXI. As maiores empresas do mundo em valor de mercado já não são petroleiras ou montadoras: são empresas de tecnologia cuja principal matéria-prima são os dados gerados por bilhões de usuários. Mas por que os dados se tornaram tão valiosos? Para responder a essa pergunta, vale a pena fazermos um breve passeio por alguns avanços tecnológicos das últimas décadas.\nDe forma simplificada, um computador é uma máquina que recebe dados de entrada, realiza operações lógicas e aritméticas sobre eles e devolve resultados. Os primeiros computadores eletrônicos de uso geral utilizavam válvulas termiônicas (componentes do tamanho de uma lâmpada) como “interruptores” para representar os dígitos binários (0 e 1) que sustentam toda a computação moderna.\nO exemplo mais emblemático é o ENIAC (Electronic Numerical Integrator and Computer), construído na Universidade da Pensilvânia entre 1943 e 1946. Projetado para calcular tabelas balísticas durante a Segunda Guerra Mundial, o ENIAC ocupava uma sala de aproximadamente 140 m², pesava cerca de 30 toneladas e consumia 150 kW de energia. Seu “cérebro” era composto por 17.468 válvulas, além de milhares de resistores, capacitores e relês, totalizando cerca de 5 milhões de conexões soldadas à mão. Com tudo isso, ele era capaz de realizar aproximadamente 5.000 operações de adição por segundo.\nO grande salto veio com a invenção do transistor em 1947 nos Laboratórios Bell, e posteriormente com o desenvolvimento dos circuitos integrados no final dos anos 1950. Um transistor cumpre a mesma função de “interruptor eletrônico” que uma válvula, porém é incomparavelmente menor, mais rápido, mais barato e mais eficiente em termos de energia. Quanto mais transistores conseguimos colocar em um único chip, mais operações ele pode realizar simultaneamente, e mais poderoso se torna o computador.",
+    "section": "Referências",
+    "text": "Referências\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2025). R para Ciência de Dados (2ª edição). https://pt.r4ds.hadley.nz/",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
+      "Motivação"
     ]
   },
   {
-    "objectID": "0motivacao.html#big-data",
-    "href": "0motivacao.html#big-data",
+    "objectID": "0motivacao.html#recapitulando",
+    "href": "0motivacao.html#recapitulando",
     "title": "Motivação",
-    "section": "Big Data",
-    "text": "Big Data\nO termo Big Data não se refere apenas a “muitos dados”. Ele descreve um cenário em que o volume, a velocidade e a variedade dos dados ultrapassam a capacidade das ferramentas tradicionais de coleta, armazenamento e análise. São os chamados 3 V’s do Big Data:\n\n\n\n\n\n\nFigura 1.9: Os 3 V’s do Big Data\n\n\n\n\nVolume\nPara ter uma intuição da escala de dados que produzimos, considere a seguinte analogia. Imagine um tabuleiro de xadrez e um grão de arroz. Se colocarmos 1 grão na primeira casa, 2 na segunda, 4 na terceira e assim por diante, dobrando a cada casa, ao chegar na última casa (a 64ª), teríamos cerca de \\(2^{63} \\approx 9{,}2 \\times 10^{18}\\) grãos. Isso equivale a aproximadamente 460 bilhões de toneladas de arroz, muito mais do que toda a produção mundial acumulada na história.\n\n\n\n\n\n\n\nFigura 1.10: Analogia do crescimento exponencial: grãos de arroz em um tabuleiro de xadrez.\n\n\n\nÉ exatamente esse tipo de crescimento exponencial que observamos na geração de dados. A adoção massiva de dispositivos móveis, sensores embarcados, sistemas de monitoramento e Tecnologias da Informação e Comunicação (TICs) fez com que a quantidade de dados gerados globalmente crescesse de forma vertiginosa.\n\n\n\n\n\n\n\nFigura 1.11: Crescimento da quantidade de dados gerados globalmente.\n\n\n\n\n\nVelocidade\nAlém do volume, a velocidade com que os dados são gerados e precisam ser processados é impressionante. Um carro autônomo, por exemplo, gera e processa enormes quantidades de dados a cada segundo: câmeras, radares, sensores LIDAR, GPS e acelerômetros alimentam algoritmos que precisam tomar decisões em tempo real para garantir a segurança dos passageiros.\n\n\n\n\n\n\n\nFigura 1.12: Sensores de um veículo autônomo gerando dados em tempo real.\n\n\n\nOutro exemplo notável são as turbinas de aviões modernos: cada motor pode gerar terabytes de dados por voo, monitorando temperatura, pressão, vibração e outros parâmetros críticos que permitem a manutenção preditiva e aumentam a segurança das operações aéreas.\n\n\nVariedade\nOs dados que geramos não são apenas números organizados em planilhas. Eles assumem formas bastante diversas:\n\nDados estruturados: tabelas com linhas e colunas bem definidas, como planilhas e bancos de dados relacionais.\nDados semiestruturados: dados com alguma organização, mas sem um esquema rígido, como arquivos JSON, XML ou logs de servidores.\nDados não estruturados: textos livres, imagens, vídeos, áudios, publicações em redes sociais, que representam a maior parte dos dados gerados hoje.\n\n\n\n\n\n\n\n\nFigura 1.13: Tipos de dados: estruturados, semiestruturados e não estruturados.\n\n\n\nA capacidade de lidar com essa variedade de formatos é um dos grandes desafios (e oportunidades) da área de dados.",
+    "section": "Recapitulando",
+    "text": "Recapitulando\nNeste capítulo, percorremos um longo caminho para entender por que os dados se tornaram tão centrais no mundo contemporâneo. Vimos que quatro grandes forças convergiram para isso: o crescimento exponencial na capacidade de processamento , os avanços na transmissão de dados, a revolução no armazenamento e a conectividade massiva de pessoas e objetos à Internet. Juntos, esses saltos criaram as condições para o fenômeno do Big Data, caracterizado pelo volume, variedade e velocidade dos dados gerados continuamente ao redor do planeta.\nEm seguida, olhamos para os reflexos dessa transformação no mercado de trabalho. O Future of Jobs Report de 2025 mostrou que as carreiras em dados estão entre as que mais crescem no mundo, e a profissão de Cientista de Dados se consolidou como uma das mais promissoras do século, com reconhecimento em rankings como os do Glassdoor, do U.S. News & World Report e do LinkedIn, além de projeções de crescimento expressivas pelo Bureau of Labor Statistics. Por fim, discutimos o que significa se capacitar nessa área: um fluxo de trabalho iterativo que vai da importação à comunicação dos dados, sustentado por três domínios de competência (matemático/estatístico, ferramental e de aplicação) que se complementam e se reforçam mutuamente.\nAgora que o cenário está posto, é hora de começar a construir essas competências na prática. E o primeiro passo é dominar a ferramenta que nos acompanhará ao longo de todo o livro. No próximo capítulo, faremos uma Introdução ao R, a linguagem de programação que será o nosso principal instrumento de trabalho. Ter fluência nessa ferramenta é um diferencial importante para que os conceitos estatísticos e probabilísticos apresentados nas partes seguintes possam ser não apenas compreendidos, mas efetivamente aplicados, visualizados e experimentados. Em outras palavras, o domínio ferramental é o alicerce sobre o qual construiremos, passo a passo, o domínio teórico.\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2025). R para Ciência de Dados (2ª edição). https://pt.r4ds.hadley.nz/",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
-    ]
-  },
-  {
-    "objectID": "0motivacao.html#o-mercado-de-trabalho-em-dados",
-    "href": "0motivacao.html#o-mercado-de-trabalho-em-dados",
-    "title": "Motivação",
-    "section": "O Mercado de Trabalho em Dados",
-    "text": "O Mercado de Trabalho em Dados\n\nFuture of Jobs Report (2025)\nDiante desse cenário de crescimento exponencial na geração de dados, é natural que o mercado de trabalho reflita essa transformação. O Future of Jobs Report 2025, publicado pelo Fórum Econômico Mundial, ouviu milhares de empregadores que respondem por mais de 14 milhões de colaboradores em dezenas de setores e países. Os resultados são expressivos:\n\nQuase 90% das organizações apontam IA e Tecnologias de Processamento de Dados como o principal vetor de transformação dos negócios nos próximos anos.\nEspecialistas em Big Data, especialistas em IA e Aprendizado de Máquina e engenheiros de FinTech figuram entre as três carreiras com maior crescimento previsto.\n\n\n\n\n\n\n\n\nFigura 1.14: Carreiras com maior crescimento previsto segundo o Future of Jobs Report 2025.\n\n\n\n\n\nCientista de Dados: “The Sexiest Job of the 21st Century”\nEm 2012, a Harvard Business Review publicou um artigo que marcou época ao chamar o cientista de dados de “the sexiest job of the 21st century”. Mais de uma década depois, a previsão se confirmou: a profissão segue entre as mais demandadas, bem remuneradas e com altos índices de satisfação profissional.\n\n\n\n\n\n\n\nFigura 1.15: Artigo da Harvard Business Review (2012).\n\n\n\n\n\nInteligência Artificial, Aprendizado de Máquina e Ciência de Dados\nÉ comum haver confusão entre termos como Inteligência Artificial (IA), Aprendizado de Máquina (Machine Learning - ML), Aprendizado Profundo (Deep Learning - DL) e Ciência de Dados. Uma forma didática de entender a relação entre eles é pensar em “bonecas russas”:\n\nInteligência Artificial é o campo mais amplo, que busca criar sistemas capazes de realizar tarefas que normalmente exigiriam inteligência humana.\nAprendizado de Máquina é um subcampo da IA que desenvolve algoritmos capazes de aprender padrões a partir dos dados, sem serem explicitamente programados para cada tarefa.\nAprendizado Profundo é um subcampo do ML que utiliza redes neurais com muitas camadas para aprender representações cada vez mais abstratas dos dados.\nCiência de Dados é uma área interdisciplinar que utiliza métodos de estatística, computação e conhecimento de domínio para extrair conhecimento a partir de dados, e pode ou não utilizar técnicas de IA/ML.\n\n\n\n\n\n\n\n\nFigura 1.16: Relação entre Inteligência Artificial, Aprendizado de Máquina, Aprendizado Profundo e Ciência de Dados.\n\n\n\n\n\nO Ciclo da Ciência de Dados\nNa prática, um projeto de Ciência de Dados segue um ciclo com etapas bem definidas:\n\nObtenção dos dados: coleta a partir de sensores, bancos de dados, APIs, questionários, entre outras fontes.\nTratamento dos dados: limpeza, transformação e organização dos dados em formato adequado para análise.\nModelagem: aplicação de técnicas estatísticas e/ou de aprendizado de máquina para identificar padrões e relações.\nVisualização e comunicação: apresentação dos resultados de forma clara e acessível para a tomada de decisão.\n\n\n\n\n\n\n\n\nFigura 1.17: Ciclo da Ciência de Dados.\n\n\n\nCada uma dessas etapas será abordada ao longo deste livro, com ênfase especial nas fases de tratamento, modelagem e visualização.\n\n\nOnde a Ciência de Dados é Aplicada?\nAs aplicações da Ciência de Dados são praticamente ilimitadas. Alguns setores que se destacam:\n\nTransportes: planejamento de rotas, previsão de demanda, contagem automática de veículos, veículos autônomos.\nSaúde: diagnóstico por imagem, epidemiologia, descoberta de medicamentos.\nFinanças: detecção de fraudes, análise de risco, trading algorítmico.\nVarejo: sistemas de recomendação, previsão de vendas, precificação dinâmica.\nGoverno: políticas públicas baseadas em evidências, planejamento urbano, segurança pública.\n\n\n\n\n\n\n\n\nFigura 1.18: Exemplos de aplicações de Ciência de Dados em diversos setores.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
-    ]
-  },
-  {
-    "objectID": "0motivacao.html#como-se-preparar",
-    "href": "0motivacao.html#como-se-preparar",
-    "title": "Motivação",
-    "section": "Como se Preparar",
-    "text": "Como se Preparar\n\nCompetências para a Ciência de Dados\nUma representação clássica das competências necessárias para atuar em Ciência de Dados é o Diagrama de Venn, que identifica três áreas fundamentais:\n\nConhecimento de domínio: entender o problema e o contexto em que os dados estão inseridos (no nosso caso, Engenharia de Transportes).\nHabilidades em computação/programação: saber manipular dados, escrever código e utilizar ferramentas computacionais.\nMatemática e Estatística: dominar os fundamentos que sustentam os modelos e as análises.\n\n\n\n\n\n\n\n\nFigura 1.19: Diagrama de Venn das competências em Ciência de Dados.\n\n\n\nA interseção dessas três áreas é onde mora a Ciência de Dados. E é exatamente nessa interseção que este livro pretende atuar: oferecendo os fundamentos de Matemática e Estatística, utilizando ferramentas computacionais (R e tidyverse) e contextualizando os exemplos na Engenharia de Transportes.\n\n\nA Conexão com Este Livro\nEste livro foi estruturado para percorrer esse caminho de forma gradual:\n\nAspectos introdutórios (Parte 1): instalação e familiarização com o R.\nAnálise exploratória de dados (Parte 2): estatística descritiva, manipulação e visualização de dados.\nTeoria da probabilidade (Parte 3): fundamentos probabilísticos essenciais.\nDistribuições de probabilidade (Parte 4): modelos teóricos para variáveis aleatórias.\nInferência estatística (Parte 5): estimação de parâmetros e testes de hipóteses.\nRelações entre variáveis (Parte 6): correlação e regressão linear.\n\nAo final desta jornada, você terá uma base sólida para avançar com segurança para tópicos mais avançados de modelagem estatística e aprendizado de máquina. Vamos começar!",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
-    ]
-  },
-  {
-    "objectID": "0motivacao.html#das-válvulas-aos-bilhões-de-transistores-meio-século-de-revoluções-silenciosas",
-    "href": "0motivacao.html#das-válvulas-aos-bilhões-de-transistores-meio-século-de-revoluções-silenciosas",
-    "title": "Motivação",
-    "section": "",
-    "text": "Figura 1.2: O ENIAC (1946): 30 toneladas, 17.468 válvulas e 5.000 adições por segundo.\n\n\n\n\n\n\n\n\n\n\nFigura 1.3: Imagem microscópica de um circuito integrado para controlar um painel de LCD\n\n\n\n\nProcessamento de dados: a Lei de Moore\nEm 1965, Gordon Moore, cofundador da Intel Corporation, publicou um artigo na revista Electronics intitulado “Cramming more components onto integrated circuits”, no qual observou que o número de componentes em um circuito integrado vinha dobrando a cada ano desde 1959. Moore projetou que esse ritmo se manteria por pelo menos mais uma década. Em 1975, ele revisou a previsão para uma duplicação a cada dois anos, ritmo que se manteve notavelmente estável por mais de cinco décadas, até os dias de hoje.\n\n\n\n\n\n\nFigura 1.4: Evolução do número de transistores em processadores ao longo das décadas (a Lei de Moore em ação).\n\n\n\nO que essa regularidade significa na prática? Enquanto em 1960 trabalhávamos com circuitos com algumas dezenas de componentes, um processador comercial moderno (como o GB202 da NVIDIA, lançado em 2024) possui mais de 92 bilhões de transistores. Essa escalada exponencial na capacidade de processamento é o primeiro ingrediente que tornou possível lidar com volumes de dados antes inimagináveis.\nPara se ter uma ideia, o ENIAC de 1946 alcançava cerca de 500 FLOPS (operações de ponto flutuante por segundo). O supercomputador Cray-1, referência nos anos 1970, atingia 160 milhões de FLOPS, e ocupava uma sala inteira. Hoje, um smartphone comum carrega no bolso um processador capaz de realizar trilhões de operações por segundo (teraFLOPS). O chip A17 Pro da Apple, por exemplo, alcança mais de 5 teraFLOPS, cerca de 10 bilhões de vezes a capacidade do ENIAC, em um dispositivo que pesa pouco mais de 200 gramas.\n\n\nTransmissão de dados: a Lei de Nielsen e as gerações móveis\nDe nada adiantaria processar enormes volumes de dados se não fosse possível transmiti-los de forma eficiente e confiável entre diferentes computadores. Felizmente, as tecnologias de telecomunicação também avançaram significativamente ao longo desse período. Em 1998, Jakob Nielsen, um especialista em usabilidade e experiência do usuário (UX), documentou uma regularidade empírica que ficou conhecida como a Lei de Nielsen: a capacidade máxima de transferência de dados de uma rede ou conexão disponível para usuários domésticos (conhecida como largura de banda) aparentava crescer cerca de 50% ao ano, equivalendo a uma duplicação a cada 21 meses aproximadamente. indicando uma aderência impressionante ao longo de quatro décadas, conforme o gráfico a seguir\n\n\n\n\n\n\nFigura 1.5: Evolução da velocidade de conexão à internet ao longo das décadas.\n\n\n\nPara as conexões móveis, a evolução foi igualmente expressiva, impulsionada pelas sucessivas gerações de tecnologia de radiofrequência. A tabela abaixo resume os marcos principais, com velocidades de pico definidas pelos padrões IMT da União Internacional de Telecomunicações (ITU):\n\n\n\nTabela 1.1: Gerações de tecnologia móvel e suas velocidades de pico. Fonte: padrões IMT da ITU e especificações 3GPP.\n\n\n\n\n\n\n\n\n\n\n\n\nGeração\nPeríodo aproximado\nVelocidade de pico\nAvanço principal\n\n\n\n\n\n2G (GSM)\nanos 1990\n~0,1 Mbps\nDados digitais e SMS\n\n\n\n3G (UMTS/HSPA)\nanos 2000\n2 Mbps (até 42 Mbps com HSPA+)\nInternet móvel e e-mail\n\n\n\n4G (LTE)\nanos 2010\n100 Mbps (até 3 Gbps com LTE-A Pro)\nStreaming de vídeo em tempo real\n\n\n\n5G (NR)\nanos 2020\naté 10 Gbps\n“Internet das Coisas” massiva e latência ultrabaixa\n\n\n\n\n\n\n\nA cada nova geração, não apenas a velocidade aumentou como também a latência (atraso na transmissão de dados através de uma rede móvel) diminuiu drasticamente, viabilizando aplicações em tempo real como veículos autônomos, telemedicina e cidades inteligentes.\n\n\nArmazenamento de dados: do armário de uma tonelada ao bolso\nProcessar e transmitir dados com rapidez é bacana, mas em algum momento os dados vão precisar descansar em algum estoque… Sobre esse aspecto, estamos lidando com as tecnologias de armazenamento de dados. E a evolução nesse campo foi tão impressionante quanto nas demais.\nÉ raro falar em armazenamento de dados hoje em dia utilizando grandeza inferior ao gigabyte. Mas acredite: o primeiro disco rígido comercial da história, o IBM 350, lançado em 1956, armazenava 3,75 MB em 50 discos magnéticos de 24 polegadas cada. Ele era do tamanho de dois refrigeradores, pesava cerca de uma tonelada e o custo de aluguel do sistema era de US$ 3.200 por mês (cerca de US$ 36.000 em valores atuais), o que equivalia a aproximadamente US$ 10.000 por megabyte.\n\n\n\n\n\n\n\nFigura 1.6: O IBM 350 RAMAC (1956): uma tonelada para armazenar 3,75 MB.\n\n\n\nNas décadas seguintes, a capacidade de armazenamento cresceu exponencialmente enquanto o custo despencou. O floppy disk (disquete) de 3,5 polegadas, popular nos anos 1980 e 1990, armazenava 1,44 MB. O primeiro disco rígido a atingir 1 TB (terabyte) chegou ao mercado apenas em 2007, mas bastaram dois anos para que surgisse o de 2 TB. Segundo dados disponibilizados pelo Our World in Data, o custo por gigabyte de armazenamento magnético caiu de mais de US$ 1 milhão nos anos 1950 para menos de US$ 0,02 atualmente, uma redução de mais de 50 bilhões de vezes.\n\n\n\n\n\n\nFigura 1.7: Evolução do custo de armazenamento por gigabyte ao longo das décadas.\n\n\n\nEssa queda vertiginosa no custo por gigabyte viabilizou a construção dos centros de dados (data centers): instalações dedicadas a abrigar, alimentar e refrigerar grandes conjuntos de servidores. O conceito não é novo: já nos anos 1940 e 1950, as primeiras salas de mainframes (como a que abrigava o ENIAC) precisavam de ventilação e controle de temperatura para manter o equipamento em funcionamento. Nas décadas seguintes, empresas como a IBM construíram salas dedicadas a mainframes corporativos, e com o advento da internet comercial nos anos 1990, surgiram os primeiros data centers em larga escala para atender à demanda da web. A partir dos anos 2000, o modelo de computação em nuvem (cloud computing), pioneiramente oferecido pela Amazon Web Services (AWS) em 2006, transformou a escala do setor: em vez de manter servidores próprios, empresas passaram a alugar capacidade de processamento e armazenamento sob demanda. Hoje, os chamados data centers de hiperescala (hyperscale), operados por empresas como Amazon, Google e Microsoft, podem abrigar centenas de milhares de servidores em instalações do tamanho de vários campos de futebol. Segundo estimativas do IDC, o volume global de dados criados, capturados e replicados saltou de cerca de 2 zettabytes em 2010 para mais de 149 zettabytes em 2024 (1 zettabyte = 1 trilhão de gigabytes).\nParalelamente ao avanço no hardware, os formatos de armazenamento de dados também evoluíram para acompanhar essa escala. Durante décadas, formatos baseados em texto puro dominaram o armazenamento de dados tabulares: o CSV (Comma-Separated Values), o JSON (JavaScript Object Notation) e o XML (Extensible Markup Language) são amplamente utilizados até hoje por sua legibilidade e universalidade. Entretanto, esses formatos apresentam limitações importantes em grandes volumes: armazenam tudo como texto (um número inteiro como 1000000000 ocupa 10 bytes em texto, contra 4 bytes em representação binária), não possuem compressão nativa e organizam os dados por linhas, dificultando consultas que precisam acessar apenas algumas colunas de uma tabela com dezenas delas.\nPara superar essas limitações, formatos binários e colunares ganharam espaço. O Apache Parquet, por exemplo, armazena os dados coluna por coluna (em vez de linha por linha), aplica codificação de tipos nativos e compressão integrada (como Snappy ou Gzip). O resultado prático é expressivo: em benchmarks comparativos, arquivos Parquet são tipicamente 5 a 10 vezes menores que o CSV equivalente, podendo chegar a 50 vezes em conjuntos de dados com alta repetição de valores. Além do ganho em espaço, a leitura seletiva de colunas torna as consultas analíticas ordens de grandeza mais rápidas. Outros formatos modernos, como o Apache Arrow (otimizado para processamento em memória) e o ORC (Optimized Row Columnar, bastante utilizado no ecossistema Hadoop), seguem princípios semelhantes de eficiência.\n\n\nAdoção tecnológica: o mundo na palma da mão\nOs avanços em processamento, transmissão e armazenamento só se traduzem em “toneladas de dados” porque foram acompanhados por uma adoção sem precedentes de tecnologias digitais pela população mundial.\nO que impressiona não é apenas o número de pessoas conectadas, mas a velocidade com que cada nova tecnologia foi adotada em comparação com as anteriores. O telefone fixo, inventado em 1876, levou cerca de 75 anos para alcançar 50 milhões de usuários. O rádio precisou de 38 anos para atingir a mesma marca, e a televisão, de 13 anos. A internet chegou lá em 7 anos. Já o smartphone levou apenas 5 anos para saltar de 5% a 50% de adoção nos domicílios americanos, uma velocidade comparável apenas à da televisão entre 1950 e 1953, conforme análise publicada na Harvard Business Review. Nos gráficos a seguir, é possível visualizar a velocidade de adoção de algumas tecnologias de comunicação, com destaque para o avanço exponencial do uso de smartphones (mobile phone subscriptions), além do avanço do uso da Internet em diferentes regiões do mundo nas últimas décadas .\n\n\n\n\n\n\n\n\n\n(a) Adoção de tecnologias de comunicação ao longo da história.\n\n\n\n\n\n\n\n\n\n(b) Percentual da população utilizando a internet por região.\n\n\n\n\n\nFigura 1.8: Adoção de tecnologias de comunicação e uso da internet no mundo. Fonte: Our World in Data (a e b)\n\n\n\nA convergência desses quatro fatores (processamento cada vez mais potente, transmissão cada vez mais rápida, armazenamento cada vez mais barato e adoção cada vez mais ampla) criou as condições para o fenômeno que chamamos de Big Data.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Motivação</span>"
+      "Motivação"
     ]
   }
 ]
