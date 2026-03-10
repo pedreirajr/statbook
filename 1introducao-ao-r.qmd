@@ -50,32 +50,32 @@ Para ajustar o tema visual, o tamanho da fonte e outras preferências, acesse o 
 
 Uma das funcionalidades mais básicas de uma linguagem de programação é funcionar como uma calculadora. No seu Console, logo após o símbolo `>`, vamos executar as seguintes operações aritméticas abaixo e conferir o resultado de saída:
 
-- Adição:
+- Adição (`+`):
 ```{r}
 2 + 3
 ```
 
-- Subtração:
+- Subtração (`-`):
 ```{r}
 10 - 4 
 ```
 
-- Multiplicação:
+- Multiplicação (`*`):
 ```{r}
 6 * 7 
 ```
 
-- Divisão:
+- Divisão (`/`):
 ```{r}
 15 / 4   
 ```
 
-- Potenciação:
+- Potenciação (`^`):
 ```{r}
 2 ^ 3 
 ```
 
-- Radiciação:
+- Radiciação (`^`, com um número menor que 1 na potência):
 ```{r}
 4 ^ (1/2)
 ```
