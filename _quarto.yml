@@ -12,7 +12,9 @@ csl: apa.csl
 book:
   title: "Ciência de Dados para a Engenharia de Transportes"
   subtitle: "Aplicações práticas em R"
-  author: "Jorge Ubirajara Pedreira Junior"
+  author:
+    - name: "Jorge Ubirajara Pedreira Junior"
+      url: https://pedreirajr.github.io/website/
   language: pt
   page-navigation: true
   search: true
@@ -23,7 +25,7 @@ book:
     - part: "PARTE 1: ASPECTOS INTRODUTÓRIOS"
       chapters:
         - 1introducao-ao-r.qmd
-        - 2planejamento-de-pesquisas.qmd
+        - 2intro-pesq-empirica.qmd
 
     - part: "PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS"
       chapters:

@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Introdução à Pesquisa Empírica – Ciência de Dados para a Engenharia de Transportes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./3estatistica-descritiva.html" rel="next">
+<link href="./1introducao-ao-r.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d9ea66fcd6c317012447f26e9c021348.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1introducao-ao-r.html">PARTE 1: ASPECTOS INTRODUTÓRIOS</a></li><li class="breadcrumb-item"><a href="./2intro-pesq-empirica.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução à Pesquisa Empírica</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Ciência de Dados para a Engenharia de Transportes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0motivacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motivação</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">PARTE 1: ASPECTOS INTRODUTÓRIOS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1introducao-ao-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução ao R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2intro-pesq-empirica.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução à Pesquisa Empírica</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">PARTE 2: ANÁLISE EXPLORATÓRIA DE DADOS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3estatistica-descritiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estatística Descritiva</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4manipulacao-de-dados-tabulares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manipulação de Dados Tabulares</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5visualizacao-de-dados-tabulares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualização de Dados Tabulares</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">PARTE 3: INTRODUÇÃO À TEORIA DA PROBABILIDADE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6revisao-de-teoria-dos-conjuntos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Revisão de Teoria dos Conjuntos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7experimento-espaco-eventos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimento Aleatório, Espaço Amostral e Eventos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8regras-multiplicacao-adicao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Regras da Multiplicação e da Adição</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9teorema-de-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Teorema de Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10variaveis-aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Variáveis Aleatórias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11lgn-e-tlc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lei dos Grandes Números e Teorema do Limite Central</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">PARTE 4: DISTRIBUIÇÕES DE PROBABILIDADE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12distribuicoes-discretas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuições de Probabilidade Discretas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13distribuicoes-continuas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Distribuições de Probabilidade Contínuas</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">PARTE 5: INFERÊNCIA ESTATÍSTICA</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14estimacao-de-parametros.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Estimação de Parâmetros</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15introducao-testes-de-hipoteses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introdução aos Testes de Hipóteses</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16testes-t-student.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testes t de Student</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17testes-nao-parametricos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testes não-paramétricos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">PARTE 6: ESTIMANDO RELAÇÕES ENTRE VARIÁVEIS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18associacao-e-correlacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Associação e Correlação</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19regressao-linear-simples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Regressão Linear Simples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20inferencia-em-regressao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Inferência em Regressão</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21regressao-linear-multipla.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regressão Linear Múltipla</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referências</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice do Capítulo</h2>
+   
+  <ul>
+  <li><a href="#o-processo-de-uma-pesquisa-empírica" id="toc-o-processo-de-uma-pesquisa-empírica" class="nav-link active" data-scroll-target="#o-processo-de-uma-pesquisa-empírica"><span class="header-section-number">2.1</span> O Processo de uma Pesquisa Empírica</a></li>
+  <li><a href="#aspectos-de-planejamento-relevantes" id="toc-aspectos-de-planejamento-relevantes" class="nav-link" data-scroll-target="#aspectos-de-planejamento-relevantes"><span class="header-section-number">2.2</span> Aspectos de Planejamento Relevantes</a>
+  <ul>
+  <li><a href="#definição-do-problema" id="toc-definição-do-problema" class="nav-link" data-scroll-target="#definição-do-problema"><span class="header-section-number">2.2.1</span> Definição do Problema</a></li>
+  <li><a href="#delineamento-dos-objetivos" id="toc-delineamento-dos-objetivos" class="nav-link" data-scroll-target="#delineamento-dos-objetivos"><span class="header-section-number">2.2.2</span> Delineamento dos Objetivos</a></li>
+  <li><a href="#desenho-do-processo-de-coleta" id="toc-desenho-do-processo-de-coleta" class="nav-link" data-scroll-target="#desenho-do-processo-de-coleta"><span class="header-section-number">2.2.3</span> Desenho do Processo de Coleta</a>
+  <ul class="collapse">
+  <li><a href="#dados-primários-e-dados-secundários" id="toc-dados-primários-e-dados-secundários" class="nav-link" data-scroll-target="#dados-primários-e-dados-secundários"><span class="header-section-number">2.2.3.1</span> Dados Primários e Dados Secundários</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conectando-com-o-fluxo-da-ciência-de-dados" id="toc-conectando-com-o-fluxo-da-ciência-de-dados" class="nav-link" data-scroll-target="#conectando-com-o-fluxo-da-ciência-de-dados"><span class="header-section-number">2.3</span> Conectando com o fluxo da Ciência de Dados</a></li>
+  <li><a href="#tipologia-dos-dados" id="toc-tipologia-dos-dados" class="nav-link" data-scroll-target="#tipologia-dos-dados"><span class="header-section-number">2.4</span> Tipologia dos Dados</a>
+  <ul>
+  <li><a href="#escalas-de-mensuração" id="toc-escalas-de-mensuração" class="nav-link" data-scroll-target="#escalas-de-mensuração"><span class="header-section-number">2.4.1</span> Escalas de Mensuração</a></li>
+  <li><a href="#tipos-de-estruturas-de-conjuntos-de-dados" id="toc-tipos-de-estruturas-de-conjuntos-de-dados" class="nav-link" data-scroll-target="#tipos-de-estruturas-de-conjuntos-de-dados"><span class="header-section-number">2.4.2</span> Tipos de estruturas de conjuntos de dados</a></li>
+  </ul></li>
+  <li><a href="#sec-amostragem" id="toc-sec-amostragem" class="nav-link" data-scroll-target="#sec-amostragem"><span class="header-section-number">2.5</span> Noções de Amostragem</a>
+  <ul>
+  <li><a href="#conceitos-fundamentais" id="toc-conceitos-fundamentais" class="nav-link" data-scroll-target="#conceitos-fundamentais"><span class="header-section-number">2.5.1</span> Conceitos Fundamentais</a></li>
+  <li><a href="#métodos-de-amostragem" id="toc-métodos-de-amostragem" class="nav-link" data-scroll-target="#métodos-de-amostragem"><span class="header-section-number">2.5.2</span> Métodos de Amostragem</a>
+  <ul class="collapse">
+  <li><a href="#amostragem-não-probabilística" id="toc-amostragem-não-probabilística" class="nav-link" data-scroll-target="#amostragem-não-probabilística"><span class="header-section-number">2.5.2.1</span> Amostragem Não Probabilística</a></li>
+  <li><a href="#amostragem-probabilística" id="toc-amostragem-probabilística" class="nav-link" data-scroll-target="#amostragem-probabilística"><span class="header-section-number">2.5.2.2</span> Amostragem Probabilística</a></li>
+  </ul></li>
+  <li><a href="#dimensionamento-da-amostra" id="toc-dimensionamento-da-amostra" class="nav-link" data-scroll-target="#dimensionamento-da-amostra"><span class="header-section-number">2.5.3</span> Dimensionamento da Amostra</a></li>
+  </ul></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">2.6</span> Exercícios</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1introducao-ao-r.html">PARTE 1: ASPECTOS INTRODUTÓRIOS</a></li><li class="breadcrumb-item"><a href="./2intro-pesq-empirica.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução à Pesquisa Empírica</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução à Pesquisa Empírica</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>“Não se gerencia o que não se mede.<br>
+Não se mede o que não se define.<br>
+Não se define o que não se entende.<br>
+E não há sucesso no que não se gerencia.”</p>
+<p>— William Edwards Deming</p>
+</blockquote>
+<p><a href="https://pt.wikipedia.org/wiki/William_Edwards_Deming">William Deming</a> foi um dos maiores responsáveis pela disseminação do pensamento estatístico na gestão de negócios ao longo do século XX. Sua principal contribuição foi a de convencer organizações de que decisões baseadas em dados são superiores a decisões baseadas em intuição.</p>
+<p>A primeira frase dessa sua proposição encapsula de maneira importante a filosofia do nosso livro, na qual Deming considera que “medir”, que reflete a ideia de <em>coletar e analisar dados</em>, é essencial para o bom funcionamento das organizações. As frases seguintes, porém, relacionam-se especificamente com o propósito deste capítulo.</p>
+<p>Análise de dados, por si só, não é garantia de sucesso, uma vez que por trás dela existe um contexto maior, que é o emprendimento de uma <strong>pesquisa empírica</strong>. Antes de calcular uma média, construir um gráfico ou ajustar um modelo estatístico, uma série de decisões críticas já terá sido tomada (<em>ou deveria ter sido!</em>). Tais decisões dizem respeito a atividades de planejamento e condução de pesquisas que são essenciais para que a análise dos dados atenda aos objetivos que motivaram sua existência.</p>
+<p>Mas o que define uma pesquisa empírica? De forma sucinta, trata-se de uma investigação sistemática que busca responder perguntas sobre o mundo real a partir de dados coletados e analisados com métodos adequados. O adjetivo “empírico” remete à observação direta da realidade, em oposição a argumentos puramente teóricos ou especulativos.</p>
+<p>Na Engenharia de Transportes, pesquisas empíricas são realizadas constantemente para subsidiar decisões práticas: projetar uma nova linha de ônibus, dimensionar a capacidade de um corredor viário, avaliar o impacto de uma mudança tarifária ou identificar os fatores associados à ocorrência de acidentes de trânsito. Em todos esses casos, tomar decisões com base em evidências empíricas é o que nos permite ir além da improvisação técnica.</p>
+<p>É importante destacar que uma análise de dados bem executada não salva uma pesquisa mal planejada. Se o problema de pesquisa foi mal definido, se os dados foram coletados com instrumentos inadequados ou se a amostra não representa a população de interesse, os resultados da análise estatística serão, na melhor das hipóteses, irrelevantes e, na pior, enganosos. Plenejamento e execução adequados são, portanto, uma condição necessária para que a análise de dados atinja o propósito para o qual foi realizada.</p>
+<p>Entendido esse contexto, nos resta uma pergunta importante: qual o roteiro de uma pesquisa empírica, na prática?</p>
+<section id="o-processo-de-uma-pesquisa-empírica" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="o-processo-de-uma-pesquisa-empírica"><span class="header-section-number">2.1</span> O Processo de uma Pesquisa Empírica</h2>
+<p>O fluxo de uma pesquisa empírica depende consideravelmente das peculiaridades da área de conhecimento em que é realizada. Todavia, em todos os casos a maior inspiração é o <strong>método científico</strong>, que pode ser resumido na seguinte sequência:</p>
+<p><span class="math display">\[\text{Observação} \rightarrow \text{Pergunta} \rightarrow \text{Hipóteses} \rightarrow \text{Experimentos} \rightarrow \text{Análise} \rightarrow \text{Conclusão}\]</span></p>
+<p>Cada etapa tem um papel bem definido no avanço do conhecimento:</p>
+<ul>
+<li><strong>Observação:</strong> o ponto de partida é a percepção de um fenômeno ou problema no mundo real. Em transportes, pode ser o aumento na taxa de acidentes em um cruzamento, o crescimento do tempo médio de viagem em um corredor ou a queda na demanda de uma linha de ônibus.</li>
+<li><strong>Pergunta:</strong> a observação é traduzida em uma questão específica e empiricamente respondível. “Por que os acidentes aumentaram neste cruzamento?” ou “Quais fatores explicam a variação na demanda desta linha de metrô?” são perguntas que orientam o desenho de uma pesquisa.</li>
+<li><strong>Hipóteses:</strong> com base em teoria, experiência prévia ou literatura especializada, propõem-se explicações possíveis para a pergunta formulada. As hipóteses delimitam o escopo da coleta de dados, fazendo com que o que é necessário para testá-las seja medido.</li>
+<li><strong>Experimentos:</strong> os dados são coletados de forma sistemática para permitir o teste das hipóteses. Em ciências aplicadas como a Engenharia de Transportes, isso inclui tanto experimentos controlados (<em>quando possível</em>) quanto levantamentos e observações em campo (<em>mais comum</em>).</li>
+<li><strong>Análise:</strong> os dados coletados são processados, organizados e interpretados à luz das hipóteses formuladas. É aqui que entram as ferramentas da estatística, tema central deste livro.</li>
+<li><strong>Conclusão:</strong> os achados são sintetizados e confrontados com as hipóteses iniciais. Hipóteses corroboradas reforçam o conhecimento existente, enquanto hipóteses refutadas geram novas perguntas e alimentam um novo ciclo de investigação.</li>
+</ul>
+<p>Com base no método científico, as diferentes áreas do conhecimento adaptam roteiros para organizar esse processo, de forma que atendam aos objetivos do seu campo. Para a análise de dados em Ciências Sociais, por exemplo, <span class="citation" data-cites="barbetta2006">Barbetta (<a href="references.html#ref-barbetta2006" role="doc-biblioref">2006</a>)</span> apresenta um fluxo de trabalho genérico, conforme o ilustrado na <a href="#fig-proc_pesq_barbetta" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>.</p>
+<div id="fig-proc_pesq_barbetta" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-proc_pesq_barbetta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-1-processo_planejamento.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-proc_pesq_barbetta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Etapas comuns a pesquisas envolvendo levantamento e análise de dados
+</figcaption>
+</figure>
+</div>
+<p>No <strong>Planejamento de Transportes</strong>, pode-se destacar, por exemplo, a proposta do <em>Travel Survey Manual</em> <span class="citation" data-cites="tierney1996">(<a href="references.html#ref-tierney1996" role="doc-biblioref">Tierney et al., 1996</a>)</span>, que propõe um roteiro geral com <strong>5 macroetapas</strong> para a execução de <strong>pesquisas de mobilidade</strong>, conforme a <a href="#fig-tsm_5macro" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>:</p>
+<div id="fig-tsm_5macro" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tsm_5macro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-2-tsm.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tsm_5macro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Macroetapas de uma pesquisa
+</figcaption>
+</figure>
+</div>
+<p>Estas 5 grandes fases são distribuídas em <strong>20 etapas individuais</strong> que percorrem o ciclo completo de uma pesquisa de transportes, da definição do problema à implementação dos resultados. São elas:</p>
+<p><strong>(A) Planejamento da Pesquisa</strong></p>
+<ol type="1">
+<li><strong>Definição do Problema:</strong> decisão sobre a questão a ser estudada. Uma definição precisa do problema é o pré-requisito para todas as demais etapas.</li>
+<li><strong>Definição das Hipóteses:</strong> especificação das relações entre variáveis que a pesquisa pretende investigar. As hipóteses orientam o que deve ser medido e com qual nível de detalhe.</li>
+</ol>
+<p><strong>(B) Desenho da Pesquisa</strong></p>
+<ol start="3" type="1">
+<li><strong>Informações Secundárias:</strong> levantamento e avaliação de dados e estudos já existentes sobre o problema. Identificar o que já se sabe evita retrabalho e permite calibrar o esforço de coleta primária.</li>
+<li><strong>Diretrizes:</strong> estabelecimento dos princípios e procedimentos que nortearão o estudo, incluindo critérios de qualidade, padrões metodológicos e restrições éticas e operacionais.</li>
+<li><strong>Organização:</strong> mobilização dos recursos humanos, financeiros e materiais necessários para a execução, incluindo a definição de equipes, papéis, orçamento e cronograma.</li>
+<li><strong>Planejamento Amostral:</strong> definição de como e quantas observações serão coletadas. Envolve a escolha do método de amostragem, o dimensionamento da amostra e a especificação da população-alvo (temas tratados na <a href="#sec-amostragem" class="quarto-xref"><span>Seção 2.5</span></a>).</li>
+<li><strong>Esboço do Instrumento de Coleta:</strong> definição dos itens a serem questionados ou registrados, antes de preocupações com formato ou <em>layout</em>. O objetivo é garantir que todas as variáveis necessárias para responder às hipóteses estejam contempladas.</li>
+<li><strong>Formatação do Instrumento de Coleta:</strong> definição do formato final do instrumento (questionário em papel, formulário digital, roteiro de entrevista, planilha de contagem) e sequenciamento das perguntas.</li>
+</ol>
+<p><strong>(C) Pesquisa de Campo</strong></p>
+<ol start="9" type="1">
+<li><strong>Pré-teste:</strong> aplicação preliminar do instrumento a um grupo reduzido de respondentes, com o objetivo de identificar ambiguidades, problemas de compreensão e falhas operacionais antes da coleta em larga escala.</li>
+<li><strong>Treinamento:</strong> capacitação da equipe de campo sobre as técnicas de coleta a serem utilizadas (entrevista, observação, registro em formulário digital).</li>
+<li><strong>Instrução (<em>Briefing</em>):</strong> capacitação da equipe sobre os procedimentos específicos da pesquisa: como abordar os respondentes, como lidar com recusas e como proceder em situações imprevistas.</li>
+<li><strong>Coleta dos Dados:</strong> execução propriamente dita do trabalho de campo, seguindo os procedimentos definidos nas etapas anteriores.</li>
+</ol>
+<p><strong>(D) Preparação dos Dados</strong></p>
+<ol start="13" type="1">
+<li><strong>Codificação e Entrada dos Dados:</strong> conversão das respostas coletadas em formato utilizável computacionalmente. Vale observar que, quando a coleta é realizada com dispositivos eletrônicos (<em>tablets</em> ou DCMs<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>) com formulários pré-programados, essa etapa é em grande parte dispensável, pois o instrumento digital já transforma as respostas em uma tabela estruturada, eliminando a necessidade de digitação manual.</li>
+<li><strong>Limpeza dos Dados:</strong> verificação e correção de inconsistências, erros de entrada, valores ausentes e registros duplicados, assegurando que os dados estejam em condições confiáveis para análise.</li>
+<li><strong>Programação:</strong> manipulação computacional dos dados para criar novas variáveis, recodificar categorias, integrar bases distintas e preparar os dados para análise.</li>
+<li><strong>Compilação:</strong> organização dos dados nos formatos e agregações úteis para a análise, como tabelas-resumo, matrizes origem-destino ou séries temporais.</li>
+</ol>
+<p><strong>(E) Análise dos Dados</strong></p>
+<ol start="17" type="1">
+<li><strong>Análise dos Dados:</strong> exploração das relações entre duas ou mais variáveis, incluindo análise descritiva, cruzamentos e identificação de padrões.</li>
+<li><strong>Testes:</strong> aplicação de testes de hipóteses estatísticos e mensuração da qualidade do ajuste de modelos, permitindo avaliar a significância e a robustez dos resultados encontrados.</li>
+<li><strong>Comunicação:</strong> síntese e apresentação dos achados e conclusões do estudo em formato acessível aos tomadores de decisão e demais interessados.</li>
+<li><strong>Aplicação:</strong> implementação das propostas ou recomendações derivadas dos resultados, fechando o ciclo entre pesquisa e decisão prática.</li>
+</ol>
+<p>Embora voltado especificamente para pesquisas de mobilidade, esse roteiro ilustra bem a complexidade de qualquer pesquisa empírica de médio ou grande porte. Da definição inicial do problema até a aplicação prática dos resultados, há um longo caminho percorrido por uma equipe multidisciplinar, com etapas técnicas, logísticas e analíticas interdependentes.</p>
+<p>Entretanto, este livro não tem como objetivo prover uma formação completa na condução de pesquisas empíricas, mesmo que restrita à área de Engenharia de Transportes. Entender o contexto mais amplo em que a análise de dados se insere é, porém, fundamental para uma boa prática analítica.</p>
+<p>Se situarmos o conteúdo deste livro no fluxo do <em>Travel Survey Manual</em>, cobrimos sobretudo as etapas de <strong>14</strong> (Limpeza dos Dados) a <strong>18</strong> (Testes estatísticos), e em menor medida a <strong>19</strong> (Comunicação). As demais, especialmente as macroetapas (A) a (C), constituem um campo de formação próprio, tratado em disciplinas associadas a métodos de pesquisa e levantamentos em Engenharia de Transportes.</p>
+<p>De modo geral, os aspectos de <strong>planejamento</strong> de uma pesquisa são os mais relevantes para quem irá analisar dados. Compreender o problema que a pesquisa se propõe a responder, identificar os objetivos e hipóteses que orientam a coleta, e reconhecer como as escolhas metodológicas do processo de coleta condicionam o que é possível ou não concluir na etapa de análise.</p>
+</section>
+<section id="aspectos-de-planejamento-relevantes" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="aspectos-de-planejamento-relevantes"><span class="header-section-number">2.2</span> Aspectos de Planejamento Relevantes</h2>
+<p>Voltando à <a href="#fig-proc_pesq_barbetta" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>, observe que há 3 etapas importantes que precedem a execução da pesquisa: (1) Definição do Problema, (2) Formulação dos Objetivos e (3) Planejamento da Pesquisa. Vamos nos debruçar melhor sobre esses três aspectos nesta e nas próximas seções.</p>
+<section id="definição-do-problema" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="definição-do-problema"><span class="header-section-number">2.2.1</span> Definição do Problema</h3>
+<p>Toda pesquisa começa com uma pergunta que determina a qualidade da pesquisa. Nesse sentido, um bom problema de pesquisa é específico, empiricamente respondível e relevante para o contexto de aplicação.</p>
+<p>A definição do problema orienta todas as decisões subsequentes: quais variáveis medir, quem observar, com qual instrumento e em qual escala geográfica e temporal. Pesquisas com problemas vagos ou mal especificados tendem a produzir dados que não respondem às perguntas que realmente importam (ou que permitem interpretações tão variadas que se tornam inúteis para a tomada de decisão).</p>
+<p>A charge da <a href="#fig-charge_prob" class="quarto-xref">Figura&nbsp;<span>2.3</span></a> é um clássico no mundo da gestão de projetos, engenharia de software e comunicação corporativa. Ela ilustra, de forma satírica, como as falhas de comunicação e a falta de alinhamento entre diferentes setores podem transformar uma necessidade simples em um produto bizarro e ineficiente.</p>
+<div id="fig-charge_prob" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-charge_prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-3-charge_problema.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-charge_prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.3: Charge clássica sobre problemas de comunicação em gestão de projetos
+</figcaption>
+</figure>
+</div>
+<p>A mensagem da charge que mais nos interessa, entretanto, diz respeito à diferença entre o primeiro e o último quadro, evidenciando que aquilo que o cliente <em>explicou</em> é completamente distinto daquilo que ele <em>queria</em>. Observe que a elicitação de um problema requer mais do que uma mera descrição por parte dos envolvidos, mas que ele seja efetivamente entendido. É o tipo de situação à qual Deming provavelmente se referia na frase <strong><em>Não se define o que não se entende</em></strong> da epígrafe do capítulo.</p>
+<p>Definir bem um problema é, portanto, um processo que exige método. Reuniões estruturadas de <em>brainstorming</em> com os diferentes atores envolvidos (gestores, operadores, usuários da infraestrutura) permitem identificar divergências de interpretação antes que elas contaminem o desenho da pesquisa. Há ainda bastante proveito a ser tirado de ferramentas de gestão como os <em>5 Porquês</em> ou a <em>Árvore de Problemas</em> que facilitam o consenso entre os envolvidos e a posterior formulação dos objetivos.</p>
+</section>
+<section id="delineamento-dos-objetivos" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="delineamento-dos-objetivos"><span class="header-section-number">2.2.2</span> Delineamento dos Objetivos</h3>
+<p>Definido o problema, podemos partir para a proposição dos <strong>objetivos</strong>, ou seja, aquilo que a pesquisa pretende alcançar. Dois exemplos ilustram como objetivos bem enunciados estruturam uma pesquisa:</p>
+<ul>
+<li><p>O <strong>Censo Demográfico 2010 do IBGE</strong> enuncia seu objetivo como: <em>“contar os habitantes do Território Nacional, identificar suas características e revelar como vivem os brasileiros, pois conhecer em detalhes como é e como vive a população é de extrema importância para o governo e para a sociedade”</em> <span class="citation" data-cites="ibge2016censo">(<a href="references.html#ref-ibge2016censo" role="doc-biblioref">Instituto Brasileiro de Geografia e Estatística, 2016</a>)</span>.</p></li>
+<li><p>A <a href="https://planmob.salvador.ba.gov.br/images/consulte/legislacao/pesquisa-o.d.-da-rm-de-salvador-2012-sintese-dos-resultados.pdf"><strong>Pesquisa de Mobilidade da Região Metropolitana de Salvador de 2012</strong></a> estabelece como objetivo <em>“o levantamento de informações atualizadas sobre os deslocamentos realizados pela população em um dia útil típico”</em>. Esse enunciado delimita o que será medido (deslocamentos), quem será observado (a população residente) e o recorte espacial (a região metropolitana).</p></li>
+</ul>
+<p>Objetivos bem formulados evitam desperdício de recursos e protegem a pesquisa de desvios de escopo. Se um aspecto não está nos objetivos, não precisa ser medido e se está nos objetivos, não pode ser esquecido no instrumento de coleta.</p>
+</section>
+<section id="desenho-do-processo-de-coleta" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="desenho-do-processo-de-coleta"><span class="header-section-number">2.2.3</span> Desenho do Processo de Coleta</h3>
+<p>Com o problema definido e os objetivos enunciados, o próximo passo é desenhar <em>como</em> os dados serão coletados. Os principais aspectos a definir são:</p>
+<p><strong>(A) Instrumento de coleta:</strong> dispositivo com o qual obteremos as informações de interesse. Pode ser, dentre outros, um questionário estruturado, formulário auto-aplicado, diário de viagens ou até mesmo imagens de tráfego.</p>
+<p><strong>(B) Método de amostragem:</strong> definição de quem (ou o quê) será observado e como esses elementos serão selecionados da população e em que quantidade.</p>
+<p><strong>(C) Dimensionamento de recursos:</strong> estimação de quantos entrevistadores, equipamentos e dias de campo são necessários para atingir o tamanho de amostra definido dentro do prazo disponível.</p>
+<p><strong>(D) Orçamento e cronograma:</strong> os recursos financeiros e o tempo são restrições reais que frequentemente condicionam as escolhas em (A), (B) e (C).</p>
+<section id="dados-primários-e-dados-secundários" class="level4" data-number="2.2.3.1">
+<h4 data-number="2.2.3.1" class="anchored" data-anchor-id="dados-primários-e-dados-secundários"><span class="header-section-number">2.2.3.1</span> Dados Primários e Dados Secundários</h4>
+<p>Os dados utilizados numa pesquisa podem ser classificados quanto à sua origem em dois grandes grupos. <strong>Dados primários</strong> são coletados diretamente pelo(a) pesquisador(a) para responder a uma questão específica. São desenhados sob medida para o problema em questão, mas demandam tempo e recursos financeiros consideráveis. Exemplos típicos em transportes incluem:</p>
+<ul>
+<li>Pesquisas de <em>Origem-Destino</em> (OD): em geral, baseadas em um conjunto de instrumentos como entrevistas domiciliares e/ou até mesmo rastreio de dispositivos móveis, para caracterizar as viagens das pessoas;</li>
+<li>Contagens volumétricas de tráfego: registros do número de veículos por período de tempo em pontos fixos da via;</li>
+<li>Levantamentos de velocidade e tempo de percurso: medições em campo para caracterizar o desempenho operacional de vias;</li>
+<li>Pesquisas de satisfação de usuários: questionários estruturados sobre a percepção do serviço de transporte público.</li>
+</ul>
+<p><strong>Dados secundários</strong> são produzidos por terceiros, em geral órgãos oficiais, com propósitos nem sempre idênticos aos da pesquisa em curso, mas que podem ser reaproveitados. Fontes secundárias relevantes em transportes incluem os dados de Censo Demográfico e da Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD-C), ambas realizadas pelo IBGE.</p>
+<p>Cabe destacar que a escolha entre dados primários e secundários não é excludente. Muitas pesquisas combinam as duas fontes, usando dados secundários para contextualizar e dados primários para aprofundar aspectos específicos do problema.</p>
+</section>
+</section>
+</section>
+<section id="conectando-com-o-fluxo-da-ciência-de-dados" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="conectando-com-o-fluxo-da-ciência-de-dados"><span class="header-section-number">2.3</span> Conectando com o fluxo da Ciência de Dados</h2>
+<p>Uma vez concluídas as etapas de planejamento e coleta, inicia-se o trabalho analítico propriamente dito. Neste momento, precisamos nos lembrar da <a href="#fig-cdd-cap2" class="quarto-xref">Figura&nbsp;<span>2.4</span></a>, apresentada no <a href="https://pedreirajr.github.io/statbook/0motivacao.html">capítulo motivacional</a>, destacando o ciclo da ciência de dados que estrutura os capítulos seguintes deste livro.</p>
+<div id="fig-cdd-cap2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cdd-cap2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-4-fluxo_cdd.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cdd-cap2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.4: O ciclo da ciência de dados, adaptado de <span class="citation" data-cites="r4ds_pt_2e">Wickham et al. (<a href="references.html#ref-r4ds_pt_2e" role="doc-biblioref">2025</a>)</span>.
+</figcaption>
+</figure>
+</div>
+<p>Este ciclo pressupõe que as etapas anteriores foram executadas com rigor, pois (<em>não custa frisar</em>) a melhor análise estatística não corrige uma coleta de dados mal delineada. Dito isto, a maneira como o instrumento de coleta foi desenhado e o modo como os dados coletados foram organizados determinam dois aspectos importantes que entenderemos na próxima seção.</p>
+</section>
+<section id="tipologia-dos-dados" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="tipologia-dos-dados"><span class="header-section-number">2.4</span> Tipologia dos Dados</h2>
+<p>Há dois aspectos relevantes a se entender quando nos deparamos com os dados que estão prontos para análise (<a href="#fig-tipologia_dados" class="quarto-xref">Figura&nbsp;<span>2.5</span></a>). A rigor, estes aspectos dependem das características do fenômeno estudado e dos objetivos da pesquisa, sendo estabelecidos ainda no planejamento da coleta. O primeiro deles diz respeito à <strong>escala de mensuração</strong> de cada uma das colunas da tabela de dados e o segundo refere-se à <strong>natureza</strong> ou <strong>estrutura destas tabelas</strong> como um todo.</p>
+<div id="fig-tipologia_dados" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tipologia_dados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-5-tipologia_dados.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tipologia_dados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.5: Escalas de mensuração e estruturas das bases de dados
+</figcaption>
+</figure>
+</div>
+<p>A escala das variáveis determina quais estatísticas descritivas são válidas, além de quais testes de hipóteses e modelos estatísticos são adequados para o seu estudo. Não é possível, por exemplo, calcular <strong>média</strong> ou <strong>mediana</strong> de uma variável do tipo categórica nominal. Do ponto de vista das características da tabela de dados, é particularmente importante entender se uma mesma observação (<em>ex.: indivíduo, domicílio, veículo</em>) aparece mais de uma vez na tabela, sobretudo porque foram medidos em períodos diferentes no processo de coleta.</p>
+<section id="escalas-de-mensuração" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="escalas-de-mensuração"><span class="header-section-number">2.4.1</span> Escalas de Mensuração</h3>
+<p>A classificação das escalas de mensuração mais difundida organiza as variáveis em quatro tipos <span class="citation" data-cites="stevens1946">(<a href="references.html#ref-stevens1946" role="doc-biblioref">Stevens, 1946</a>)</span>. As duas primeiras, <strong>razão</strong> e <strong>intervalar</strong>, são escalas do tipo <strong>numérica</strong>, ao passo que as duas últimas, <strong>ordinal</strong> e <strong>nominal</strong>, são escalas especificadas como <strong>categóricas</strong> (<a href="#fig-escalas_dados" class="quarto-xref">Figura&nbsp;<span>2.6</span></a>).</p>
+<div id="fig-escalas_dados" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-escalas_dados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-6-escala_dados.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-escalas_dados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.6: Tipos de escalas de mensuração
+</figcaption>
+</figure>
+</div>
+<p>A distinção entre os quatro tipos se dá respondendo a três perguntas, em sequência:</p>
+<ol type="1">
+<li>Uma medida pode ser comparada à outra em termos de <strong>ordem</strong>?</li>
+<li>A <strong>diferença</strong> numérica (subtração) entre duas medidas faz sentido?</li>
+<li>A <strong>razão</strong> numérica (divisão) entre duas medidas faz sentido?</li>
+</ol>
+<ul>
+<li><strong>Escala de Razão:</strong> o tipo mais completo de variável <em>numérica</em>. Possui zero absoluto, que representa “ausência” do atributo mensurado, o que torna as três operações válidas:
+<ol type="1">
+<li><span style="color: #398E35;"><strong>Sim</strong></span>, é possível dizer que um valor é maior que o outro.</li>
+<li><span style="color: #398E35;"><strong>Sim</strong></span>, a diferença entre dois valores é interpretável.</li>
+<li><span style="color: #398E35;"><strong>Sim</strong></span>, a razão entre dois valores é interpretável.</li>
+</ol></li>
+</ul>
+<p><em>Exemplos:</em> volume de tráfego (veículos/hora); distância percorrida (km), tempo de viagem (minutos), velocidade média (km/h), número de acidentes e emissão de CO₂ (g/km). No caso de distância, por exemplo, podemos dizer que 45 km/h é maior que 30 km/h, que há uma diferença de 15 km/h entre essas duas medidas e que uma é 1,5 vezes maior que a outra.</p>
+<ul>
+<li><strong>Escala Intervalar:</strong> variável <em>numérica</em> em que o zero é arbitrário (não representa “ausência” da propriedade mensurada). Por isso, diferenças são interpretáveis, mas razões não:
+<ol type="1">
+<li><span style="color: #398E35;"><strong>Sim</strong></span>, é possível dizer que um valor é maior que o outro.</li>
+<li><span style="color: #398E35;"><strong>Sim</strong></span>, a diferença entre dois valores é interpretável.</li>
+<li><span style="color: #D71A1E;"><strong>Não</strong></span> é possível calcular uma razão numérica entre dois valores.</li>
+</ol></li>
+</ul>
+<p><em>Exemplo:</em> temperatura do pavimento em graus Celsius. Perceba que, neste caso, podemos dizer que 30°C é maior que 20°C e que a diferença entre ambas é de 10°C. Porém, não se pode afirmar que 30°C é “uma vez e meia” maior que 20°C, pois o zero da escala Celsius é arbitrário (não significa a ausência do atributo “temperatura”, é somente o valor que atribuímos ao ponto em que a água passa do estado sólido para o líquido).</p>
+<ul>
+<li><strong>Escala Ordinal:</strong> variável <em>categórica</em> em que os níveis têm uma ordem natural, mas nenhuma operação matemática de subtração ou divisão é possível de realizar entre valores diferentes:
+<ol type="1">
+<li><span style="color: #398E35;"><strong>Sim</strong></span>, é possível dizer que um valor é maior que o outro</li>
+<li><span style="color: #D71A1E;"><strong>Não</strong></span> faz sentido calcular diferenças numéricas entre dois valores.</li>
+<li><span style="color: #D71A1E;"><strong>Não</strong></span> é possível calcular uma razão numérica entre dois valores.</li>
+</ol></li>
+</ul>
+<p><em>Exemplos:</em> Nível de Serviço de vias (A a F, conforme o <a href="https://www.trb.org/Main/Blurbs/175169.aspx"><em>Highway Capacity Manual</em></a>); satisfação do usuário com o transporte público (variando, por exemplo, entre <em>muito insatisfeito</em>, <em>insatisfeito</em>, <em>neutro</em>, <em>satisfeito</em> e <em>muito satisfeito</em>); nível de instrução (<em>ensino fundamental</em>, <em>ensino médio</em> e <em>ensino superior</em>, por exemplo). Com relação ao Nível de Serviço, sabemos que A é maior que B, mas não podemos atribuir um valor numérico à diferença ou à razão entre eles.</p>
+<ul>
+<li><strong>Escala Nominal:</strong> variável <em>categórica</em> em que os níveis são apenas rótulos, sem qualquer ordem entre eles. Códigos numéricos eventualmente atribuídos (ex: 1 = carro, 2 = ônibus) são meros identificadores, sem significado aritmético:
+<ol type="1">
+<li><span style="color: #D71A1E;"><strong>Não</strong></span> é possível dizer que um valor é maior que o outro.</li>
+<li><span style="color: #D71A1E;"><strong>Não</strong></span> faz sentido calcular diferenças numéricas entre dois valores.</li>
+<li><span style="color: #D71A1E;"><strong>Não</strong></span> é possível calcular uma razão numérica entre dois valores.</li>
+</ol></li>
+</ul>
+<p><em>Exemplos:</em> modo de transporte utilizado na viagem (carro, ônibus, metrô, a pé, bicicleta); tipo de via (arterial, coletora, local). Dizer que “bicicleta é maior que <em>ride-hailing</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>”, “ônibus − carro = 1” ou que “metrô é três vezes carro” não tem qualquer interpretação válida.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Exercício: qual a escala dos dados abaixo?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 22%">
+<col style="width: 24%">
+<col style="width: 19%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th style="text-align: center;">Sexo</th>
+<th style="text-align: center;">Qtd carros em casa</th>
+<th style="text-align: center;">Distância de viagem</th>
+<th style="text-align: center;">Tempo de Viagem</th>
+<th style="text-align: center;">Horário da Viagem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2 km</td>
+<td style="text-align: center;">Até 10 minutos</td>
+<td style="text-align: center;">07:30</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1,5 km</td>
+<td style="text-align: center;">Entre 31 min e 1 hora</td>
+<td style="text-align: center;">08:00</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3 km</td>
+<td style="text-align: center;">Mais de 1 hora</td>
+<td style="text-align: center;">13:10</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10 km</td>
+<td style="text-align: center;">Entre 11 e 30 minutos</td>
+<td style="text-align: center;">09:20</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">20 km</td>
+<td style="text-align: center;">Entre 11 e 30 minutos</td>
+<td style="text-align: center;">07:00</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0,5 km</td>
+<td style="text-align: center;">Mais de 1 hora</td>
+<td style="text-align: center;">05:30</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0,1 km</td>
+<td style="text-align: center;">Até 10 minutos</td>
+<td style="text-align: center;">06:40</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Resposta
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 7%">
+<col style="width: 23%">
+<col style="width: 24%">
+<col style="width: 20%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Sexo</th>
+<th style="text-align: center;">Qtd carros em casa</th>
+<th style="text-align: center;">Distância de viagem</th>
+<th style="text-align: center;">Tempo de Viagem</th>
+<th style="text-align: center;">Horário da Viagem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;"><span style="color: #D71A1E;"><strong>Nominal</strong></span></td>
+<td style="text-align: center;"><span style="color: #D71A1E;"><strong>Razão</strong></span></td>
+<td style="text-align: center;"><span style="color: #D71A1E;"><strong>Razão</strong></span></td>
+<td style="text-align: center;"><span style="color: #D71A1E;"><strong>Ordinal</strong></span></td>
+<td style="text-align: center;"><span style="color: #D71A1E;"><strong>Intervalar</strong></span></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Notem que <strong>Tempo de Viagem</strong> parece ser uma variável numérica, mas na verdade foi medida em uma escala ordinal. Para tirar a dúvida, sempre faça as 3 perguntas para checar se faz sentido as comparações. Além disso, veja que 00:00 consiste apenas em uma convenção humana para a virada do dia, não necessariamente é a ausência do atributo <strong>Horário de Viagem</strong>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Uma outra classificação para variáveis em escala numérica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para variáveis numéricas (razão e intervalar), existe ainda uma segunda classificação, independente da escala, que diz respeito à natureza dos valores que a variável pode assumir:</p>
+<ul>
+<li><p><strong>Contínua:</strong> assume valores <strong>racionais</strong> (<span class="math inline">\(\mathbb{Q}\)</span>) ou <strong>reais</strong> (<span class="math inline">\(\mathbb{R}\)</span>), ou seja, pode tomar qualquer valor dentro de um intervalo, incluindo decimais. <em>Exemplos em transportes:</em> distância de viagem (1,35 km), velocidade média (47,8 km/h), renda domiciliar (R$ 2.795,30).</p></li>
+<li><p><strong>Discreta:</strong> assume valores <strong>naturais</strong> (<span class="math inline">\(\mathbb{N}\)</span>) ou <strong>inteiros</strong> (<span class="math inline">\(\mathbb{Z}\)</span>), ou seja, valores <em>contáveis</em> ou <em>enumeráveis</em>, sem frações intermediárias com significado. <em>Exemplos em transportes:</em> quantidade de veículos na residência (0, 1, 2, 3, …), número de viagens realizadas no dia, número de faixas de uma via.</p></li>
+</ul>
+<p>Guarde essa classificação em mente, pois ela será muito útil quando tratarmos mais adiante de <strong>variáveis aleatórias</strong> e das distribuições de probabilidade associadas a cada tipo.</p>
+</div>
+</div>
+</section>
+<section id="tipos-de-estruturas-de-conjuntos-de-dados" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="tipos-de-estruturas-de-conjuntos-de-dados"><span class="header-section-number">2.4.2</span> Tipos de estruturas de conjuntos de dados</h3>
+<p>Além da escala de mensuração das variáveis individuais, a forma como as observações são organizadas no tempo define a <strong>estrutura do conjunto de dados</strong>. Existem outros tipos além dos que serão apresentados aqui, mas os três mais comuns em pesquisas de transportes são o corte transversal, a série temporal e os dados em painel. É importante reconhecer a estrutura dos dados com os quais se está trabalhando, pois cada tipo implica decisões de análise e modelagem distintas. A maior parte deste livro se dedica ao primeiro caso, o corte transversal, que é também o mais frequente na prática.</p>
+<p><strong>Corte transversal (<em>cross-section</em>):</strong> medição de atributos para várias unidades em um determinado momento no tempo. Cada linha da tabela representa uma unidade observacional diferente (um indivíduo, domicílio, veículo ou via), e as colunas representam os atributos medidos.</p>
+<div id="tbl-crosssection" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-crosssection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.1: Exemplo de dados em corte transversal: viagens ao trabalho por domicílio (cada linha é um domicílio diferente)
+</figcaption>
+<div aria-describedby="tbl-crosssection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 19%">
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th style="text-align: center;">Posse de veículo</th>
+<th style="text-align: center;">Tamanho da família</th>
+<th style="text-align: center;">Distância de viagem (km)</th>
+<th style="text-align: center;">Tempo de viagem (min)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">5 ou mais</td>
+<td style="text-align: center;">10,00</td>
+<td style="text-align: center;">66</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">10,33</td>
+<td style="text-align: center;">70</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">5 ou mais</td>
+<td style="text-align: center;">18,84</td>
+<td style="text-align: center;">141</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">22,69</td>
+<td style="text-align: center;">151</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">14,53</td>
+<td style="text-align: center;">94</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">15,93</td>
+<td style="text-align: center;">92</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">7,49</td>
+<td style="text-align: center;">57</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Série temporal (<em>time series</em>):</strong> dados de um atributo que varia no tempo para uma ou mais unidades em observação, com muitas repetições no tempo. Com uma quantidade de informações suficiente, torna-se possível modelar padrões intrinsecamente temporais, como sazonalidade e tendências de longo prazo. Esse tipo de dado também exige técnicas específicas que levam em conta a influência entre observações consecutivas (autocorrelação). Observe o exemplo abaixo de uma série temporal de um atributo (<em>decolagem</em>) para uma única unidade (<em>Aeroporto de Salvador</em>) ao longo de vários períodos (<em>meses</em>):</p>
+<div id="tbl-timeseries" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-timeseries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.2: Exemplo de série temporal: quantidade mensal de decolagens no Aeroporto de Salvador (dados ilustrativos)
+</figcaption>
+<div aria-describedby="tbl-timeseries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Mês/Ano</th>
+<th style="text-align: center;">Decolagens (Aeroporto de Salvador-BA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Jan/2022</td>
+<td style="text-align: center;">3.241</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fev/2022</td>
+<td style="text-align: center;">2.987</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mar/2022</td>
+<td style="text-align: center;">3.512</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Abr/2022</td>
+<td style="text-align: center;">3.388</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mai/2022</td>
+<td style="text-align: center;">3.601</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Jun/2022</td>
+<td style="text-align: center;">3.490</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Jul/2022</td>
+<td style="text-align: center;">3.658</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ago/2022</td>
+<td style="text-align: center;">3.724</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Set/2022</td>
+<td style="text-align: center;">3.491</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Out/2022</td>
+<td style="text-align: center;">3.406</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Nov/2022</td>
+<td style="text-align: center;">3.579</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Dez/2022</td>
+<td style="text-align: center;">3.847</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Dados em painel (<em>panel data</em> ou <em>longitudinal data</em>):</strong> consiste na combinação das duas estruturas anteriores, com atributos de várias unidades observadas em múltiplos períodos. O valor analítico do painel está na possibilidade de controlar diferenças entre unidades e isolar o efeito de variáveis de interesse ao longo do tempo. No exemplo abaixo, observe que há medições de dois atributos (<em>decolagens</em> e <em>passageiros</em>) para três unidades (<em>aeroportos</em>) em dois períodos de tempo (<em>anos</em>).</p>
+<div id="tbl-panel-long" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panel-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.3: Exemplo de dados em painel no formato <em>long</em>: desempenho anual de aeroportos do Nordeste (dados ilustrativos)
+</figcaption>
+<div aria-describedby="tbl-panel-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Aeroporto</th>
+<th style="text-align: center;">Ano</th>
+<th style="text-align: center;">Decolagens</th>
+<th style="text-align: center;">Passageiros</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Salvador</td>
+<td style="text-align: center;">2021</td>
+<td style="text-align: center;">38.512</td>
+<td style="text-align: center;">4.201.330</td>
+</tr>
+<tr class="even">
+<td>Salvador</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;">41.234</td>
+<td style="text-align: center;">4.589.210</td>
+</tr>
+<tr class="odd">
+<td>Recife</td>
+<td style="text-align: center;">2021</td>
+<td style="text-align: center;">29.874</td>
+<td style="text-align: center;">3.102.450</td>
+</tr>
+<tr class="even">
+<td>Recife</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;">32.198</td>
+<td style="text-align: center;">3.487.620</td>
+</tr>
+<tr class="odd">
+<td>Fortaleza</td>
+<td style="text-align: center;">2021</td>
+<td style="text-align: center;">33.641</td>
+<td style="text-align: center;">3.654.890</td>
+</tr>
+<tr class="even">
+<td>Fortaleza</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;">36.005</td>
+<td style="text-align: center;">3.912.340</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Os dados em painel podem ser visualizados em dois formatos. No formato <strong><em>long</em></strong> (comprido), cada combinação unidade-período ocupa uma linha, com uma coluna indicando a unidade e outra indicando o período, conforme a <a href="#tbl-panel-long" class="quarto-xref">Tabela&nbsp;<span>2.3</span></a> acima. No formato <strong><em>wide</em></strong> (largo), cada período ocupa uma coluna separada e cada linha representa uma unidade, com os atributos de todos os períodos dispostos lado a lado, conforme a <a href="#tbl-panel-wide" class="quarto-xref">Tabela&nbsp;<span>2.4</span></a> abaixo. Observe que os dados são os mesmos da anterior (<a href="#tbl-panel-long" class="quarto-xref">Tabela&nbsp;<span>2.3</span></a>), somente dispostos de uma maneira diferente.</p>
+<div id="tbl-panel-wide" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panel-wide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.4: Os mesmos dados em painel no formato <em>wide</em>
+</figcaption>
+<div aria-describedby="tbl-panel-wide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aeroporto</th>
+<th style="text-align: center;">Decolagens 2021</th>
+<th style="text-align: center;">Decolagens 2022</th>
+<th style="text-align: center;">Passageiros 2021</th>
+<th style="text-align: center;">Passageiros 2022</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Salvador</td>
+<td style="text-align: center;">38.512</td>
+<td style="text-align: center;">41.234</td>
+<td style="text-align: center;">4.201.330</td>
+<td style="text-align: center;">4.589.210</td>
+</tr>
+<tr class="even">
+<td>Recife</td>
+<td style="text-align: center;">29.874</td>
+<td style="text-align: center;">32.198</td>
+<td style="text-align: center;">3.102.450</td>
+<td style="text-align: center;">3.487.620</td>
+</tr>
+<tr class="odd">
+<td>Fortaleza</td>
+<td style="text-align: center;">33.641</td>
+<td style="text-align: center;">36.005</td>
+<td style="text-align: center;">3.654.890</td>
+<td style="text-align: center;">3.912.340</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<!--O formato *long* é o mais conveniente para análise no R com o tidyverse, e a transformação entre os dois formatos é tratada no [Capítulo 4](4manipulacao-de-dados.qmd) com as funções `pivot_longer()` e `pivot_wider()` do pacote **tidyr**.-->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Série temporal ou dados em painel?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>À primeira vista, os dois tipos parecem estruturalmente similares, pois ambos combinam observações ao longo do tempo. A diferença fundamental está na <em>assimetria</em> entre as duas dimensões e no objetivo analítico de cada estrutura.</p>
+<p>Numa <strong>série temporal</strong>, o número de períodos costuma ser grande (centenas ou milhares de observações) e o número de unidades é pequeno. O foco analítico recai sobre a dinâmica temporal: autocorrelação, tendência, sazonalidade e estacionariedade são os conceitos centrais.</p>
+<p>Nos <strong>dados em painel</strong>, a lógica é inversa: é comum haver muitas unidades e o número de períodos é pequeno ou moderado. O valor central do painel não está na abundância de períodos, mas na possibilidade de controlar as <strong>diferenças entre unidades</strong> que afetam a variável de interesse mas não variam no tempo e não são diretamente mensuráveis <span class="citation" data-cites="wooldridge2010">(<a href="references.html#ref-wooldridge2010" role="doc-biblioref">Wooldridge, 2010</a>)</span>. Essa capacidade de separar os efeitos transversais dos temporais é a principal vantagem estrutural dos dados longitudinais em relação ao corte transversal isolado e à série temporal pura.</p>
+<p>Em transportes, considere um painel de municípios com dados anuais de acidentalidade viária ao longo de 5 anos. O painel permite isolar o efeito de políticas de segurança viária, isolando características municipais permanentes (topografia e estrutura da rede viária), algo impossível tanto num corte transversal quanto numa série temporal de um único município.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-amostragem" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-amostragem"><span class="header-section-number">2.5</span> Noções de Amostragem</h2>
+<p>Raramente é possível ou desejável observar todos os elementos de uma população de interesse. Para tanto, os <strong>procedimentos amostrais</strong> oferecem um caminho para obter informações confiáveis sobre a população a partir de um subconjunto menor de observações, uma vez que esse subconjunto seja selecionado de forma adequada. Nesta seção, abordaremos alguns aspectos introdutórios sobre amostragem, mas sem o aprofundamento robusto que o tema requer<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Para tanto, precisaríamos de um suporte teórico maior sobre teoria da probabilidade que só veremos mais adiante. Entretanto, essa aproximação inicial é fundamental para entendermos este que é um dos principais desafios de uma pesquisa empírica.</p>
+<section id="conceitos-fundamentais" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="conceitos-fundamentais"><span class="header-section-number">2.5.1</span> Conceitos Fundamentais</h3>
+<p>Imagine que você precisa estimar o tempo médio que os trabalhadores brasileiros gastam se deslocando ao trabalho. A resposta exata existe em algum lugar, mas para calculá-la com certeza, você precisaria perguntar a cada trabalhador brasileiro. Esse conjunto de todos os elementos sobre os quais queremos fazer afirmações é o que chamamos de <strong>população</strong>. Como observar toda a população raramente é viável, a solução é selecionar um subconjunto menor e bem escolhido, aquilo que denominamos de <strong>amostra</strong>. Cada elemento individual que pode ser observado desta amostra, por sua vez (um trabalhador, neste caso), é o que denominamos <strong>unidade amostral</strong>.</p>
+<p>A <a href="#fig-pop_amostra" class="quarto-xref">Figura&nbsp;<span>2.7</span></a> resume esse movimento central da pesquisa empírica, onde observamos a amostra e, a partir dela, fazemos <strong>inferências</strong> sobre a população.</p>
+<div id="fig-pop_amostra" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pop_amostra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-7-pop_amostra.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pop_amostra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.7: Relação entre população, amostra e o processo de inferência estatística
+</figcaption>
+</figure>
+</div>
+<p>Outros conceitos importantes são o de <strong>parâmetro</strong>, <strong>estimativa</strong> e <strong>erro amostral</strong>. Enquanto <strong>parâmetro</strong> diz respeito a uma estatística que calculamos sobre os dados de toda a população, <strong>estimativa</strong> refere-se a essa estatística computada em uma amostra. Considerando o exemplo anterior, estamos falando da média do tempo de viagem, que difere somente sobre qual base de dados é calculada (população ou amostra). A diferença entre essa estimativa e o parâmetro verdadeiro é o chamamos de <strong>erro amostral</strong>. Ele sempre existe em alguma medida, simplesmente porque a amostra não é a população inteira.</p>
+<p>Para tornar esses conceitos concretos, suponha que o Censo Demográfico, ao observar toda a população brasileira, revele que o tempo médio de viagem ao trabalho é de 55 minutos (<strong>parâmetro</strong>), ao passo que a PNAD Contínua, ao levantar apenas uma amostra, estima esse mesmo valor em 51 minutos (<strong>estimativa</strong>). Neste caso, a diferença de 4 minutos entre os dois é o <strong>erro amostral</strong> da estimativa.</p>
+<p>Do ponto de vista da qualidade da amostra, há dois atributos ainda a serem considerados. O primeiro deles é a <strong>precisão</strong> (<em>precision</em>), que diz respeito ao quão concentrados estão os valores observados em torno da estimativa. A segunda é a <strong>exatidão</strong>, também chamada de <em>acurácia</em> (do inglês <em>accuracy</em>), que se refere ao quão próxima a estimativa está do parâmetro verdadeiro da população. É possível ser muito preciso sem ser exato (resultados consistentes entre si, mas sistematicamente afastados da realidade) e ser exato sem ser muito preciso (resultados que oscilam em torno do valor correto, mas sem grande consistência entre si).</p>
+<p>Associado a cada um desses atributos, há um tipo específico de erro. A falta de precisão é consequência do <strong>erro aleatório</strong>, a variabilidade natural que decorre do fato de observarmos apenas uma parcela da população, que pode ser substancialmente reduzido com amostras maiores. A falta de exatidão, por sua vez, é consequência do <strong>erro sistemático</strong> (o <strong>viés</strong>), um desvio consistente e em sentido fixo entre a estimativa e o parâmetro verdadeiro. O viés não se cancela com amostras maiores, pois na continuidade do fator de enviesamento, o desvio permanece. Uma pesquisa que não entrevista moradores em regiões de favelas, por exemplo, sistematicamente sub-representa domicílios de renda mais baixa, independentemente de quantas entrevistas sejam feitas.</p>
+<p>O erro amostral observado em cada pesquisa resulta, na verdade, da combinação dessas duas componentes (erro aleatório e erro sistemático). Suponha que, conhecendo o parâmetro verdadeiro do tempo médio de viagem ao trabalho (55 minutos), você realize diversas pesquisas amostrais independentes e calcule o erro em cada uma (estimativa − parâmetro). Se os erros oscilarem sem direção preferida (ora +3 min, ora −2 min, ora +5 min, …), você está diante de um erro predominantemente aleatório. A estimativa flutua em torno do parâmetro e tende a se anular em média, sem falhas sistemáticas no processo de coleta.</p>
+<p>Se, em vez disso, os erros forem consistentemente positivos (ora +10 min, ora + 5 min, ora + 7 min, por exemplo), você está diante de uma componente sistemática. Alguma característica do processo de coleta empurra as estimativas persistentemente acima do parâmetro verdadeiro, e aumentar o tamanho da amostra não resolverá o problema.</p>
+<p>Para visualizar essa distinção, pense em cada ponto da <a href="#fig-exat-prec1" class="quarto-xref">Figura&nbsp;<span>2.8</span></a> abaixo como um valor observado de um atributo qualquer obtido de cada elemento da amostra. O centro do alvo representa o parâmetro verdadeiro da população. Observe os quatro casos e reflita: em quais temos o pior e melhor situação de precisão e exatidão? E por quê?</p>
+<div id="fig-exat-prec1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exat-prec1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-8-exat_prec1.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exat-prec1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.8: Quatro situações de medição amostral. Quais são precisas? Quais são exatas?
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Resposta
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="fig-exat-prec1-rotulos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exat-prec1-rotulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-9-exat_prec1_rotulos.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exat-prec1-rotulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.9: Os quatro casos identificados: precisão e exatidão
+</figcaption>
+</figure>
+</div>
+<p>O painel superior esquerdo, <strong>preciso e exato</strong>, é o cenário ideal: os erros são pequenos e aleatórios, sem direção preferida. O painel inferior esquerdo, <strong>impreciso mas exato</strong>, não aparenta ter viés, mas são grandes: os valores variam bastante, mas em média se centram no parâmetro. O painel superior direito, <strong>preciso mas inexato</strong>, é o mais enganoso: o erro é predominantemente sistemático, pois os valores são consistentes entre si, mas apontam coletivamente para o lugar errado. O painel inferior direito, <strong>impreciso e inexato</strong>, combina os dois problemas.</p>
+</div>
+</div>
+</div>
+<p>Há uma complicação da realidade, porém, que muda tudo. Na prática, quase nunca sabemos onde fica o centro do alvo, pois o motivo de realizarmos uma amostragem é exatamente entender algo que desconhecemos sobre a população. De fato, caso soubéssemos o parâmetro verdadeiro, não haveria qualquer motivo para conduzir uma pesquisa amostral. A <a href="#fig-exat-prec2" class="quarto-xref">Figura&nbsp;<span>2.10</span></a> reproduz os quatro painéis anteriores sem o centro do alvo visível, situação análoga à da pesquisa real.</p>
+<div id="fig-exat-prec2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exat-prec2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-10-exat_prec2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exat-prec2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.10: Os mesmos quatro casos sem o centro do alvo visível: como distinguir o preciso-exato do preciso-inexato?
+</figcaption>
+</figure>
+</div>
+<p>Sem o centro do alvo, os dois painéis da coluna esquerda (um exato e um inexato) ficam indistinguíveis à primeira vista. Essa situação revela uma assimetria fundamental entre os dois tipos de erro, discutida em detalhe por <span class="citation" data-cites="richardson1995">Richardson et al. (<a href="references.html#ref-richardson1995" role="doc-biblioref">1995</a>)</span>. O <strong>erro aleatório</strong> pode ser estimado a partir dos próprios dados da amostra, pois é uma expressão direta da dispersão dos valores observados em torno da estimativa. Esse cálculo está no coração das fórmulas de dimensionamento amostral e dos intervalos de confiança que veremos mais adiante. O <strong>erro sistemático</strong>, por outro lado, é invisível para quem olha apenas para dentro da amostra. Se todos os respondentes foram selecionados de forma tendenciosa, os dados internos nada revelarão sobre o desvio em relação à população real.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Essa assimetria cria uma armadilha recorrente. Como o erro aleatório é visível e quantificável, recebe atenção e recursos, pois basta aumentar o tamanho da amostra. Como o viés é invisível sem referência externa, tende a ser ignorado. Nas palavras de <span class="citation" data-cites="richardson1995">Richardson et al. (<a href="references.html#ref-richardson1995" role="doc-biblioref">1995</a>)</span>, o resultado é o risco de gastar recursos para obter respostas <strong>precisamente erradas</strong>. Em pesquisas de transportes, um exemplo claro é uma contagem de tráfego realizada apenas em dias úteis de bom tempo: a grande quantidade de dados produz estimativas muito precisas de volumes que, no entanto, ignoram sistematicamente a variação por dia da semana e condições climáticas, gerando um retrato fiel de uma condição que não representa o comportamento médio real.</p>
+</div>
+</div>
+</section>
+<section id="métodos-de-amostragem" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="métodos-de-amostragem"><span class="header-section-number">2.5.2</span> Métodos de Amostragem</h3>
+<p>Compreendidas as propriedades que definem uma boa amostra e os tipos de erro que podem comprometê-la, o próximo passo é entender como os elementos são efetivamente selecionados da população. A escolha do método de amostragem não é uma decisão trivial, pois condiciona a qualidade das estimativas produzidas, os recursos necessários para a coleta e a capacidade de generalização dos resultados. Para navegar por esse conjunto de opções, é útil organizá-las segundo três eixos de classificação complementares:</p>
+<p><strong>(A) Probabilístico vs.&nbsp;não-probabilístico:</strong> o critério mais fundamental, que separa os métodos em que cada elemento tem uma probabilidade conhecida e não nula de integrar a amostra daqueles em que a seleção depende de julgamento, conveniência ou acaso não controlado. Apenas os métodos probabilísticos permitem calcular formalmente o erro amostral e fazer inferências generalizáveis sobre a população.</p>
+<p><strong>(B) Único estágio vs.&nbsp;múltiplos estágios:</strong> nos métodos de estágio único, os elementos da amostra são selecionados diretamente da população em uma única operação de sorteio. Nos métodos de múltiplos estágios, a seleção ocorre em etapas hierárquicas, sorteando-se primeiro unidades maiores (setores, zonas, municípios) e, dentro das unidades selecionadas, as unidades menores de interesse (domicílios e indivíduos).</p>
+<p><strong>(C) Seleção equiprovável vs.&nbsp;não-equiprovável:</strong> nos métodos equiprováveis, todos os elementos da população têm a mesma probabilidade de ser incluídos na amostra. Nos métodos não-equiprováveis, as probabilidades de seleção variam intencionalmente entre subgrupos (o que pode ser justificado por razões analíticas, como garantir representação de grupos minoritários, ou por razões operacionais).</p>
+<section id="amostragem-não-probabilística" class="level4" data-number="2.5.2.1">
+<h4 data-number="2.5.2.1" class="anchored" data-anchor-id="amostragem-não-probabilística"><span class="header-section-number">2.5.2.1</span> Amostragem Não Probabilística</h4>
+<p>Nesses métodos, a seleção dos elementos não segue um processo aleatório definido, o que impede o cálculo rigoroso do erro amostral e compromete a generalização dos resultados. São exemplos:</p>
+<ul>
+<li><strong>Amostragem por conveniência:</strong> aquelas em que comumente se selecionam os elementos mais fáceis de acessar. Por exemplo, entrevistar passageiros na saída de uma estação de metrô à qual o pesquisador tem acesso ou distribuir questionários <em>online</em> por meio de redes sociais configuram amostragem por conveniência. É rápida e barata, mas altamente sujeita a viés de seleção<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</li>
+<li><strong>Amostragem intencional (ou por julgamento):</strong> o pesquisador seleciona deliberadamente elementos considerados representativos ou informativos (por exemplo, escolher municípios “típicos” de diferentes regiões do país para um estudo de caso). Requer conhecimento prévio aprofundado e é difícil de justificar formalmente.</li>
+</ul>
+<p>Esses métodos são aceitáveis em estudos exploratórios, pesquisas qualitativas e situações com severas restrições operacionais, mas não devem ser utilizados quando se pretende fazer inferências estatísticas sobre a população.</p>
+</section>
+<section id="amostragem-probabilística" class="level4" data-number="2.5.2.2">
+<h4 data-number="2.5.2.2" class="anchored" data-anchor-id="amostragem-probabilística"><span class="header-section-number">2.5.2.2</span> Amostragem Probabilística</h4>
+<p>Nesses métodos, cada elemento da população tem uma probabilidade conhecida e diferente de zero de ser incluído na amostra. Essa propriedade é o que permite calcular o erro amostral e construir intervalos de confiança, tornando os resultados generalizáveis à população-alvo.</p>
+<p>Para que um método probabilístico funcione na prática, é necessário definir o <strong>quadro amostral</strong> (<em>sampling frame</em>), a lista operacional ou dispositivo a partir do qual os elementos serão efetivamente selecionados. Enquanto a população-alvo é um conceito teórico, o quadro amostral é a sua materialização prática. Exemplos típicos em transportes incluem cadastros de domicílios, listas de placas de veículos e relações de domicílios de empresas de distribuição de água/energia.</p>
+<p>A <a href="#fig-pop-frame" class="quarto-xref">Figura&nbsp;<span>2.11</span></a> ilustra a relação entre população-alvo, quadro amostral e amostra. Em situação ideal, os dois primeiros coincidiriam perfeitamente. Na prática, o quadro amostral raramente cobre a população-alvo sem lacunas ou excessos, gerando dois tipos de discrepância:</p>
+<div id="fig-pop-frame" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pop-frame-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-11-pop_frame.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pop-frame-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.11: Relação entre população-alvo, quadro amostral e amostra
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><p><strong>População não-elegível coberta pelo quadro amostral:</strong> elementos presentes no quadro que <em>não</em> pertencem à população-alvo. Em uma pesquisa domiciliar de usuários do transporte público, um cadastro que inclui imóveis comerciais e domicílios desocupados exemplifica esse caso: sortear um imóvel comercial resulta em uma tentativa de entrevista inválida.</p></li>
+<li><p><strong>População elegível não-coberta pelo quadro amostral:</strong> elementos que pertencem à população-alvo mas estão ausentes do quadro. É a situação de <em>cobertura incompleta</em> (<em>undercoverage</em>), potencialmente a mais grave: esses elementos nunca terão chance de ser selecionados, o que pode introduzir viés sistemático quando o grupo não-coberto difere do restante em aspectos relevantes para a pesquisa. Uma pesquisa domiciliar baseada em listas telefônicas, por exemplo, excluiria sistematicamente domicílios sem telefone fixo.</p></li>
+</ul>
+<p>Com o quadro amostral adequado em mãos, a seleção propriamente dita pode seguir diferentes estratégias:</p>
+<p><strong>Amostragem Aleatória Simples:</strong> cada elemento da população tem a mesma probabilidade de ser selecionado. A seleção é feita por sorteio, geralmente sem reposição. É o método mais simples e serve de base para a derivação das fórmulas de dimensionamento amostral. Em transportes, seria equivalente a selecionar aleatoriamente domicílios a partir de um cadastro completo de endereços para realizar uma pesquisa Origem-Destino (OD).</p>
+<div id="fig-aas" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-12-aas.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.12: Amostragem aleatória simples: cada elemento da população tem igual probabilidade de ser sorteado
+</figcaption>
+</figure>
+</div>
+<p><strong>Amostragem Aleatória Sistemática:</strong> os elementos são ordenados (por endereço, número de cadastro, posição na fila) e selecionados a cada intervalo fixo <span class="math inline">\(k\)</span> (por exemplo, a cada 10 domicílios). É operacionalmente mais simples que a amostragem aleatória simples quando existe uma listagem ordenada e produz resultados similares desde que a ordem de listagem não esteja correlacionada com atributos importantes que se deseja mensurar.</p>
+<p><strong>Amostragem Aleatória Estratificada:</strong> a população é dividida em subgrupos homogêneos internamente (<em>estratos</em>) e uma amostra probabilística é retirada de cada estrato. É especialmente útil quando se quer garantir representação adequada de grupos minoritários ou quando a variabilidade entre estratos é maior que dentro deles.</p>
+<p><em>Exemplo:</em> numa pesquisa de satisfação com o transporte público, estratificar por modo (metrô, trem metropolitano, ônibus municipal, ônibus interurbano) garante que usuários de metrô não dominem a amostra pelo volume e que modos de menor frequência sejam adequadamente representados.</p>
+<div id="fig-aae" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-13-aae.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.13: Amostragem estratificada: a população é dividida em estratos homogêneos (cores) e indivíduos são sorteados aleatoriamente dentro de cada estrato
+</figcaption>
+</figure>
+</div>
+<p><strong>Amostragem por Conglomerados:</strong> a população é dividida em grupos (<strong>conglomerados</strong> ou <strong><em>clusters</em></strong>) que funcionam como unidades de amostragem, e uma amostra desses grupos é sorteada. Dentro dos conglomerados sorteados, todos os elementos (ou uma subamostra deles) são pesquisados. É especialmente indicada quando a população é geograficamente dispersa, os custos de deslocamento são elevados ou não existe cadastro individual de boa qualidade. Ao contrário dos estratos, os conglomerados devem ser internamente heterogêneos, cada um representando a diversidade da população, e externamente homogêneos entre si.</p>
+<p><em>Exemplo:</em> numa pesquisa sobre mobilidade <em>intercampi</em> com estudantes de uma universidade, sorteiam-se os cursos e, dentro de cada curso, obtém-se resposta de todos (ou quase todos) os alunos.</p>
+<div id="fig-apc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-apc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-14-apc.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-apc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.14: Amostragem por conglomerados: conglomerados são sorteados e muitos (ou todos os) indivíduos desses conglomerados são entrevistados
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Estratificada vs.&nbsp;Conglomerados: a inversão da homogeneidade
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>À primeira vista, amostragem estratificada e amostragem por conglomerados parecem semelhantes, pois ambas dividem a população em grupos antes de sortear. A diferença fundamental está na lógica oposta de formação desses grupos:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Dentro do grupo</th>
+<th style="text-align: center;">Entre grupos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Estratificada</strong> (estratos)</td>
+<td style="text-align: center;">Homogêneo</td>
+<td style="text-align: center;">Heterogêneo</td>
+</tr>
+<tr class="even">
+<td><strong>Conglomerados</strong> (<em>clusters</em>)</td>
+<td style="text-align: center;">Heterogêneo</td>
+<td style="text-align: center;">Homogêneo</td>
+</tr>
+</tbody>
+</table>
+<p>Na amostragem estratificada, o objetivo é formar grupos internamente homogêneos, de modo que a variância dentro de cada estrato seja pequena. Observações adicionais dentro do mesmo estrato tendem a agregar pouca informação nova, o que justifica sortear apenas uma amostra dentro de cada estrato, sem necessidade de pesquisar todos os seus elementos.</p>
+<p>Na amostragem por conglomerados, a lógica é inversa. O ideal é que cada conglomerado seja uma miniatura heterogênea da população inteira, de modo que qualquer conglomerado sorteado seja igualmente representativo. Os conglomerados entre si devem ser parecidos (homogêneos), o que justifica pesquisar poucos deles com maior profundidade, concentrando o trabalho de campo.</p>
+<p>Na prática, porém, conglomerados naturais como setores censitários tendem a ser internamente homogêneos por razões socioeconômicas e geográficas, violando o ideal teórico. É exatamente por isso que a amostragem por conglomerados geralmente exige amostras maiores para atingir a mesma precisão: observações dentro de um mesmo conglomerado carregam informações redundantes sobre a população.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="dimensionamento-da-amostra" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="dimensionamento-da-amostra"><span class="header-section-number">2.5.3</span> Dimensionamento da Amostra</h3>
+<p>Definido o método de amostragem, a pergunta seguinte é: <strong>quantas observações são necessárias?</strong> Esta resposta é condicionada por diversos aspectos, mas sobretudo pelo método de amostragem escolhido. Nesta seção, apresentaremos o caso mais trivial, considerando uma <strong>amostragem aleatória simples</strong> para uma variável de proporção (ex.: proporção de indivíduos que usam o transporte motorizado individual). Neste caso, precisamos entender três fatores fundamentais, ilustrados na <a href="#fig-dim-amostra" class="quarto-xref">Figura&nbsp;<span>2.15</span></a>:</p>
+<div id="fig-dim-amostra" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dim-amostra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/02-intro-pesq-empirica/2-15-dim_amostra.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dim-amostra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.15: Fatores determinantes do tamanho de amostra para uma amostragem aleatória simples
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Erro amostral tolerável (<span class="math inline">\(E_0\)</span>):</strong> o desvio máximo aceitável entre a estimativa amostral e o parâmetro populacional verdadeiro. Quanto menor o erro tolerável, maior a amostra exigida. Trata-se de uma decisão do pesquisador, condicionada pelos objetivos da pesquisa.</li>
+<li><strong>Confiabilidade (<span class="math inline">\(C\)</span>):</strong> a frequência com que, em amostras repetidas, o intervalo <span class="math inline">\(\text{estimativa} \pm E_0\)</span> (também denominado <strong>intervalo de confiança</strong>) conteria o parâmetro verdadeiro da população. Um nível de 95% não é uma afirmação sobre uma amostra específica, mas sobre o método. Neste caso, se o procedimento fosse repetido muitas vezes, 95% desses intervalos conteriam o verdadeiro valor do parâmetro. Níveis mais elevados (por exemplo, 99%) exigem amostras maiores para o mesmo <span class="math inline">\(E_0\)</span> (ou tolerar <span class="math inline">\(E_0\)</span> maiores para um mesmo tamanho de amostra).</li>
+<li><strong>Tamanho da população (<span class="math inline">\(N\)</span>):</strong> o número de elementos da população-alvo. Para populações muito grandes, o tamanho de amostra necessário converge para um valor fixo e passa a ser praticamente independente de <span class="math inline">\(N\)</span>. Isso tem uma implicação prática importante, pois uma pesquisa em uma cidade com 5 milhões de habitantes não exige uma amostra muito maior do que em outra cidade com 500 mil.</li>
+</ul>
+<p>Sendo assim, podemos empregar uma fórmula simplificada<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> que incorpora esses três fatores com a confiabilidade fixada em 95%:</p>
+<p><span id="eq-n0"><span class="math display">\[n_0 = \frac{1}{E_0^2} \tag{2.1}\]</span></span></p>
+<p>onde <span class="math inline">\(n_0\)</span> é o tamanho de amostra para uma população <strong><em>infinitas</em></strong> e <span class="math inline">\(E_0\)</span> é o <strong>erro amostral tolerável</strong> (expresso em proporção, não em porcentagem). Para populações <strong><em>finitas</em></strong> de tamanho <span class="math inline">\(N\)</span>, aplica-se a correção:</p>
+<p><span id="eq-n-corrigido"><span class="math display">\[n = \frac{N \cdot n_0}{N + n_0} \tag{2.2}\]</span></span></p>
+<p>O resultado é o tamanho mínimo de amostra necessário para estimar uma proporção com erro não superior a <span class="math inline">\(E_0\)</span> e confiabilidade de 95%.</p>
+<p><em>Exemplo 1:</em> deseja-se levantar, por amostragem aleatória simples, a proporção de pessoas que utiliza o transporte coletivo em uma cidade com 200 habitantes. Qual o tamanho mínimo de amostra para que os erros não ultrapassem 4%, a uma confiabilidade de 95%?</p>
+<p><span class="math display">\[n_0 = \frac{1}{(0{,}04)^2} = 625 \quad \Rightarrow \quad n = \frac{200 \times 625}{200 + 625} \approx 152\]</span></p>
+<p><em>Exemplo 2:</em> o mesmo problema, agora para uma cidade com 200.000 habitantes:</p>
+<p><span class="math display">\[n_0 = \frac{1}{(0{,}04)^2} = 625 \quad \Rightarrow \quad n = \frac{200.000 \times 625}{200.000 + 625} \approx 624\]</span></p>
+<p>Os dois exemplos revelam uma propriedade fundamental da fórmula. O valor <span class="math inline">\(n_0 = 625\)</span> é idêntico nos dois casos, pois <span class="math inline">\(E_0\)</span> e <span class="math inline">\(C\)</span> são os mesmos. O que muda é o peso da correção para populações finitas. Para <span class="math inline">\(N = 200\)</span>, a amostra precisa cobrir cerca de <strong>76% da população</strong> para atingir o erro tolerado. Para <span class="math inline">\(N = 200.000\)</span>, basta entrevistar <strong>menos de 0,4% da população</strong>, pois <span class="math inline">\(n \approx n_0\)</span>. Esse contraste é o argumento central que justifica a existência da correção para populações finitas na fórmula.</p>
+<p>A <a href="#fig-amostra-n-vs-N" class="quarto-xref">Figura&nbsp;<span>2.16</span></a> ilustra o comportamento de <span class="math inline">\(n\)</span> em função de <span class="math inline">\(N\)</span> para <span class="math inline">\(E_0 = 4\%\)</span>, destacando os dois exemplos. O eixo horizontal está em escala logarítmica para que ambos os pontos (<span class="math inline">\(N = 200\)</span> e <span class="math inline">\(N = 200.000\)</span>) sejam visíveis. A convergência para <span class="math inline">\(n_0 = 625\)</span> ocorre rapidamente: a partir de populações de algumas dezenas de milhares, <span class="math inline">\(n\)</span> praticamente não varia com <span class="math inline">\(N\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-amostra-n-vs-N" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-amostra-n-vs-N-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="2intro-pesq-empirica_files/figure-html/fig-amostra-n-vs-N-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-amostra-n-vs-N-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.16: Tamanho de amostra necessário (n) em função do tamanho da população (N) para E₀ = 4% e C = 95% (eixo horizontal em escala logarítmica). A linha tracejada indica a assíntota n₀ = 625. Os pontos vermelhos correspondem aos dois exemplos da seção.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercícios" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">2.6</span> Exercícios</h2>
+<p><strong>1.</strong> Uma pesquisa deseja estimar a proporção de usuários de transporte público que avaliam o serviço como “satisfatório ou muito satisfatório” em uma cidade com 800.000 habitantes adultos. Usando a fórmula de Barbetta com erro amostral de 3%, calcule o tamanho mínimo da amostra necessário.</p>
+<p><strong>2.</strong> Classifique as variáveis a seguir quanto à escala de mensuração (nominal, ordinal, intervalar ou razão) e justifique sua resposta:</p>
+<ol type="a">
+<li>Número de passageiros por viagem de ônibus</li>
+<li>Avaliação da sinalização viária (ruim, regular, boa, ótima)</li>
+<li>Código numérico do modo de transporte (1 = carro, 2 = ônibus, 3 = metrô, 4 = bicicleta)</li>
+<li>Tempo de espera no ponto de ônibus (em minutos)</li>
+<li>CEP do domicílio de origem da viagem</li>
+</ol>
+<p><strong>3.</strong> Uma equipe de pesquisa deseja estimar a velocidade média de operação dos ônibus no corredor expresso de uma cidade. Explique por que a fórmula de Barbetta (<span class="math inline">\(n_0 = 1/E_0^2\)</span>) <strong>não</strong> é diretamente aplicável a este caso e descreva qual informação adicional seria necessária para dimensionar a amostra corretamente.</p>
+<p><strong>4.</strong> A Secretaria de Transportes de uma cidade pretende realizar uma pesquisa de satisfação com usuários do metrô. A população de usuários é estimada em 120.000 passageiros/dia. A secretaria deseja que o erro amostral não ultrapasse 4%. Calcule:</p>
+<ol type="a">
+<li>O tamanho da amostra para uma população infinita (<span class="math inline">\(n_0\)</span>).</li>
+<li>O tamanho corrigido da amostra (<span class="math inline">\(n\)</span>) para a população de 120.000 usuários.</li>
+<li>A diferença percentual entre <span class="math inline">\(n\)</span> e <span class="math inline">\(n_0\)</span>. O que esse resultado indica sobre a influência do tamanho da população neste caso?</li>
+</ol>
+<p><strong>5.</strong> Classifique os planos amostrais a seguir quanto ao método de amostragem (conveniência, sistemática, estratificada, conglomerados) e identifique possíveis fontes de viés em cada caso:</p>
+<ol type="a">
+<li>Entrevistar os primeiros 200 passageiros que desembarcam em uma estação de metrô durante a hora de pico da manhã.</li>
+<li>Sortear 30 setores censitários da cidade e entrevistar todos os domicílios de cada setor sorteado.</li>
+<li>Dividir os bairros em três grupos (alta, média e baixa renda) e sortear uma amostra proporcional de domicílios em cada grupo.</li>
+<li>A partir de um cadastro de veículos com placa, selecionar um veículo ao acaso entre os primeiros 10 e, a partir dele, selecionar a cada 10 veículos subsequentes.</li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-barbetta2006" class="csl-entry" role="listitem">
+Barbetta, P. A. (2006). <em>Estatística Aplicada às Ciências Sociais</em> (6º ed). Editora da UFSC.
+</div>
+<div id="ref-ibge2016censo" class="csl-entry" role="listitem">
+Instituto Brasileiro de Geografia e Estatística. (2016). <em>Metodologia do censo demográfico 2010</em>. IBGE. <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv95987.pdf">https://biblioteca.ibge.gov.br/visualizacao/livros/liv95987.pdf</a>
+</div>
+<div id="ref-richardson1995" class="csl-entry" role="listitem">
+Richardson, A. J., Ampt, E. S., &amp; Meyburg, A. H. (1995). <em>Survey Methods for Transport Planning</em>. Eucalyptus Press.
+</div>
+<div id="ref-stevens1946" class="csl-entry" role="listitem">
+Stevens, S. S. (1946). On the Theory of Scales of Measurement. <em>Science</em>, <em>103</em>(2684), 677–680.
+</div>
+<div id="ref-tierney1996" class="csl-entry" role="listitem">
+Tierney, K., Decker, S., Proussaloglou, K., Rossi, T., Ruiter, E., &amp; McGuckin, N. (1996). <em>Travel Survey Manual</em> (FHWA-PL-96-029). Cambridge Systematics, Inc. <a href="https://doi.org/10.21949/1404543">https://doi.org/10.21949/1404543</a>
+</div>
+<div id="ref-r4ds_pt_2e" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2025). <em>R para Ciência de Dados (2ª edição)</em>. <a href="https://pt.r4ds.hadley.nz/">https://pt.r4ds.hadley.nz/</a>
+</div>
+<div id="ref-wooldridge2010" class="csl-entry" role="listitem">
+Wooldridge, J. M. (2010). <em>Econometric Analysis of Cross Section and Panel Data</em> (2º ed). MIT Press.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><em>Dispositivo Móvel de Coleta</em><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>mobilidade por aplicativo<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>De fato, existem disciplinas e livros inteiros dedicados somente a este tópico!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>erro sistemático que ocorre quando a amostra de um estudo não representa adequadamente a população-alvo devido à forma como os participantes são selecionados<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>esta fórmula é na verdade uma aproximação da formulação original, que veremos melhor <a href="./14estimacao-de-parametros.html">neste capítulo</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./1introducao-ao-r.html" class="pagination-link" aria-label="Introdução ao R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução ao R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./3estatistica-descritiva.html" class="pagination-link" aria-label="Estatística Descritiva">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estatística Descritiva</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
